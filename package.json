@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/belensantacruz/grupo_9_petshop/issues"
   },
-  "homepage": "https://github.com/belensantacruz/grupo_9_petshop#readme"
+  "homepage": "https://github.com/belensantacruz/grupo_9_petshop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
