@@ -1,0 +1,19 @@
+{
+  "name": "grupo_9_petshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belensantacruz/grupo_9_petshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belensantacruz/grupo_9_petshop/issues"
+  },
+  "homepage": "https://github.com/belensantacruz/grupo_9_petshop#readme"
+}
