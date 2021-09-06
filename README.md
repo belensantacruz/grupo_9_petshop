@@ -1,4 +1,4 @@
-## ¡BIENVENIDOS AL REPOSITORIO DEL GRUPO NUEVE!
+¡BIENVENIDOS AL REPOSITORIO DEL GRUPO NUEVE!
 
 **DESCRIPCIÓN DE PRODUCTOS**
 *De acuerdo a cada animal van a personalizarse los distintos productos y servicios ofrecidos (Perros y Gatos)
