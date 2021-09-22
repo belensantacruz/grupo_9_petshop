@@ -8,4 +8,9 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname,"./views/footer.html"));
 });
 
+// Header
+app.get("/header", (req, res) => {
+    res.sendFile(path.resolve(__dirname,"./views/header.html"));
+});
+
 app.listen(3000, () => console.log("Server corriendo en el puerto 3000"));
