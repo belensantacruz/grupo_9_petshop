@@ -1,38 +1,26 @@
 @import url("https://fonts.google.com/specimen/Poppins?query=popp family = Poppins & display = swap");
 *{
-<<<<<<< HEAD
-    font-family:'Poppins', sans-serif;
-=======
-    font-family: 'Roboto', 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
->>>>>>> 81ea9978417a4f799d5e0f69518f76e4bece4dd3
+    font-family: 'Poppins', sans-serif;
     margin:0;
     padding:0;
     box-sizing:border-box;
-
-  
 }
+
 footer{
     display: flex;
     width: 100%;
     padding: 50px 0px;
 }
+
 .cajafooter{
     display: flex;
-<<<<<<< HEAD
-=======
-    flex-direction: row;
->>>>>>> 81ea9978417a4f799d5e0f69518f76e4bece4dd3
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
 }
+
 .boxfooter{
-display: flex;
-<<<<<<< HEAD
-flex-direction: column; 
+    display: flex;
+    flex-direction: column;
 }
-=======
-flex-direction: column;
-}
->>>>>>> 81ea9978417a4f799d5e0f69518f76e4bece4dd3
