@@ -15,78 +15,122 @@
     <!-- Header -->
     <!-- Carrusel -->
     <section class="carrusel">
-        <article class="slide">
-            <img class="oferta-img" src="/images/borderCollieMerle.jpg" alt="Imagen de oferta 1">
-            <h3>Título oferta 1</h3>
-        </article>
-        <article>
-            <img class="oferta-img" src="/images/goldenRetriever.jpg" alt="Imagen de oferta 2">
-            <h3>Título oferta 2</h3>
-        </article>
-        <article class="slide">
-            <img class="oferta-img" src="/images/ovejeroAleman.jpg" alt="Imagen de oferta 3">
-            <h3>Título oferta 3</h3>
-        </article>
-        <article class="slide">
-            <img class="oferta-img" src="/images/roughCollie.jpg" alt="Imagen de oferta 4">
-            <h3>Título oferta 4</h3>
-        </article>
+        <div class="slides">
+            <article class="slide">
+                <img class="oferta-img" src="/images/borderCollieMerle.jpg" alt="Imagen de oferta 1">
+                <h3 class="titulo-oferta">Título oferta 1</h3>
+            </article>
+            <article class="slide">
+                <img class="oferta-img" src="/images/goldenRetriever.jpg" alt="Imagen de oferta 2">
+                <h3 class="titulo-oferta">Título oferta 2</h3>
+            </article>
+            <article>
+                <img class="oferta-img" src="/images/banner.png" alt="Imagen de oferta 3">
+                <h3 class="titulo-oferta">Título oferta 3</h3>
+            </article>
+            <article class="slide">
+                <img class="oferta-img" src="/images/roughCollie.jpg" alt="Imagen de oferta 4">
+                <h3 class="titulo-oferta">Título oferta 4</h3>
+            </article>
+        </div>
         <!-- Flechas y dots de carrusel-->
-        <div>
+        <div class="flechas">
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+        <div class="dots-container">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
         </div>
-        <a>&#10094;</a>
-        <a>&#10095;</a>
     </section>
     <!-- Articulos-->
-    <section class="publicaciones">
+    <main class="publicaciones">
         <h1>Publicaciones destacadas</h1>
         <div class="articulos-total">
-            <article class="articulo">
+            <article class="articulo selected">
                 <img src="/images/producto1.png" alt="Imagen Producto 1">
-                <h2>Producto 1</h2>
-                <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis esse nam impedit similique quam necessitatibus culpa qui laudantium.</p>
-                <p>$11320,00</p>
-                <!-- button with input-->
-                <button>Comprar</button>
+                <div class="product-details">
+                    <h2>Producto 1</h2>
+                    <p class="descripcion-producto visible">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
+                    <p>$11320,00</p>
+                    <div class="botones-compras">
+                        <div class="cuantificador-visible">
+                            <button>-</button>
+                            <input type="text" value="1" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button class="comprar-button">Comprar</button>
+                    </div>
+                </div>
             </article>
             <article class="articulo">
                 <img src="/images/producto2.png" alt="Imagen Producto 2">
-                <h2>Producto 2</h2>
-                <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis esse nam impedit similique quam necessitatibus culpa qui laudantium.</p>
-                <p>$20,00</p>
-                <!-- button with input-->
-                <button>Comprar</button>
+                <div class="product-details">
+                    <h2>Producto 2</h2>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
+                    <p>$20,00</p>
+                    <div class="botones-compras">
+                        <div class="cuantificador">
+                            <button>-</button>
+                            <input type="text" value="1" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button class="comprar-button">Comprar</button>
+                    </div>
+                </div>
             </article>
             <article class="articulo">
                 <img src="/images/producto3.png" alt="Imagen Producto 3">
-                <h2>Producto 3</h2>
-                <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis esse nam impedit similique quam necessitatibus culpa qui laudantium.</p>
-                <p>$1900,00</p>
-                <!-- button with input-->
-                <button>Comprar</button>
+                <div class="product-details">
+                    <h2>Producto 3</h2>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
+                    <p>$1900,00</p>
+                    <div class="botones-compras">
+                        <div class="cuantificador">
+                            <button>-</button>
+                            <input type="text" value="1" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button class="comprar-button">Comprar</button>
+                    </div>
+                </div>
             </article>
             <article class="articulo">
                 <img src="/images/producto4.png" alt="Imagen Producto 4">
-                <h2>Producto 4</h2>
-                <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis esse nam impedit similique quam necessitatibus culpa qui laudantium.</p>
-                <p>$215,00</p>
-                <!-- button with input-->
-                <button>Comprar</button>
+                <div class="product-details">
+                    <h2>Producto 4</h2>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
+                    <p>$215,00</p>
+                    <div class="botones-compras">
+                        <div class="cuantificador">
+                            <button>-</button>
+                            <input type="text" value="1" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button class="comprar-button">Comprar</button>
+                    </div>
+                </div>
             </article>
-            <article class="articulo">
+            <article class="articulo oculto">
                 <img src="/images/producto5.png" alt="Imagen Producto 5">
-                <h2>Producto 5</h2>
-                <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis esse nam impedit similique quam necessitatibus culpa qui laudantium.</p>
-                <p>$5,00</p>
-                <!-- button with input-->
-                <button>Comprar</button>
+                <div class="product-details">
+                    <h2>Producto 5</h2>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
+                    <p>$5,00</p>
+                    <div class="botones-compras">
+                        <div class="cuantificador">
+                            <button>-</button>
+                            <input type="text" value="1" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button class="comprar-button">Comprar</button>
+                    </div>
+                </div>
             </article>
         </div>
-    </section>
+    </main>
     <!-- Footer -->
 </body>
 </html>
