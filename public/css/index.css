@@ -1,78 +1,214 @@
+/* Todos los componentes */
 * {
   font-family: 'Poppins';
-  box-sizing: border-box
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
-
 body {
   background-color: #efe017;
+  width: 100%
+}
+img {
+  max-width: 100%;
 }
 
-.publicaciones {
-  color: #976e1b;
-}
-
-.articulo {
-  background-color: #ddd5d1;
-}
-
-button {
-  background-color: #976E1B;
-  color: #ddd5d1;
-  font-weight: bold;
-}
-
-.articulos-total {
-  display: flex;
-  justify-content: space-between;
-}
-
-.descripcion-producto {
-  font-size: 0.5em;
-}
-h2 {
-  font-size: 1rem;
-}
-h1 {
-  font-weight: bold;
-}
-
+/* Carrusel */
 .slide {
   display: none;
 }
+.titulo-oferta {
+  color: black;
+  font-size: 20px;
+  font-style: italic;
+  padding: 8px 12px;
+  position: absolute;
+  top: 29%;
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-weight: bold;
+}
+.oferta-img {
+  margin-top: 20px;
+}
+.prev{
+  align-items: flex-start;
+}
+.next{
+  position: absolute;
+  top:0%;
+  align-self: flex-end;
+}
+.prev:hover, .next:hover {
+  background-color: black;
+}
+.prev, .next {
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #EF8B6D;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Artículos */
+.oculto{
+  display: none;
+}
+.articulo {
+  background-color: #ddd5d1;
+  max-width: 280px;
+  border: solid 2px #EF8B6D;
+  text-align: center;
+  margin: 5px;
+}
+.comprar-button {
+  background-color: #976E1B;
+  color: #ddd5d1;
+  font-weight: bold;
+  padding: 2px 8px;
+}
+.oferta-img {
+  text-align: center;
+}
+.publicaciones {
+  color: #976e1b;
+  margin: 10px 25px;
+}
+.flechas {
+  display: none;
+}
+.articulos-total {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.publicaciones img {
+  width: 300px;
+  height: 250px;
+}
+.product-details {
+  text-align: center;
+  flex-direction: column;
+  padding: 8px 15px;
+  margin: auto;
+  align-content: space-around;
+}
+.product-details p{
+  margin: 10px;
+}
+.cuantificador {
+  display: none;
+}
+.cuantificador-visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cuantificador-visible button {
+  width: 30px;
+  height: 30px;
+}
+.cuantificador-visible input {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+.botones-compras {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 15px 10px;
+}
+.articulo img{
+  background-color: white;
+}
+
+/* Media Queries */
 
 /*Smartphones*/
-@media (min-width: 0px){
+@media (min-width: 200px){
+  .publicaciones {
+    min-width: 500px;
+  }
   .oferta-img {
-    width: 70rem;
-    height: 40rem;
+    text-align: center;
+    min-width: 550px;
+    min-height: 200px;
+    max-height: 200px;
   }
-  .publicaciones img {
-    width: 40rem;
+  .descripcion-producto{
+    display: none;
+    text-align: center;
+    font-size: 0.8rem;
+    margin: auto;
   }
-  .articulo {
-    text-align: left;
-    width: 40rem;
+  h2 {
+    font-size: 1.2rem;
+    margin: 2px;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 1rem;
+    margin-bottom: 9px;
   }
 }
 
 /*Laptops*/
-@media (min-width: 700px){
+@media (min-width: 500px){
   .oferta-img {
-    width: 100vw;
-    height: 100vh;
-  }
-  .publicaciones img {
-    width: 20vw;
-    height: 270px;
-  }
-  .articulo {
-    font-size: 2vw;
     text-align: center;
-    width: 38vw;
-    padding: 10px;
-    border: solid 2px #EF8B6D;
-    margin: 4px 5px;
-    height: fit-content(80vh);
-    line-height: 3vh;
+    width: 100%;
+    height: 50vh;
+  }
+  .flechas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+    top:15%
+  }
+  .descripcion-producto{
+    display: none;
+    font-size: 0.8rem;
+    margin: auto;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .visible {
+    display: contents;
+  }
+  .selected img {
+    width: 200px;
+    height: 180px;
+    margin-top: 15px;
+  }
+  .dots-container {  
+    top: 35%;
+    position: absolute;
+    left: 50%;
+  }
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #EF8B6D;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .dot:hover {
+    background-color: #977662;
   }
 }
