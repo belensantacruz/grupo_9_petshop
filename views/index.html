@@ -5,132 +5,191 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Guarida Petshop</title>
-    <link rel="stylesheet" href="/css/normallize.css">
+    <script src="https://kit.fontawesome.com/50bc258b8b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/normalize.css">
 </head>
 <body>
-    <!-- Header -->
-    <!-- Carrusel -->
-    <section class="carrusel">
-        <div class="slides">
-            <article class="slide">
-                <img class="oferta-img" src="/images/borderCollieMerle.jpg" alt="Imagen de oferta 1">
-                <h3 class="titulo-oferta">Título oferta 1</h3>
-            </article>
-            <article class="slide">
-                <img class="oferta-img" src="/images/goldenRetriever.jpg" alt="Imagen de oferta 2">
-                <h3 class="titulo-oferta">Título oferta 2</h3>
-            </article>
-            <article>
-                <img class="oferta-img" src="/images/banner.png" alt="Imagen de oferta 3">
-                <h3 class="titulo-oferta">Título oferta 3</h3>
-            </article>
-            <article class="slide">
-                <img class="oferta-img" src="/images/roughCollie.jpg" alt="Imagen de oferta 4">
-                <h3 class="titulo-oferta">Título oferta 4</h3>
-            </article>
+    <!-- <Header> -->
+    <main>
+        <div class="carrusel">
+            <div class="imagenes-carrusel">
+                <img src="/images/banner.png" alt="Imagen banner">
+                <img class="banner-inactivo" src="/images/goldenRetriever.jpg" alt="Imagen Golder">
+                <img class="banner-inactivo" src="/images/ovejeroAleman.jpg" alt="Imagen Ovejero Alemán">
+                <img class="banner-inactivo" src="/images/borderCollieMerle.jpg" alt="Imagen Border Collie">
+                <img class="banner-inactivo" src="/images/roughCollie.jpg" alt="Imagen Rough Collie">
+            </div>
+            <div class="arrows">
+                <p class="prev">&lt;</p>
+                <p class="next">&gt;</p>
+            </div>
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
-        <!-- Flechas y dots de carrusel-->
-        <div class="flechas">
-            <a class="prev">&#10094;</a>
-            <a class="next">&#10095;</a>
-        </div>
-        <div class="dots-container">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </section>
-    <!-- Articulos-->
-    <main class="publicaciones">
-        <h1>Publicaciones destacadas</h1>
-        <div class="articulos-total">
-            <article class="articulo selected">
-                <img src="/images/producto1.png" alt="Imagen Producto 1">
-                <div class="product-details">
-                    <h2>Producto 1</h2>
-                    <p class="descripcion-producto visible">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
-                    <p>$11320,00</p>
+        <section class="articulos-destacados">
+            <div class="titulo-articulos">
+                <h1>Publicaciones destacadas</h1>
+                <div class="articulos-arrows">
+                    <p class="button-articulos">&lt;</p>
+                    <p class="button-articulos active">&gt;</p>
+                </div>
+            </div>
+            <div class="articulos">
+                <article>
+                    <img src="/images/producto1.png" alt="Imagen Producto 1">
+                    <p class="descripcion-articulo">Producto 1</p>
+                    <p class="precio">$11320,00</p>
                     <div class="botones-compras">
-                        <div class="cuantificador-visible">
+                        <div class="botones-cantidad">
                             <button>-</button>
-                            <input type="text" value="1" readonly="readonly">
+                            <input type="text" value="0" readonly="readonly">
                             <button>+</button>
                         </div>
-                        <button class="comprar-button">Comprar</button>
+                        <button>Comprar</button>
                     </div>
-                </div>
-            </article>
-            <article class="articulo">
-                <img src="/images/producto2.png" alt="Imagen Producto 2">
-                <div class="product-details">
-                    <h2>Producto 2</h2>
-                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
-                    <p>$20,00</p>
+                </article>
+                <article>
+                    <img src="/images/producto2.png" alt="Imagen Producto 2">
+                    <p class="descripcion-articulo">Producto 2</p>
+                    <p class="precio">$20,00</p>
                     <div class="botones-compras">
-                        <div class="cuantificador">
+                        <div class="botones-cantidad">
                             <button>-</button>
-                            <input type="text" value="1" readonly="readonly">
+                            <input type="text" value="0" readonly="readonly">
                             <button>+</button>
                         </div>
-                        <button class="comprar-button">Comprar</button>
+                        <button>Comprar</button>
                     </div>
-                </div>
-            </article>
-            <article class="articulo">
-                <img src="/images/producto3.png" alt="Imagen Producto 3">
-                <div class="product-details">
-                    <h2>Producto 3</h2>
-                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
-                    <p>$1900,00</p>
+                </article>
+                <article>
+                    <img src="/images/producto3.png" alt="Imagen Producto 3">
+                    <p class="descripcion-articulo">Producto 3</p>
+                    <p class="precio">$1900,00</p>
                     <div class="botones-compras">
-                        <div class="cuantificador">
+                        <div class="botones-cantidad">
                             <button>-</button>
-                            <input type="text" value="1" readonly="readonly">
+                            <input type="text" value="0" readonly="readonly">
                             <button>+</button>
                         </div>
-                        <button class="comprar-button">Comprar</button>
+                        <button>Comprar</button>
                     </div>
-                </div>
-            </article>
-            <article class="articulo">
-                <img src="/images/producto4.png" alt="Imagen Producto 4">
-                <div class="product-details">
-                    <h2>Producto 4</h2>
-                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
-                    <p>$215,00</p>
+                </article>
+                <article>
+                    <img src="/images/producto4.png" alt="Imagen Producto 4">
+                    <p class="descripcion-articulo">Producto 4</p>
+                    <p class="precio">$215,00</p>
                     <div class="botones-compras">
-                        <div class="cuantificador">
+                        <div class="botones-cantidad">
                             <button>-</button>
-                            <input type="text" value="1" readonly="readonly">
+                            <input type="text" value="0" readonly="readonly">
                             <button>+</button>
                         </div>
-                        <button class="comprar-button">Comprar</button>
+                        <button>Comprar</button>
                     </div>
-                </div>
-            </article>
-            <article class="articulo oculto">
-                <img src="/images/producto5.png" alt="Imagen Producto 5">
-                <div class="product-details">
-                    <h2>Producto 5</h2>
-                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus perferendis.</p>
-                    <p>$5,00</p>
+                </article>
+                <article>
+                    <img src="/images/producto5.png" alt="Imagen Producto 5">
+                    <p class="descripcion-articulo">Producto 5</p>
+                    <p class="precio">$5,00</p>
                     <div class="botones-compras">
-                        <div class="cuantificador">
+                        <div class="botones-cantidad">
                             <button>-</button>
-                            <input type="text" value="1" readonly="readonly">
+                            <input type="text" value="0" readonly="readonly">
                             <button>+</button>
                         </div>
-                        <button class="comprar-button">Comprar</button>
+                        <button>Comprar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="articulos-ofertas">
+            <div class="titulo-articulos">
+                <h1>Ofertas imperdibles!</h1>
+                <div class="articulos-arrows">
+                    <div class="articulos-arrows">
+                        <p class="button-articulos">&lt;</p>
+                        <p class="button-articulos active">&gt;</p>
                     </div>
                 </div>
-            </article>
-        </div>
+            </div>
+            <div class="articulos">
+                <article>
+                    <img src="/images/producto1.png" alt="Imagen Producto 1">
+                    <p class="descripcion-articulo">Producto 1</p>
+                    <p class="precio">$11320,00</p>
+                    <div class="botones-compras">
+                        <div class="botones-cantidad">
+                            <button>-</button>
+                            <input type="text" value="0" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button>Comprar</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="/images/producto2.png" alt="Imagen Producto 2">
+                    <p class="descripcion-articulo">Producto 2</p>
+                    <p class="precio">$20,00</p>
+                    <div class="botones-compras">
+                        <div class="botones-cantidad">
+                            <button>-</button>
+                            <input type="text" value="0" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button>Comprar</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="/images/producto3.png" alt="Imagen Producto 3">
+                    <p class="descripcion-articulo">Producto 3</p>
+                    <p class="precio">$1900,00</p>
+                    <div class="botones-compras">
+                        <div class="botones-cantidad">
+                            <button>-</button>
+                            <input type="text" value="0" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button>Comprar</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="/images/producto4.png" alt="Imagen Producto 4">
+                    <p class="descripcion-articulo">Producto 4</p>
+                    <p class="precio">$215,00</p>
+                    <div class="botones-compras">
+                        <div class="botones-cantidad">
+                            <button>-</button>
+                            <input type="text" value="0" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button>Comprar</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="/images/producto5.png" alt="Imagen Producto 5">
+                    <p class="descripcion-articulo">Producto 5</p>
+                    <p class="precio">$5,00</p>
+                    <div class="botones-compras">
+                        <div class="botones-cantidad">
+                            <button>-</button>
+                            <input type="text" value="0" readonly="readonly">
+                            <button>+</button>
+                        </div>
+                        <button>Comprar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
-    <!-- Footer -->
+    <!-- <Footer> -->
 </body>
 </html>

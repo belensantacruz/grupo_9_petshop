@@ -1,214 +1,213 @@
-/* Todos los componentes */
+/* All */
 * {
-  font-family: 'Poppins';
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Poppins', sans-serif;
 }
-body {
-  background-color: #efe017;
-  width: 100%
+main {
+  background-color: #DDD5D1;
 }
-img {
-  max-width: 100%;
+section {
+  margin: 25px;
 }
 
 /* Carrusel */
-.slide {
+.banner-inactivo {
   display: none;
 }
-.titulo-oferta {
-  color: black;
-  font-size: 20px;
-  font-style: italic;
-  padding: 8px 12px;
-  position: absolute;
-  top: 29%;
+.imagenes-carrusel img{
   width: 100%;
-  text-align: left;
-  color: white;
-  font-weight: bold;
+  height: 20vh;
 }
-.oferta-img {
-  margin-top: 20px;
-}
-.prev{
-  align-items: flex-start;
-}
-.next{
-  position: absolute;
-  top:0%;
-  align-self: flex-end;
-}
-.prev:hover, .next:hover {
-  background-color: black;
-}
-.prev, .next {
-  font-size: 2rem;
+.arrows {
+  color: #FFE91C;
   cursor: pointer;
-  position: absolute;
-  top: 20%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: #EF8B6D;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Artículos */
-.oculto{
   display: none;
 }
-.articulo {
-  background-color: #ddd5d1;
-  max-width: 280px;
-  border: solid 2px #EF8B6D;
-  text-align: center;
-  margin: 5px;
+.arrows p:hover{
+  background-color: #F8520F;
 }
-.comprar-button {
+.arrows p {
   background-color: #976E1B;
-  color: #ddd5d1;
-  font-weight: bold;
-  padding: 2px 8px;
+  position: absolute;
+  top: 18%;
 }
-.oferta-img {
-  text-align: center;
+.next {
+  position: absolute;
+  right: 0px;
 }
-.publicaciones {
-  color: #976e1b;
-  margin: 10px 25px;
-}
-.flechas {
+.dots {
   display: none;
+  position: absolute; 
 }
-.articulos-total {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.publicaciones img {
-  width: 300px;
-  height: 250px;
-}
-.product-details {
-  text-align: center;
-  flex-direction: column;
-  padding: 8px 15px;
-  margin: auto;
-  align-content: space-around;
-}
-.product-details p{
-  margin: 10px;
-}
-.cuantificador {
-  display: none;
-}
-.cuantificador-visible {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.cuantificador-visible button {
-  width: 30px;
-  height: 30px;
-}
-.cuantificador-visible input {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  font-weight: bold;
-}
-.botones-compras {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 15px 10px;
-}
-.articulo img{
-  background-color: white;
-}
-
-/* Media Queries */
-
-/*Smartphones*/
-@media (min-width: 200px){
-  .publicaciones {
-    min-width: 500px;
-  }
-  .oferta-img {
-    text-align: center;
-    min-width: 550px;
-    min-height: 200px;
-    max-height: 200px;
-  }
-  .descripcion-producto{
-    display: none;
-    text-align: center;
-    font-size: 0.8rem;
-    margin: auto;
-  }
-  h2 {
-    font-size: 1.2rem;
-    margin: 2px;
-  }
-  h1 {
-    font-weight: bold;
-    font-size: 1.8rem;
-    padding: 1rem;
-    margin-bottom: 9px;
-  }
-}
-
-/*Laptops*/
-@media (min-width: 500px){
-  .oferta-img {
-    text-align: center;
-    width: 100%;
-    height: 50vh;
-  }
-  .flechas {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: 100%;
-    top:15%
-  }
-  .descripcion-producto{
-    display: none;
-    font-size: 0.8rem;
-    margin: auto;
-    text-align: center;
-    font-size: 0.8rem;
-  }
-  .visible {
-    display: contents;
-  }
-  .selected img {
-    width: 200px;
-    height: 180px;
-    margin-top: 15px;
-  }
-  .dots-container {  
-    top: 35%;
-    position: absolute;
-    left: 50%;
-  }
-  .dot {
+.dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #EF8B6D;
+    background-color: #FFE91C;
     border-radius: 50%;
-    display: inline-block;
     transition: background-color 0.6s ease;
+}
+.dot:hover {
+  background-color: #F8520F;
+}
+
+/* Artículos */
+.titulo-articulos {
+  display: flex;
+  width: 100%;
+}
+.titulo-articulos h1 {
+  width: 60%;
+  color: #240046;
+  font-size: 30px;
+}
+.articulos-arrows {
+  display: none;
+  justify-content: flex-end;
+  width: 40%;
+}
+.articulos-arrows .active:hover {
+  background-color: #240046;
+  cursor: pointer;
+  color: #DDD5D1;
+}
+.articulos-arrows p:hover{
+  background-color: transparent;
+  cursor: default;
+  color: grey;
+}
+.articulos-arrows .active {
+  color: #240046;
+  border: solid 2px #240046;
+}
+.articulos-arrows p {
+  color: grey;
+  border: solid 2px grey;
+  border-radius: 50%;
+}
+.articulos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.articulos article {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 90%;
+  max-width: 100%;
+  text-align: center;
+  min-width: 190px;
+  min-height: 350px;
+  margin: 15px;
+  border: solid 1px #976E1B;
+  border-radius: 2%;
+  box-shadow: 0px 0px 10px #EF8B6D;
+}
+.articulos article img {
+  border-bottom: solid 1px #976E1B;
+  margin: auto;
+  max-width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.precio {
+  color: #240046;
+  font-weight: bold;
+  margin: 10px;
+  max-width: 100%;
+}
+.descripcion-articulo {
+  display: none;
+  margin: 10px 10px 5px 10px;
+  max-width: 100%;
+}
+.botones-compras {
+  max-width: 100%;
+  margin: 5px 10px 10px 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.botones-cantidad {
+  display: flex;
+}
+.botones-cantidad input {
+  width: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+.botones-cantidad button{
+  border-radius: 20%;
+  padding: 5px;
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media (min-width: 361px) {
+  .imagenes-carrusel img{
+    height: 40vh;
   }
-  .dot:hover {
-    background-color: #977662;
+  .arrows {
+    font-size: 40px;
+    display: contents;
+  }
+  .arrows p {
+    padding: 2px 10px;
+  }
+  .dots{
+    display: flex;
+    top: 35%;
+    left: 42%;
+  }
+  .articulos article {
+    min-width: 120px;
+    min-height: 210px;
+    flex-basis: 40%;
+  }
+  /* .articulos-arrows {
+    display: flex;
+    font-size: 40px;
+  }
+  .articulos-arrows p {
+    padding: 0px 20px;
+    margin: 10px;
+    max-height: 50px;
+  } */
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .imagenes-carrusel img{
+    height: 60vh;
+  }
+  .arrows {
+    display: contents;
+    font-size: 60px;
+  }
+  .arrows p {
+    padding: 4px 16px;
+  }
+  .dots{
+    display: flex;
+    top: 55%;
+    left: 46%;
+  }
+  .articulos-arrows {
+    display: flex;
+    font-size: 60px;
+  }
+  .articulos-arrows p {
+    padding: 0px 20px;
+    margin: 10px;
+    max-height: none;
+  }
+  .articulos article {
+    min-width: 250px;
+    min-height: 280px;
+    flex-basis: 15%;
   }
 }
