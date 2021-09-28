@@ -28,5 +28,9 @@ app.get("/registro", (req, res) => {
     res.sendFile(path.resolve(__dirname,"./views/registro.html"));
 });
 
+// Detalle producto
+app.get("/product", (req, res) => {
+    res.sendFile(path.resolve(__dirname,"./views/product.html"));
+});
 
 app.listen(3000, () => console.log("Server corriendo en el puerto 3000"));
