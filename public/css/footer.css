@@ -1,26 +1,120 @@
 @import url("https://fonts.google.com/specimen/Poppins?query=popp family = Poppins & display = swap");
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'sans-serif';
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
-footer{
-    display: flex;
-    width: 100%;
-    padding: 50px 0px;
+.conteiner{
+    background-color: white;
 }
-
-.cajafooter{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
+.footer{
+padding-left:25px;
+padding-right:25px;
+padding-top:10px;
+padding-bottom: 10px;
 }
+.row{
+    display:flex;
+    flex-wrap:wrap;
 
-.boxfooter{
+}
+ul{
+    list-style:none;
+}
+.footer-col{
+    font-size:13px;
+    width:16%;
     display: flex;
     flex-direction: column;
 }
+.footer-col-logo img{
+    width:100%;
+}
+.footer-col-logo{
+    width:10%;
+    padding-right:15px;
+    display: flex;
+    flex-direction: column;
+}
+.footer-col-barra{
+    width:26%;
+    font-size:13px;
+    display: flex;
+    flex-direction: column;
+}
+h4{
+    font-size:15px;
+}
+.footer-col ul li a{
+text-decoration: none;
+color: black;
+transition:all 0.3s ease;
+}
+.footer-col ul li a:hover{
+   padding-left:10px;
+    }
+
+.footer-col-barra input{
+    width:100%;
+    height: 35px;
+    border: 1px solid #cdcdcd;
+    border-radius:2px;
+}
+.footer-col .social-links i {
+    display: inline-block;
+    font-size:20px;
+    color:black;
+    transition:all 0.3s ease;
+}
+.footer-col .social-links i:hover{
+    padding-left:10px;
+}
+
+@media (max-width:768px){
+    .footer-col ul li{
+        font-size:10px;
+    }  
+    .footer-col-barra input{
+        height: 18px;
+    }
+    h4{
+        font-size:11px;
+    }
+    .footer-col .social-links i {
+        font-size:15px;
+    }
+    .footer-col{
+        
+        width:18%;
+       
+    }
+
+.footer-col-barra{
+    width:18%;
+
+}
+.footer-col-logo img {
+    width: 100%;
+}
+}
+
+@media (max-width:460px){
+    .footer-col-logo{
+        display:none;
+    }
+    .footer-col-barra{
+        display:none;
+    }
+    .footer-col .social-links i {
+        font-size:18px;
+    }
+    .footer-col{
+        font-size:10px;
+        width:50%;
+        padding: 0 15px;
+    }
+    h4{
+        font-size:14px;
+    }
+    }
