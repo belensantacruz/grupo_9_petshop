@@ -1,0 +1,71 @@
+@import url("https://fonts.google.com/specimen/Poppins?query=popp family = Poppins & display = swap");
+*{
+    font-family: 'Poppins', 'sans-serif';
+    
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.contenedor{
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.center{
+   display:flex;
+   flex-direction:column;
+   text-align:center;
+    background-color: white;
+    border:1px solid black;
+    width: 100vw;
+    height: 50vh;
+    border-radius: 3px;
+}
+.center h1{
+    text-align:center;
+    font-size: 20px;
+    padding-top:15px;
+    padding-bottom: 15px;
+}
+.email{
+
+padding-bottom:20px;
+}
+.email input{
+    width:80%;
+    height:35px;
+    border: 1px solid #cdcdcd;
+    border-radius:2px;
+}
+.contraseña input{
+    width:80%;
+    height: 35px;;
+    border: 1px solid #cdcdcd;
+    border-radius:2px;
+}
+.iniciarsesion{
+    margin-top:60px;
+    margin-bottom:20px;
+    }
+.iniciarsesion button{
+width:52%;
+height:40px;
+background-color: white;
+border-radius:3px;
+}
+.olvidastecontraseña a{
+    font-size:11px;
+}
+@media (min-width:768px){
+.center{
+    width: 40vw;
+    height: 50vh;
+}
+}
+@media (min-width:1280px){
+    .center{
+        width: 20vw;
+        height: 43vh;
+    }
+}
