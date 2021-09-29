@@ -6,7 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 main {
-  background-color: #DDD5D1;
+  background-color: white;
 }
 section {
   margin: 25px;
@@ -21,17 +21,19 @@ section {
   height: 20vh;
 }
 .arrows {
-  color: #FFE91C;
+  color: white;
   cursor: pointer;
   display: none;
 }
 .arrows p:hover{
-  background-color: #F8520F;
+  background-color: #ff2870;
 }
 .arrows p {
-  background-color: #976E1B;
+  background-color: #8a2be2;
+  border-radius: 2px;
   position: absolute;
   top: 18%;
+  transition: background-color 0.6s ease;
 }
 .next {
   position: absolute;
@@ -46,12 +48,12 @@ section {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #FFE91C;
+    background-color: #8a2be2;
     border-radius: 50%;
     transition: background-color 0.6s ease;
 }
 .dot:hover {
-  background-color: #F8520F;
+  background-color: #ff2870;
 }
 
 /* Artículos */
@@ -61,8 +63,8 @@ section {
 }
 .titulo-articulos h1 {
   width: 60%;
-  color: #240046;
-  font-size: 30px;
+  color: #8a2be2;
+  font-size: 24px;
 }
 .articulos-arrows {
   display: none;
@@ -70,9 +72,9 @@ section {
   width: 40%;
 }
 .articulos-arrows .active:hover {
-  background-color: #240046;
+  background-color: #8a2be2;
   cursor: pointer;
-  color: #DDD5D1;
+  color: white;
 }
 .articulos-arrows p:hover{
   background-color: transparent;
@@ -80,8 +82,8 @@ section {
   color: grey;
 }
 .articulos-arrows .active {
-  color: #240046;
-  border: solid 2px #240046;
+  color: #8a2be2;
+  border: solid 2px #8a2be2;
 }
 .articulos-arrows p {
   color: grey;
@@ -90,42 +92,45 @@ section {
 }
 .articulos {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   text-align: center;
 }
 .articulos article {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   flex-basis: 90%;
   max-width: 100%;
   text-align: center;
   min-width: 190px;
-  min-height: 350px;
-  margin: 15px;
-  border: solid 1px #976E1B;
-  border-radius: 2%;
-  box-shadow: 0px 0px 10px #EF8B6D;
+  margin: 10px;
+  border: solid 1px #8a2be2;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+  background-color: rgb(250, 237, 250);
+}
+.articulos article:hover {
+  box-shadow: 0px 0px 5px #8a2be2;
 }
 .articulos article img {
-  border-bottom: solid 1px #976E1B;
+  border-bottom: solid 1px #8a2be2;
   margin: auto;
   max-width: 100%;
   height: 100%;
+  /* max-height: 250px; */
   background-color: white;
+  border-radius: 10px 10px 0px 0px;
 }
 .precio {
-  color: #240046;
+  color: #8a2be2;
   font-weight: bold;
   margin: 10px;
   max-width: 100%;
 }
-.descripcion-articulo {
-  display: none;
-  margin: 10px 10px 5px 10px;
-  max-width: 100%;
-}
 .botones-compras {
+  display: none;
   max-width: 100%;
   margin: 5px 10px 10px 10px;
   display: flex;
@@ -138,10 +143,52 @@ section {
   width: 25px;
   text-align: center;
   font-weight: bold;
+  border: solid 1px #8a2be2;
 }
-.botones-cantidad button{
-  border-radius: 20%;
+.minus, .plus {
+  padding: 3px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #8a2be2;
+  font-weight: bold;
+}
+.minus:hover, .plus:hover {
+  background-color: #ff2870;
+  color: white;
+}
+.minus {
+  border-radius: 5px 0px 0px 5px;
+}
+.plus {
+  border-radius: 0px 5px 5px 0px;
+}
+.comprar-button {
+  width: 70px;
+  border-radius: 50px;
+  color: #8a2be2;
+  border: solid 1px #8a2be2;
+  background-color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.comprar-button:hover {
+  background-color: #8a2be2; 
+  color: white;
+}
+.descripcion-articulo {
+  display: none;
+}
+.descripcion-articulo {
   padding: 5px;
+  color: black;
+}
+.detalles-producto {
+  display: none;
+}
+article:hover .detalles-producto {
+  display: revert;
 }
 
 /* Media Queries */
@@ -164,9 +211,18 @@ section {
     left: 42%;
   }
   .articulos article {
-    min-width: 120px;
-    min-height: 210px;
+    min-width: 130px;
     flex-basis: 40%;
+  }
+  .comprar-button {
+    font-size: 12px;
+    width: 65px;
+  }
+  .minus, .plus {
+    padding: 4px;
+  }  
+  .descripcion-articulo {
+    display: revert;
   }
   /* .articulos-arrows {
     display: flex;
@@ -198,16 +254,25 @@ section {
   }
   .articulos-arrows {
     display: flex;
-    font-size: 60px;
+    font-size: 24px;
   }
   .articulos-arrows p {
-    padding: 0px 20px;
-    margin: 10px;
+    padding: 0px 10px;
+    margin: 15px;
     max-height: none;
   }
   .articulos article {
-    min-width: 250px;
-    min-height: 280px;
-    flex-basis: 15%;
+    min-width: 220px;
+    flex-basis: 10%;
+  }
+  .comprar-button {
+    font-size: 14px;
+    width: 75px;
+  }
+  .minus, .plus {
+    padding: 5px;
+  }
+  .descripcion-articulo {
+    display: revert;
   }
 }
