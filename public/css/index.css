@@ -112,7 +112,7 @@ section {
   border-radius: 10px;
   cursor: pointer;
   transition: box-shadow 0.5s;
-  background-color: rgb(250, 237, 250);
+  background-color: white;
 }
 .articulos article:hover {
   box-shadow: 0px 0px 5px #8a2be2;
@@ -227,15 +227,6 @@ article:hover .detalles-producto {
   .descripcion-articulo {
     display: revert;
   }
-  /* .articulos-arrows {
-    display: flex;
-    font-size: 40px;
-  }
-  .articulos-arrows p {
-    padding: 0px 20px;
-    margin: 10px;
-    max-height: 50px;
-  } */
 }
 
 /* Desktop */
