@@ -6,6 +6,7 @@
     padding:0;
     box-sizing:border-box;
 }
+
 .contenedor{
     position:absolute;
     top:30%;
@@ -17,14 +18,15 @@
    flex-direction:column;
    text-align:center;
     background-color: white;
-    border:1px solid black;
+    border:1px solid #D3D3D3;
     width: 100vw;
     height: 50vh;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 .center h1{
     text-align:center;
-    font-size: 20px;
+    font-size: 24px;
+    color:#8a2be2;
     padding-top:15px;
     padding-bottom: 15px;
 }
@@ -35,14 +37,14 @@ padding-bottom:20px;
 .email input{
     width:80%;
     height:35px;
-    border: 1px solid #cdcdcd;
-    border-radius:2px;
+    border: 1px solid #D3D3D3;
+    border-radius:50px;
 }
 .contraseña input{
     width:80%;
     height: 35px;;
-    border: 1px solid #cdcdcd;
-    border-radius:2px;
+    border: 1px solid #D3D3D3;
+    border-radius:50px;
 }
 .iniciarsesion{
     margin-top:60px;
@@ -52,11 +54,27 @@ padding-bottom:20px;
 width:52%;
 height:40px;
 background-color: white;
-border-radius:3px;
+border-radius:50px;
+border: 2px solid #8a2be2;
+font-size:14px;
+transition-property: background-color, color;
+transition-duration: all 1s;
+
+}
+.iniciarsesion button:hover{
+    background-color:#8a2be2;
+    color:white;
 }
 .olvidastecontraseña a{
     font-size:11px;
+    text-decoration:none;
+    color:#ff2870;
 }
+    ::placeholder{
+        color:#ff2870;
+        font-size:12px;
+    }
+
 @media (min-width:768px){
 .center{
     width: 40vw;
