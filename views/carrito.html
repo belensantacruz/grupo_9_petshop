@@ -19,40 +19,44 @@
             <div class="articulos">
                 <article>
                     <img src="/images/producto1.png" alt="Imagen Producto 1">
-                    <div class="detalles-carrito">
-                        <div class="descripcion-producto">
-                            <h2>Producto 1</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                        <div class="cantidad-producto">
-                            <p><i class="fas fa-trash-alt"></i><a href="#">Eliminar</a></p>                 
-                            <div class="precio-cantidad">
-                                <div class="botones-cantidad">
-                                    <button class="minus">-</button>
-                                    <input type="text" value="1" readonly="readonly">
-                                    <button class="plus">+</button>
+                    <div class="contenedor-producto">
+                        <div class="detalles-carrito">
+                            <div class="descripcion-producto">
+                                <h2>Producto 1</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="cantidad-producto">
+                                <p class="boton-eliminar"><i class="fas fa-trash-alt"></i><a href="#">Eliminar</a></p>
+                                <div class="precio-cantidad">
+                                    <div class="botones-cantidad">
+                                        <button class="minus">-</button>
+                                        <input type="text" value="1" readonly="readonly">
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <p class="precio">$11320,00</p>
                                 </div>
-                                <p class="precio">$11320,00</p>
                             </div>
                         </div>
                     </div>
                 </article>
                 <article>
                     <img src="/images/producto2.png" alt="Imagen Producto 2">
-                    <div class="detalles-carrito">
-                        <div class="descripcion-producto">
-                            <h2>Producto 2</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                        <div class="cantidad-producto">
-                            <p><i class="fas fa-trash-alt"></i><a href="#">Eliminar</a></p>                 
-                            <div class="precio-cantidad">
-                                <div class="botones-cantidad">
-                                    <button class="minus">-</button>
-                                    <input type="text" value="1" readonly="readonly">
-                                    <button class="plus">+</button>
-                                </div>
-                                <p class="precio">$20,00</p>
+                    <div class="contenedor-producto">
+                        <div class="detalles-carrito">
+                            <div class="descripcion-producto">
+                                <h2>Producto 2</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="cantidad-producto">
+                                <p class="boton-eliminar"><i class="fas fa-trash-alt"></i><a href="#">Eliminar</a></p>   
+                                <div class="precio-cantidad">
+                                    <div class="botones-cantidad">
+                                        <button class="minus">-</button>
+                                        <input type="text" value="1" readonly="readonly">
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <p class="precio">$20,00</p>
+                                </div>        
                             </div>
                         </div>
                     </div>
@@ -60,25 +64,27 @@
             </div>
         </section>
         <section class="resumen">
-            <h1>Resumen</h1>
-            <input class="cupones" type="text" placeholder="Agregar cupón">
-            <div class="descuentos detalles-compra">
-                <p class="detalle-precio">Descuentos</p>
-                <p class="precio">$200,00</p>
+            <div class="resumen-background">
+                <h1>Resumen</h1>
+                <input class="cupones" type="text" placeholder="Agregar cupón">
+                <div class="descuentos detalles-compra">
+                    <p class="detalle-precio">Descuentos</p>
+                    <p class="precio">$200,00</p>
+                </div>
+                <div class="detalles-compra">
+                    <p class="detalle-precio">Subtotal</p>
+                    <p class="precio">$11340,00</p>
+                </div>
+                <div class="detalles-compra">
+                    <p class="detalle-precio">Costo del envío</p>
+                    <p class="precio">$150,00</p>
+                </div>
+                <div class="total detalles-compra">
+                    <p class="detalle-precio">Total</p>
+                    <p class="precio">$11290,00</p>
+                </div>
+                <button>Finalizar Compra</button> 
             </div>
-            <div class="detalles-compra">
-                <p class="detalle-precio">Subtotal</p>
-                <p class="precio">$11340,00</p>
-            </div>
-            <div class="detalles-compra">
-                <p class="detalle-precio">Costo del envío</p>
-                <p class="precio">$150,00</p>
-            </div>
-            <div class="total detalles-compra">
-                <p class="detalle-precio">Total</p>
-                <p class="precio">$11290,00</p>
-            </div>
-            <button>Finalizar Compra</button>
         </section>
     </div>
     
