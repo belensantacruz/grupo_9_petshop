@@ -6,9 +6,77 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registro</title>
         <link rel="stylesheet" href="\css\registro.css">
+        <link rel="stylesheet" href="\css\header.css">
+    <link rel="stylesheet" href="\css\footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
     </head>
 
     <body>
+
+        <nav class="header">
+            <div class="logo">
+                <a href="/"><img src="/images/logo-footer.png" alt="Logo"></a>
+            </div>
+    
+            <div class="header-menu">
+    
+                <div class="dropdown-menu">
+                    <button class="dropdown-btn">ALIMENTOS</button>
+                    <div class="dropdown-content">
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-menu">
+                    <button class="dropdown-btn">ACCESORIOS</button>
+                    <div class="dropdown-content">
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-menu">
+                    <button class="dropdown-btn">SALUD</button>
+                    <div class="dropdown-content">
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-menu">
+                    <button class="dropdown-btn">HIGIENE</button>
+                    <div class="dropdown-content">
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                        <a href="#">1</a>
+                    </div>
+                </div>
+            </div>  
+    
+            <div class="header-search-bar">
+                <input class="search-bar" type="text" name="" id="" placeholder="Buscar..">
+                <button type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+    
+            <div class="header-profile">
+                <a href="/login">Login</a>
+                <a href="/registro">Register</a>
+            </div>
+    
+            <div class="header-cart">
+                <a href="/carrito" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        </nav>
+
         <div class="contenedor">
             <div class="center">
                 <h1>CREAR CUENTA</h1>
@@ -21,5 +89,54 @@
                 </form>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="conteiner">
+                <div class="row">
+                    <div class="footer-col-logo">
+                        <img  src="/images/logo-footer-bco.png">
+                    </div>
+                    <div class="footer-col">
+                        <h4>Seguinos!</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Nosotros</h4>
+                        <ul>
+                            <li><a href="#">Nuestra historia</a></li>
+                            <li><a href="#">Eventos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Tienda Online</h4>
+                        <ul>
+                            <li><a href="#">Formas de Entrega</a></li>
+                            <li><a href="#">Descuentos</a></li>
+                            <li><a href="#">Cambios/devoluciones</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i><a href="#">mail@mail.com</a></li>
+                            <li><i class="fab fa-whatsapp"></i><a href="#">+5491123456789</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-barra">
+                        <h4>Enterate de las últimas novedades!</h4>
+                        <form action="resultado.html" method="POST" class="barra"> 
+                        <input type="e-mail" name="e-mail" placeholder="  mail@mail.com">
+                        </form>
+                    </div>
+                </div>
+        
+            </div>
+        </footer>
+
     </body>
 </html>

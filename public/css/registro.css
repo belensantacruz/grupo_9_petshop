@@ -7,10 +7,13 @@
     box-sizing:border-box;
 }
 .contenedor{
-    position:absolute;
+    /* position:absolute;
     top:30%;
     left:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    margin: 150px auto 300px auto;
+    display: flex;
+    justify-content: center;
 }
 .center{
    display:flex;
