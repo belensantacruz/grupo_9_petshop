@@ -174,8 +174,8 @@ section {
 .comprar-button {
   width: 50%;
   border-radius: 50px;
-  color: #8a2be2;
-  border: solid 1px #8a2be2;
+  color: black;
+  border: solid 2px #8a2be2;
   background-color: white;
   font-weight: bold;
   cursor: pointer;
