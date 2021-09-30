@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* All */
 * {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
   font-family: 'Poppins', sans-serif;
+  font-weight: 300;
 }
 main {
   background-color: white;
@@ -135,7 +137,7 @@ section {
 }
 .precio {
   color: #8a2be2;
-  font-weight: bold;
+  font-weight: 500;
   margin: 10px;
   max-width: 100%;
 }
@@ -150,7 +152,7 @@ section {
 .botones-cantidad input {
   width: 25px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 400;
   border: solid 1px #8a2be2;
 }
 .minus, .plus {
@@ -159,7 +161,7 @@ section {
   cursor: pointer;
   color: white;
   background-color: #8a2be2;
-  font-weight: bold;
+  font-weight: 300;
 }
 .minus:hover, .plus:hover {
   background-color: #ff2870;
@@ -177,7 +179,7 @@ section {
   color: black;
   border: solid 2px #8a2be2;
   background-color: white;
-  font-weight: bold;
+  font-weight: 300;
   cursor: pointer;
   font-size: 14px;
   width: 95px;
