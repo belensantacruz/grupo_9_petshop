@@ -121,6 +121,16 @@ nav {
     color: #8a2be2;
 }
 
+.product-info i {
+    color: #8a2be2;
+}
+
+.header-profile a{
+    text-decoration: none;
+    display: flex;
+    color: #8a2be2;
+}
+
 @media (max-width:768px){
     /* Smartphones y tablets */
     .header-menu{
