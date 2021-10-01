@@ -9,7 +9,10 @@
   }
 
 .all-sections {
-  padding-bottom: 100px;
+  margin-top: 80px;
+  font-weight: 300;
+}
+.all-sections h1 {
   font-weight: 300;
 }
 h1 {
