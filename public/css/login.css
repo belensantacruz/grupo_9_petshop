@@ -24,8 +24,8 @@
    text-align:center;
     background-color: white;
     border:1px solid #D3D3D3;
-    width: 100vw;
-    height: 50vh;
+    width: 300px;
+    height: 350px;
     border-radius: 10px;
 }
 .center h1{
@@ -78,17 +78,5 @@ transition-duration: all 1s;
     ::placeholder{
         color:#ff2870;
         font-size:12px;
+        padding-left: 15px;
     }
-
-@media (min-width:768px){
-    .center{
-    width: 350px;
-    height: 350px;
-    }
-}
-@media (min-width:1280px){
-    .center{
-        width: 350px;
-        height: 350px;
-    }
-}
