@@ -102,7 +102,6 @@ section {
   justify-content: flex-start;
   text-align: center;
   height: 55vh;
-  overflow: hidden;
   overflow-x: scroll;
 }
 .articulos article {
@@ -236,6 +235,9 @@ article:hover .detalles-producto {
   .descripcion-articulo {
     display: revert;
   }
+  .articulos {
+    overflow-x: scroll;
+  }
 }
 
 /* Desktop */
@@ -270,5 +272,8 @@ article:hover .detalles-producto {
   }
   .descripcion-articulo {
     display: revert;
+  }
+  .articulos{
+    overflow: hidden;
   }
 }
