@@ -9,6 +9,7 @@
 }
 main {
   background-color: white;
+  margin-top: 100px;
 }
 section {
   margin: 25px;
@@ -34,7 +35,7 @@ section {
   background-color: #8a2be2;
   border-radius: 2px;
   position: absolute;
-  top: 18%;
+  top: 30%;
   transition: background-color 0.6s ease;
 }
 .next {
@@ -215,11 +216,12 @@ article:hover .detalles-producto {
     display: contents;
   }
   .arrows p {
-    padding: 2px 10px;
+    padding: 10px 10px;
+    font-size: 30px;
   }
   .dots{
     display: flex;
-    top: 35%;
+    top: 55%;
     left: 42%;
   }
   .articulos article {
@@ -243,11 +245,12 @@ article:hover .detalles-producto {
     font-size: 60px;
   }
   .arrows p {
-    padding: 4px 16px;
+    padding: 20px 20px;
+    font-size: 40px;
   }
   .dots{
     display: flex;
-    top: 55%;
+    top: 74%;
     left: 46%;
   }
   .articulos-arrows {

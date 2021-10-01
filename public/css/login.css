@@ -81,14 +81,14 @@ transition-duration: all 1s;
     }
 
 @media (min-width:768px){
-.center{
-    width: 40vw;
-    height: 50vh;
-}
+    .center{
+    width: 350px;
+    height: 350px;
+    }
 }
 @media (min-width:1280px){
     .center{
-        width: 20vw;
-        height: 43vh;
+        width: 350px;
+        height: 350px;
     }
 }
