@@ -6,8 +6,12 @@
     padding: 0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
   }
+
+.all-sections {
+  padding-bottom: 100px;
+  font-weight: 300;
+}
 h1 {
   color: #8a2be2;
   font-size: 24px;
