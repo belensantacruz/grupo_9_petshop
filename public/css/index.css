@@ -117,7 +117,6 @@ section {
   align-items: center;
   border: solid 1px #8a2be2;
   border-radius: 10px;
-  cursor: pointer;
   transition: box-shadow 0.5s;
   background-color: white;
 }
@@ -186,10 +185,12 @@ section {
   cursor: pointer;
   font-size: 14px;
   width: 95px;
+  padding: 5px 2px;
 }
 .comprar-button:hover {
   background-color: #8a2be2; 
   color: white;
+  pointer-events:visible;
 }
 .descripcion-articulo {
   display: none;
