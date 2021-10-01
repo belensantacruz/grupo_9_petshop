@@ -101,7 +101,7 @@ section {
   position: relative;
   justify-content: flex-start;
   text-align: center;
-  height: 55vh;
+  height: 300px;
   overflow-x: scroll;
 }
 .articulos article {
