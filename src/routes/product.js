@@ -8,6 +8,7 @@ const controller =require("../controllers/productController");
 router.get("/detalle", controller.detalle);
 router.get("/carrito", controller.carrito);
 router.get("/crud", controller.crud);
-router.get("/crudForm", controller.crudForm);
+router.get("/agregarItem", controller.crudForm);
+router.get("/editarProducto", controller.editar);
 
 module.exports=router;
