@@ -6,8 +6,13 @@ let controller ={
     },
     carrito : (req, res) =>{
         res.render("carrito");
+    },
+    crud: (req, res)=>{
+        res.render("crud");
+    },
+    crudForm: (req, res) =>{
+        res.render("crudForm");
     }
-
 }
 
 module.exports =controller;
