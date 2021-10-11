@@ -2,10 +2,10 @@ const path =require ("path");
 
 let controller ={
     detalle : (req, res) =>{
-        res.render("product");
+        res.render("products/product");
     },
     carrito : (req, res) =>{
-        res.render("carrito");
+        res.render("products/carrito");
     }
 
 }
