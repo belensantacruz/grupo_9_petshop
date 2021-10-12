@@ -5,7 +5,7 @@ let controller ={
         res.render("products/product");
     },
     carrito : (req, res) =>{
-        res.render("carrito");
+        res.render("products/carrito");
     },
     crud: (req, res)=>{
         res.render("crud");
