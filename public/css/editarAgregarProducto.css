@@ -1,0 +1,48 @@
+.crudForm div {
+    padding: 5px;
+    text-align: center;
+}
+.crudForm input {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid #D3D3D3;
+}
+.crudForm button {
+    width: 50%;
+    border-radius: 50px;
+    color: black;
+    border: solid 2px #8a2be2;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    width: 95px;
+    padding: 5px 2px;
+    transition: all 0.5s ease;
+}
+.crudForm button:hover {
+    background-color: #8a2be2; 
+    color: white;
+    pointer-events:visible;
+}
+.crudImage {
+    margin: 5px 0px;
+}
+.crudImage input {
+    display: none;
+}
+.crudImage label {
+    padding: 6px 28px;
+    border-radius: 50px;
+    border: 1px solid #D3D3D3;
+    font-size: 12px;
+    border: 1px solid #D3D3D3;
+    background-color: white;
+    color: #ff2870;
+    transition: all 1s ease;
+}
+.crudImage label:hover {
+    background-color: #ff2870;
+    color: white;
+}
