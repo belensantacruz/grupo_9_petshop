@@ -13,7 +13,8 @@
 * Agregar mas ceremonias Agile (Daily, planning, retro)
 * Agregar reviews
 <br>
-https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/5f5bf2ad-782b-4b34-93ff-0d14d0330217  
+https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/5f5bf2ad-782b-4b34-93ff-0d14d0330217
+<br>  
 
 # RETRO SPRINT 2
 ## FUE BIEN
@@ -27,7 +28,6 @@ https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/5f5bf2ad-782b-4b34
 * No usamos la columna del review
 * Pactar días y horarios con anticipación para juntarnos
 * Muchas entregas y teoría hicieron que estemos al límite
-
 ## ACCIONES
 * No subestimar los temas y organizarlos con tiempo suficiente. No dejarlos al final
 * Ponerse al día con playgraund. Si alguno tiene dudas taguear en slack y preguntar
@@ -37,3 +37,18 @@ https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/5f5bf2ad-782b-4b34
 * Tratar de estar al día con las exigencuas de DH
 <br>
 https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/86b95067-8762-4c5a-808e-396c560a927d
+<br>
+
+# RETRO SPRINT 3
+## FUE BIEN
+* Entregamos todo a tiempo y súper cómodos! :D
+* Las dailies estuvieron muy bien!
+* El equipo ayudó cuando un integrante estuvo de vacaciones. Son la postaa!
+## A MEJORAR
+* Empezar a usar más el trello
+## ACCIONES
+* Mantener las dailies como siempre
+* Organizar más las tasks en el dashboard, asignar a cada uno y poner deadlines
+<br>
+https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/8aed1e82-dd6a-4a9f-8c4f-8e5720d7598b
+<br>
