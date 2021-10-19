@@ -8,13 +8,13 @@ let controller ={
         res.render("products/carrito");
     },
     crud: (req, res)=>{
-        res.render("crud");
+        res.render("products/crud");
     },
     crudForm: (req, res) =>{
-        res.render("crudForm");
+        res.render("products/crudForm");
     },
     editar: (req, res)=>{
-        res.render("editarProducto")
+        res.render("products/editarProducto")
     }
 }
 

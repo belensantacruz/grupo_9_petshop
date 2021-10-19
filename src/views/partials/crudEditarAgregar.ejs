@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
-    <main>
-    <div class="crudForm">
-        <form action="/crudForm" method="POST" >
+    <div>
         <div class="crudName"><input type="text" name="crudName" placeholder="Nombre producto"></div>
         <div class="crudDescription"><input type="text" name="crudDescription" placeholder="Descripción producto"></div>
         <div class="crudCategory"><input type="text" name="crudCategory" placeholder="Categoría"></div>
@@ -15,11 +11,6 @@
             <label for="imagenProducto">Seleccionar Imagen&nbsp;<i class="far fa-images"></i>
             </label>
         </div>
-        <div><button type="button">Enviar</button></div>
-
-        </form>
-</div>
-</main>
-<%- include('./partials/footer') %>
+    </div>
 </body>
 </html>

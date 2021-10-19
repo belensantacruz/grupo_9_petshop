@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %> 
+    <main>
+        <div class="crudForm">
+            <form action="/editarProducto" method="POST" >
+                <%- include('../partials/crudEditarAgregar') %>
+                <div><button type="button">Guardar</button></div>
+            </form>
+        </div>
+    </main>
+<%- include('../partials/footer') %> 
+</body>
+</html>
