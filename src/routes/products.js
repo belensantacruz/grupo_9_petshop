@@ -5,7 +5,7 @@ const controller =require("../controllers/productController");
 
 
 // Detalle producto
-router.get("/detalle", controller.detalle);
+router.get("/detalle/:id", controller.detalle);
 router.get("/carrito", controller.carrito);
 router.get("/crud", controller.crud);
 router.get("/agregarItem", controller.crudForm);
