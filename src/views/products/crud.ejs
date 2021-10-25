@@ -6,49 +6,28 @@
     <main>
     <table>
         <tr>
+          <th>ID</th>
           <th>Nombre de producto</th>
           <th>Descripción</th>
           <th>Categoría</th>
           <th>Precio</th>
+          <th>Status</th>
           <th>Imagen</th>
-          <th class="columnPrueba" colspan="2"><a href="/products/agregarItem">Agregar Item</a></th>
+          <th class="columnPrueba" colspan="2"><a href="/products/agregarProducto">Agregar Item</a></th>
         </tr>
-        <tr>
-          <td>Lorem ipsum dolor sit amet.</td>
-          <td>Lorem ipsum dolor sit amet.</td>
-          <td>Lorem ipsum dolor sit amet.</td>
-          <td>Lorem ipsum dolor sit amet.</td>
-          <td>LoremIpsum.jpg</td>
-          <td><a href="/products/editarProducto">Editar</a ></td>
-          <td><a href="">Borrar</a ></td>
-        </tr>
-        <tr>
-        <td>Lorem ipsum dolor sit amet.</td>
-          <td>Lorem ipsum dolor sit amet.</td>
-          <td>Lorem ipsum dolor sit amet.</td>
-          <td>Lorem ipsum dolor sit amet.</td>
-          <td>LoremIpsum.jpg</td>
-          <td><a href="/products/editarProducto">Editar</a ></td>
-          <td><a href="">Borrar</a></td>
-        </tr>
-        <tr>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>LoremIpsum.jpg</td>
-            <td><a href="/products/editarProducto">Editar</a></td>
+        <% productos.forEach(item => { %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= item.name %></td>
+            <td><%= item.description %></td>
+            <td><%= item.category %></td>
+            <td>$<%= item.price %></td>
+            <td><%= item.status %></td>
+            <td><%= item.image %></td>
+            <td><a href="/products/editarProducto/<%= item.id %>">Editar</a></td>
             <td><a href="">Borrar</a ></td>
           </tr>
-          <tr>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-            <td>LoremIpsum.jpg</td>
-            <td><a href="/products/editarProducto">Editar</a ></td>
-            <td><a href="">Borrar</a ></td>
-          </tr>    
+        <% }); %>
       </table>  
     </main>
     <%- include('../partials/footer') %>

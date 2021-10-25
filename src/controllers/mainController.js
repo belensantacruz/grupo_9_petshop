@@ -1,9 +1,9 @@
 const fs = require('fs')
 const path =require ("path");
 
-/* Logica para traer los productos */
+/* Leer jsons y parsearlos */
 let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../db/productos.json'), 'utf-8');
-let products = JSON.parse(jsonProducts); //Convertimos el json a array
+let products = JSON.parse(jsonProducts); //json a array
 
 let controller ={
     home : (req, res) =>{
