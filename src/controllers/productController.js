@@ -24,6 +24,14 @@ let controller ={
     },
     editar: (req, res)=>{
         res.render("products/editarProducto")
+    },
+    borrar: (req, res) => {
+        let nuevaListaProductos = products.filter(item => {
+            return item.id != req.params.id;
+        });
+        let jsonProductos = JSON.stringify(nuevaListaProductos, null, 4);
+        fs.writeFileSync(path.resolve(__dirname, "../db/productos.json"), jsonProductos);
+        res.redirect("/");
     }
 }
 
