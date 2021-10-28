@@ -5,16 +5,19 @@
     <%- include('../partials/header') %>
     <section id="product">
         <div class="product-photo">
+            <div class="product-photo-detail">
+            <img src="/images/products/<%= productDetail[0].image %>" alt="">
+            </div>
         </div>
             <form action="" class="product-details">
-            <div class="product-name">Producto</div>
-            <div class="product-desc">Marca, codigo de prod, etc</div>
+            <div class="product-name"><%= productDetail[0].name %></div>
+            <div class="product-desc"><%= productDetail[0].category %></div>
             <div class="star">
                 <i class="fas fa-star"></i>
             </div>
 
             <div class="price-shipping">
-                <div class="product-price">$0000,00</div>
+                <div class="product-price">$<%= productDetail[0].price %></div>
                 <div class="product-payment-shipping">
                     <div>
                         <i class="fas fa-credit-card"></i>
@@ -40,13 +43,13 @@
             </form>
     </section>
     <div class="product-info">
-        <h5>Descripción del producto</h5>
-        <p>ALIMENTOS</p>
+        <h5>Descripción del producto.</h5>
+        <p><%= productDetail[0].category %></p>
         <i class="fas fa-star"></i>
-        <h6>$0000,00</h6>
+        <h6>$<%= productDetail[0].price %></h6>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minima dolores saepe nihil mollitia, voluptate eaque suscipit ex veniam harum iure earum delectus, commodi esse eos id tenetur ducimus exercitationem ab? Nobis libero et earum repellendus laborum, eligendi, praesentium inventore vero modi laudantium impedit incidunt debitis, maxime omnis dignissimos reprehenderit.
-        </p>
+        <%= productDetail[0].description %> 
+    </p>
     </div>
 
     <%- include('../partials/footer') %>
