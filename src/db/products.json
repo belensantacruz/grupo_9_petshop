@@ -12,8 +12,7 @@
         "id": 2,
         "name": "Nike Canyon",
         "description": "vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at",
-        "price": 3594.59,
-        "image": "producto3.png",
+        "price": "3594.59",
         "category": "Categoria",
         "status": "destacado"
     },

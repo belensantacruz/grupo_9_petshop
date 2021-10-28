@@ -5,8 +5,8 @@
     <%- include('../partials/header') %> 
     <main>
         <div class="crudForm">
-            <form action="/products/agregarProducto" method="POST" >
-                <%- include('../partials/crudEditarAgregar') %>
+            <form action="/products/agregarProducto" method="POST" enctype="multipart/form-data">
+                <%- include('../partials/crudEditarAgregarProducto') %>
                 <div><button type="submit">Enviar</button></div>
             </form>
         </div>

@@ -4,10 +4,9 @@
 <body>
     <%- include('../partials/header') %> 
     <main>
-        <div class="crudForm">
-            
-            <form action="/products/editarProducto/<%=productoAeditar.id%>?_method=PUT" method="POST">
-                <%- include('../partials/crudEditarProducto') %>
+        <div class="crudForm">      
+            <form action="/products/editarProducto/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <%- include('../partials/crudEditarAgregarProducto') %>
                 <div><button type="submit">Guardar</button></div>
             </form>
         </div>

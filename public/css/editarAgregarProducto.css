@@ -1,6 +1,8 @@
 .crudForm div {
     padding: 5px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .crudForm input {
     width: 200px;
@@ -8,6 +10,14 @@
     padding: 5px;
     border-radius: 50px;
     border: 1px solid #D3D3D3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+}
+.crudForm .field {
+    font-size: 14px;
+    color: #ff2870;
 }
 .crudForm button {
     width: 50%;
@@ -20,6 +30,9 @@
     width: 95px;
     padding: 5px 2px;
     transition: all 0.5s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .crudForm button:hover {
     background-color: #8a2be2; 
@@ -28,11 +41,14 @@
 }
 .crudImage {
     margin: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.crudImage input {
+/* .crudImage input {
     display: none;
-}
-.crudImage label {
+} */
+.imageButton {
     padding: 6px 28px;
     border-radius: 50px;
     border: 1px solid #D3D3D3;
@@ -41,8 +57,22 @@
     background-color: white;
     color: #ff2870;
     transition: all 1s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-.crudImage label:hover {
+.imageButton:hover {
     background-color: #ff2870;
     color: white;
+}
+.crudImage img {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tituloImagen {
+    font-size: 12px;
+    color:grey;
 }

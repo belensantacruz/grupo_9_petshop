@@ -43,3 +43,7 @@ main{
 td {
   font-size: 14px;
 }
+td img {
+  height: 40px;
+  width: 40px;
+}

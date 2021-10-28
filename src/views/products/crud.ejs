@@ -23,7 +23,7 @@
             <td><%= item.category %></td>
             <td>$<%= item.price %></td>
             <td><%= item.status %></td>
-            <td><%= item.image %></td>
+            <td><img src="/images/products/<%= item.image %>" alt="Imagen Producto <%= item.id %>"></td>
             <td><a href="/products/editarProducto/<%= item.id %>">Editar</a></td>
             <form action="/products/editarProducto/<%= item.id %>?_method=DELETE" method="POST">
               <td><button type="submit">Borrar</button></td>

@@ -1,9 +1,9 @@
 const path = require ("path");
 const fs = require('fs');
-
-/* Leer jsons y parsearlos */
-let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../db/products.json'), 'utf-8');
+let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../db/products.json'), 'utf-8'); //Leer jsons y parsearlos
 let products = JSON.parse(jsonProducts); //json a array
+
+//Generar nuevo id:
 const nuevoId =()=>{
     let ultimo=0;
     products.forEach(element =>{
@@ -29,24 +29,27 @@ let controller ={
         res.render("products/crud", {productos});
     },
     agregar: (req, res) =>{
-        res.render("products/agregarProducto");
+        let producto={
+            ...req.body,
+        };
+        res.render("products/agregarProducto", {producto});
     },
     agregarProducto : (req, res) => {
-        let productoNuevo ={
+        let producto = {
             id: nuevoId(),
             ... req.body,
            };
-            products.push(productoNuevo)
+            products.push(producto)
         let jsonProductos= JSON.stringify(products, null, 4);
         fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonProductos);
         res.redirect('/products/crud');
     },
 
     editar: (req, res)=>{
-        let productoAeditar=products.find(function (producto){
-            return producto.id==req.params.id
+        let producto=products.find(function (prod) {
+            return prod.id==req.params.id
         })
-        res.render("products/editarProducto", {productoAeditar});
+        res.render("products/editarProducto", {producto});
     },
     update: (req, res) =>{
         products.forEach(producto => {
@@ -58,11 +61,11 @@ let controller ={
                 producto.category = req.body.category;
                 producto.status = req.body.status;
                 console.log(req.body.name);
+                console.log(req.body.image);
             }    
         });
         let jsonProducts = JSON.stringify(products, null, 4);
         fs.writeFileSync(path.resolve(__dirname, '../db/products.json'), jsonProducts);
-
         res.redirect('/products/crud');
     },
     borrar: (req, res) => {

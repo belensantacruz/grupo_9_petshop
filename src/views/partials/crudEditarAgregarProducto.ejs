@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div>
+        <div class="crudName">
+            <label class="field" for="name">Nombre</label>
+            <input type="text" name="name" value="<%=producto.name%>" id="name">
+        </div>
+        <div class="crudDescription">
+            <label class="field" for="description">Descripción</label>
+            <input type="text" name="description" value="<%=producto.description%>" id="description">
+        </div>
+        <div class="crudCategory">
+            <label class="field" for="category">Categoría</label>
+            <input type="text" name="category" value="<%=producto.category%>" id="category">
+        </div>
+        <div class="crudPrice">
+            <label class="field" for="price">Precio</label>
+            <input type="text" name="price" value="<%=producto.price%>" id="price">
+        </div>
+        <div>
+            <label class="field" for="status">Status</label>
+            <input type="text" name="status" value="<%=producto.status%>" id="status">
+        </div>
+        <div class="crudImage">
+            <input type="file" name="image" id="image" accept=".jpg,.png">
+            <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
+            <img src="/images/products/<%= producto.image %>" alt="Imagen Producto <%= producto.image %>">
+            <label class="tituloImagen" name="imageLabel"><%=producto.image%></label>
+        </div>
+    </div>
+</body>
+</html>
