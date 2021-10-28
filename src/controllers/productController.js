@@ -2,7 +2,7 @@ const path = require ("path");
 const fs = require('fs');
 
 /* Leer jsons y parsearlos */
-let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../db/productos.json'), 'utf-8');
+let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../db/products.json'), 'utf-8');
 let products = JSON.parse(jsonProducts); //json a array
 const nuevoId =()=>{
     let ultimo=0;
@@ -49,31 +49,28 @@ let controller ={
         res.render("products/editarProducto", {productoAeditar});
     },
     update: (req, res) =>{
-        products.forEach(producto =>{
+        products.forEach(producto => {
             if (producto.id == req.params.id){
-              /* producto.name = req.body.name;
-                producto.description =req.body.description;
-                producto.price= req.body.price
-                producto.image= req.body.image
-                producto.category=req.body.category
-                producto.status= req.body.status 
-                console.log(req.body.name); */
-            }
-        
-    
-        })
+                producto.name = req.body.name;
+                producto.description = req.body.description;
+                producto.price = req.body.price;
+                producto.image = req.body.image;
+                producto.category = req.body.category;
+                producto.status = req.body.status;
+                console.log(req.body.name);
+            }    
+        });
         let jsonProducts = JSON.stringify(products, null, 4);
         fs.writeFileSync(path.resolve(__dirname, '../db/products.json'), jsonProducts);
 
         res.redirect('/products/crud');
-
     },
     borrar: (req, res) => {
         let nuevaListaProductos = products.filter(item => {
             return item.id != req.params.id;
         });
         let jsonProductos = JSON.stringify(nuevaListaProductos, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../db/productos.json"), jsonProductos);
+        fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonProductos);
         res.redirect("/");
     }
 }

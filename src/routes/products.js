@@ -10,8 +10,6 @@ router.get("/agregarProducto", controller.agregar);
 router.post("/agregarProducto", controller.agregarProducto);
 router.get("/editarProducto/:id", controller.editar);
 router.put("/editarProducto/:id", controller.update);
-
-
 router.delete("/editarProducto/:id", controller.borrar);
 
 module.exports=router;
