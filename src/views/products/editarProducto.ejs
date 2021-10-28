@@ -5,12 +5,13 @@
     <%- include('../partials/header') %> 
     <main>
         <div class="crudForm">
-            <form action="/editarProducto" method="POST">
-                <%- include('../partials/crudEditarAgregar') %>
-                <div><button type="button">Guardar</button></div>
+            
+            <form action="/products/editarProducto/<%=productoAeditar.id%>?_method=PUT" method="POST">
+                <%- include('../partials/crudEditarProducto') %>
+                <div><button type="submit">Guardar</button></div>
             </form>
         </div>
     </main>
-<%- include('../partials/footer') %> 
+<%- include('../partials/footer') %>
 </body>
 </html>

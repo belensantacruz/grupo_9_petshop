@@ -1,0 +1,95 @@
+[
+    {
+        "id": 1,
+        "name": "LeBron 18 Low Summer",
+        "description": "eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing",
+        "price": 4211.31,
+        "image": "producto4.png",
+        "category": "Categoria",
+        "status": "oferta"
+    },
+    {
+        "id": 2,
+        "name": "Nike Canyon",
+        "description": "vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at",
+        "price": 3594.59,
+        "image": "producto3.png",
+        "category": "Categoria",
+        "status": "destacado"
+    },
+    {
+        "id": 3,
+        "name": "Nike Phantom GT Elite Dynamic",
+        "description": "massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst",
+        "price": 2014.32,
+        "image": "producto2.png",
+        "category": "Categoria",
+        "status": "destacado"
+    },
+    {
+        "id": 4,
+        "name": "LeBron 18 Low Summer",
+        "description": "neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus",
+        "price": 4841.65,
+        "image": "producto3.png",
+        "category": "Categoria",
+        "status": "oferta"
+    },
+    {
+        "id": 5,
+        "name": "LeBron 18 Low Summer",
+        "description": "volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero",
+        "price": 1503.27,
+        "image": "producto3.png",
+        "category": "Categoria",
+        "status": "oferta"
+    },
+    {
+        "id": 6,
+        "name": "Nike Phantom GT Elite Dynamic",
+        "description": "luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor",
+        "price": 3769.74,
+        "image": "producto1.png",
+        "category": "Categoria",
+        "status": "destacado"
+    },
+    {
+        "id": 7,
+        "name": "LeBron 18 Low Summer",
+        "description": "fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum",
+        "price": 4619.95,
+        "image": "producto5.png",
+        "category": "Categoria",
+        "status": "destacado"
+    },
+    {
+        "id": 8,
+        "name": "Nike Phantom GT Elite Dynamic",
+        "description": "quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque",
+        "price": 4042.11,
+        "image": "producto4.png",
+        "category": "Categoria",
+        "status": "oferta"
+    },
+    {
+        "id": 9,
+        "name": "Nike Air Max Pre-Day",
+        "description": "leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac",
+        "price": 2559.66,
+        "image": "producto3.png",
+        "category": "Categoria",
+        "status": "destacado"
+    },
+    {
+        "id": 10,
+        "name": "Nike Canyon",
+        "description": "sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare",
+        "price": 2594.71,
+        "image": "producto5.png",
+        "category": "Categoria",
+        "status": "destacado"
+    },
+    {
+        "id": 11
+    }
+]
