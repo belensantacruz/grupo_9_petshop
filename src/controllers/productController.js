@@ -16,14 +16,12 @@ const nuevoId =()=>{
 
 let controller ={
     detalle : (req, res) =>{
-        console.log(req.params.id);
         let productDetail = [];
         products.forEach(element => {
             if (req.params.id == element.id){
             productDetail.push(element);
         }
     });
-        console.log(productDetail);
         res.render("products/product", { productDetail });
     },
     carrito : (req, res) =>{
