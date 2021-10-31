@@ -37,7 +37,12 @@ let controller ={
     agregarProducto : (req, res) => {
         let producto = {
             id: nuevoId(),
-            ... req.body,
+            name: req.body.name,
+            description: req.body.description,
+            price: parseFloat(req.body.price),
+            category: req.body.category,
+            status: req.body.status,
+            image: req.file == undefined ? producto.image : req.file.originalname
            };
             products.push(producto)
         let jsonProductos= JSON.stringify(products, null, 4);
@@ -56,12 +61,10 @@ let controller ={
             if (producto.id == req.params.id){
                 producto.name = req.body.name;
                 producto.description = req.body.description;
-                producto.price = req.body.price;
-                producto.image = req.body.image;
+                producto.price = parseFloat(req.body.price);
+                producto.image = req.file == undefined ? producto.image : req.file.originalname;
                 producto.category = req.body.category;
                 producto.status = req.body.status;
-                console.log(req.body.name);
-                console.log(req.body.image);
             }    
         });
         let jsonProducts = JSON.stringify(products, null, 4);
