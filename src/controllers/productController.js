@@ -83,7 +83,7 @@ let controller ={
         });
         let jsonProductos = JSON.stringify(nuevaListaProductos, null, 4);
         fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonProductos);
-        res.redirect("/");
+        res.redirect("/products/crud");
     }
 }
 
