@@ -22,12 +22,19 @@
             <label class="field" for="status">Status</label>
             <input type="text" name="status" value="<%=producto.status%>" id="status" required>
         </div>
-        <div class="crudImage">
-            <input type="file" name="image" id="image" accept=".jpg,.png" required>
-            <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
-            <img src="/images/products/<%= producto.image %>" alt="Imagen Producto <%= producto.image %>">
-            <label class="tituloImagen" name="imageLabel"><%=producto.image%></label>
-        </div>
+        <% if (producto.image == null) { %>
+            <div class="crudImage">
+                <input type="file" name="image" id="image" accept=".jpg,.png" required>
+                <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
+            </div>    
+        <% } else { %>   
+            <div class="crudImage">
+                <input type="file" name="image" id="image" accept=".jpg,.png" required>
+                <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
+                <img src="/images/products/<%= producto.image %>" alt="Imagen Producto <%= producto.image %>">
+                <label class="tituloImagen" name="imageLabel"><%=producto.image%></label>
+            </div>
+        <% } %> 
     </div>
 </body>
 </html>
