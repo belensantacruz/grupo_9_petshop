@@ -1,6 +1,6 @@
 const path = require ("path");
 const fs = require('fs');
-let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../db/products.json'), 'utf-8'); //Leer jsons y parsearlos
+let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8'); //Leer jsons y parsearlos
 let products = JSON.parse(jsonProducts); //json a array
 
 //Generar nuevo id:
@@ -52,7 +52,7 @@ let controller ={
            };
             products.push(producto)
         let jsonProductos= JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonProductos);
+        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), jsonProductos);
         res.redirect('/products/crud');
     },
 
@@ -74,7 +74,7 @@ let controller ={
             }    
         });
         let jsonProducts = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, '../db/products.json'), jsonProducts);
+        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonProducts);
         res.redirect('/products/crud');
     },
     borrar: (req, res) => {
@@ -82,7 +82,7 @@ let controller ={
             return item.id != req.params.id;
         });
         let jsonProductos = JSON.stringify(nuevaListaProductos, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../db/products.json"), jsonProductos);
+        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), jsonProductos);
         res.redirect("/products/crud");
     }
 }
