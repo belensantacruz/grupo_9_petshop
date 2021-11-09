@@ -52,3 +52,18 @@ https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/86b95067-8762-4c5a
 <br>
 https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/8aed1e82-dd6a-4a9f-8c4f-8e5720d7598b
 <br>
+
+# RETRO SPRINT 4
+## FUE BIEN
+* El trabajo se terminó a tiempo
+* Hubo buena coordinación para realizar las tareas en equipo
+## A MEJORAR
+* Quedaron algunos estilos por mejorar
+* Se fue Gise D':
+* Usar más el trello
+## ACCIONES
+* Prestar atención a las notificaciones del trello
+* Nuevo miembro en el equipo? :O
+<br>
+https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/e2f88431-943f-4018-8f68-04f632192f74
+<br>
