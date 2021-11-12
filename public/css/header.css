@@ -59,7 +59,9 @@
       flex: 1;
       border: none;
       width: 90%;
+      padding-left: 10px;
   }
+
 
 .header-search-bar button{
     background: transparent;

@@ -3,6 +3,7 @@
     <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
+<div class="product-conteiner">
     <section id="product">
         <div class="product-photo">
             <div class="product-photo-detail">
@@ -42,6 +43,7 @@
             </div>
             </form>
     </section>
+    <div class="product-info-box">
     <div class="product-info">
         <h5>Descripción del producto.</h5>
         <p><%= productDetail[0].category %></p>
@@ -51,6 +53,8 @@
         <%= productDetail[0].description %> 
     </p>
     </div>
+    </div>
+</div>
 
     <%- include('../partials/footer') %>
 </body>
