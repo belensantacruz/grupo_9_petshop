@@ -2,14 +2,8 @@ let express =require("express");
 const router =express.Router();
 const controller =require("../controllers/productController");
 const path = require('path');
-const fs = require('fs');
-const numOfProdImages = (req) => {
-    if(req == undefined)
-        return fs.readdirSync('./public/images/products/').length;
-    else
-        return req.params.id
-}
 const multer = require('multer');
+
 //multer:
 const storage = multer.diskStorage({
     destination: function(req, file, cb){

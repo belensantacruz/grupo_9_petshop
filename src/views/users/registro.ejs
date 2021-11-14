@@ -2,17 +2,22 @@
 <html lang="en">
  <%- include('../partials/head') %>
     <body>
-
         <%- include('../partials/header') %>
         <div class="contenedor">
             <div class="center">
                 <h1>CREAR CUENTA</h1>
-                <form action="/login" method="POST" >
-                <div class="email"><input type="email" name="email" placeholder="mail@mail.com"></div>
-                <div class="contraseña"><input type="password" name="usuario" placeholder="Contraseña"></div>
-                <div class="contraseñados"><input type="password" name="usuario" placeholder="Vuelve a escribir tu contraseña"></div>
-                <div class="registrarse"><button type="submit">Registrarse</button></div>
-                <div class="olvidastecontraseña"><p>¿Ya tienes una cuenta?<a href="#"> Iniciar sesión</a></p></div>
+                <form action="/users/registro" method="POST" enctype="multipart/form-data">
+                    <div class="fields"><input type="text" name="name" placeholder="Nombre"></div>
+                    <div class="fields"><input type="text" name="lastname" placeholder="Apellido"></div>
+                    <div class="fields"><input type="email" name="email" placeholder="mail@mail.com"></div>
+                    <div class="fields"><input type="password" name="password" placeholder="Contraseña"></div>
+                    <div class="fields"><input type="password" name="user" placeholder="Vuelve a escribir tu contraseña"></div>
+                    <div class="crudImage">
+                        <input type="file" name="image" id="image" accept=".jpg,.png" required>
+                        <label class="imageButton"for="image">Seleccionar Avatar &nbsp;<i class="far fa-images"></i></label>
+                    </div>
+                    <div class="registrarse"><button type="submit">Registrarse</button></div>
+                    <div class="olvidastecontraseña"><p>¿Ya tienes una cuenta?<a href="#"> Iniciar sesión</a></p></div>
                 </form>
             </div>
         </div>

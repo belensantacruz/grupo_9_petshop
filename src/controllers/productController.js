@@ -51,7 +51,7 @@ let controller ={
             image: req.file == undefined ? producto.image : req.file.originalname
            };
             products.push(producto)
-        let jsonProductos= JSON.stringify(products, null, 4);
+        jsonProductos= JSON.stringify(products, null, 4);
         fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), jsonProductos);
         res.redirect('/products/crud');
     },

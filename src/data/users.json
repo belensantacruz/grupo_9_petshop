@@ -4,139 +4,188 @@
         "name": "Sherwynd",
         "lastname": "Parrin",
         "mail": "sparrin0@e-recht24.de",
-        "password": "Bq8zncJ"
+        "password": "Bq8zncJ",
+        "avatar": "avatar1.png",
+        "isAdmin": false
     },
     {
         "id": 2,
         "name": "Naomi",
         "lastname": "Guitel",
-        "mail": "nguitel1@ca.gov",
-        "password": "KlVFgG"
+        "mail": "nguitel1@admin.com",
+        "password": "KlVFgG",
+        "avatar": "avatar2.png",
+        "isAdmin": true
     },
     {
         "id": 3,
         "name": "Kelley",
         "lastname": "Pillans",
         "mail": "kpillans2@storify.com",
-        "password": "aJ7ndTQ"
+        "password": "aJ7ndTQ",
+        "avatar": "avatar3.png",
+        "isAdmin": false
     },
     {
         "id": 4,
         "name": "Gisela",
         "lastname": "Boughey",
         "mail": "gboughey3@wikimedia.org",
-        "password": "QIjQlc3OmV"
+        "password": "QIjQlc3OmV",
+        "avatar": "avatar4.png",
+        "isAdmin": false
     },
     {
         "id": 5,
         "name": "Yank",
         "lastname": "Clewes",
         "mail": "yclewes4@51.la",
-        "password": "fcNvxGVR"
+        "password": "fcNvxGVR",
+        "avatar": "avatar1.png",
+        "isAdmin": false
     },
     {
         "id": 6,
         "name": "Hubie",
         "lastname": "Alner",
         "mail": "halner5@bbc.co.uk",
-        "password": "0r0DMGZA31O"
+        "password": "0r0DMGZA31O",
+        "avatar": "avatar2.png",
+        "isAdmin": false
     },
     {
         "id": 7,
         "name": "Barbi",
         "lastname": "Rogers",
         "mail": "brogers6@mapy.cz",
-        "password": "iuJfgKjlXfr"
+        "password": "iuJfgKjlXfr",
+        "avatar": "avatar3.png",
+        "isAdmin": false
     },
     {
         "id": 8,
         "name": "Norbie",
         "lastname": "Pountain",
         "mail": "npountain7@hibu.com",
-        "password": "2se1t3ZeW"
+        "password": "2se1t3ZeW",
+        "avatar": "avatar4.png",
+        "isAdmin": false
     },
     {
         "id": 9,
         "name": "Ania",
         "lastname": "Loton",
         "mail": "aloton8@apache.org",
-        "password": "ZqrHtmxzr"
+        "password": "ZqrHtmxzr",
+        "avatar": "avatar1.png",
+        "isAdmin": false
     },
     {
         "id": 10,
         "name": "Merlina",
         "lastname": "Clappson",
         "mail": "mclappson9@yandex.ru",
-        "password": "O2DXbl"
+        "password": "O2DXbl",
+        "avatar": "avatar2.png",
+        "isAdmin": false
     },
     {
         "id": 11,
         "name": "Jeanna",
         "lastname": "Bolderson",
         "mail": "jboldersona@tumblr.com",
-        "password": "PLLtL4CwF"
+        "password": "PLLtL4CwF",
+        "avatar": "avatar3.png",
+        "isAdmin": false
     },
     {
         "id": 12,
         "name": "Guillermo",
         "lastname": "Streat",
         "mail": "gstreatb@jalbum.net",
-        "password": "1TCig5gipS"
+        "password": "1TCig5gipS",
+        "avatar": "avatar4.png",
+        "isAdmin": false
     },
     {
         "id": 13,
         "name": "Torin",
         "lastname": "Bickford",
         "mail": "tbickfordc@hc360.com",
-        "password": "WsTFs4Bg6tL"
+        "password": "WsTFs4Bg6tL",
+        "avatar": "avatar1.png",
+        "isAdmin": false
     },
     {
         "id": 14,
         "name": "Blinny",
         "lastname": "Dockreay",
         "mail": "bdockreayd@addtoany.com",
-        "password": "8FJJtRYW"
+        "password": "8FJJtRYW",
+        "avatar": "avatar2.png",
+        "isAdmin": false
     },
     {
         "id": 15,
         "name": "Wilton",
         "lastname": "Hendrich",
         "mail": "whendriche@walmart.com",
-        "password": "R7z03P1Wgz"
+        "password": "R7z03P1Wgz",
+        "avatar": "avatar3.png",
+        "isAdmin": false
     },
     {
         "id": 16,
         "name": "Cori",
         "lastname": "Bellenger",
         "mail": "cbellengerf@shutterfly.com",
-        "password": "aIZjMDvRhcya"
+        "password": "aIZjMDvRhcya",
+        "avatar": "avatar4.png",
+        "isAdmin": false
     },
     {
         "id": 17,
         "name": "Liesa",
         "lastname": "Mallaby",
         "mail": "lmallabyg@comsenz.com",
-        "password": "s00kli"
+        "password": "s00kli",
+        "avatar": "avatar1.png",
+        "isAdmin": false
     },
     {
         "id": 18,
         "name": "Wallie",
         "lastname": "Philott",
         "mail": "wphilotth@earthlink.net",
-        "password": "knwUYQYKq"
+        "password": "knwUYQYKq",
+        "avatar": "avatar2.png",
+        "isAdmin": false
     },
     {
         "id": 19,
         "name": "Kalvin",
         "lastname": "Satterthwaite",
         "mail": "ksatterthwaitei@army.mil",
-        "password": "sVcFw0G"
+        "password": "sVcFw0G",
+        "avatar": "avatar3.png",
+        "isAdmin": false
     },
     {
         "id": 20,
         "name": "Tina",
         "lastname": "Valente",
         "mail": "tvalentej@youtube.com",
-        "password": "zrlL4a3F"
+        "password": "zrlL4a3F",
+        "avatar": "avatar4.png",
+        "isAdmin": false
+    },
+    {
+        "id": 21,
+        "name": "Belen",
+        "lastname": "Santacruz",
+        "email": "belensantacruz95@gmail.com",
+        "password": "$2a$10$E.T2E.UMpPw1kJVz81PjBerzBGqake7q1Bf/RVGVnC9uPoL0SdTOO",
+        "avatar": "Beluza-ida.png",
+        "isAdmin": false
     }
 ]
