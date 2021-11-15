@@ -4,11 +4,13 @@
 <body>
     <%- include('../partials/header') %> 
     <main>
-        <div class="crudForm">
-            <form action="/products/agregarProducto" method="POST" enctype="multipart/form-data">
-                <%- include('../partials/crudEditarAgregarProducto') %>
-                <div><button type="submit">Enviar</button></div>
-            </form>
+        <div class="formContainerAdd">
+            <div class="crudForm">
+                <form action="/products/agregarProducto" method="POST" enctype="multipart/form-data">
+                    <%- include('../partials/crudEditarAgregarProducto') %>
+                    <div><button type="submit">Enviar</button></div>
+                </form>
+            </div>
         </div>
     </main>
 <%- include('../partials/footer') %> 

@@ -8,7 +8,8 @@
 }
 main {
   background-color: white;
-  margin-top: 50px;
+  margin-top: 135px;
+  margin-bottom: 65px;
   font-weight: 300;
   height: 100%;
 }
@@ -39,7 +40,7 @@ section {
   background-color: #8a2be2;
   border-radius: 2px;
   position: absolute;
-  top: 30%;
+  top: 50%;
   transition: background-color 0.6s ease;
 }
 .next {
@@ -99,17 +100,17 @@ section {
 }
 .articulos {
   display: flex;
-  position: relative;
   justify-content: flex-start;
   text-align: center;
-  height: 300px;
+  height: 320px;
   overflow-x: scroll;
 }
 .articulos article {
-  position: absolute;
   position: relative;
-  min-width: 200px;
+  width: 200px;
   height: 250px;
+  min-height: 250px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -123,12 +124,17 @@ section {
 }
 .articulos article:hover {
   box-shadow: 0px 0px 5px #8a2be2;
+  margin: 15px;
+  height: 300px;
+  min-height: 300px;
+  width: 220px;
+  min-width: 220px;
 }
 .articulos article:hover img, .articulos article:focus img {
-  width: 155px;
-  height: 155px;
-  border: solid 1px #8a2be2;
-  border-radius: 10px;
+  width: 190px;
+  height: 180px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .articulos article img {
   border-bottom: solid 1px #8a2be2;
@@ -195,8 +201,6 @@ section {
 }
 .descripcion-articulo {
   display: none;
-}
-.descripcion-articulo {
   padding: 5px;
   color: black;
 }
@@ -227,9 +231,6 @@ article:hover .detalles-producto {
     display: flex;
     top: 55%;
     left: 42%;
-  }
-  .articulos article {
-    flex-basis: 40%;
   }
   .minus, .plus {
     padding: 4px;
