@@ -2,22 +2,61 @@
 <html lang="en">
  <%- include('../partials/head') %>
     <body>
-        <%- include('../partials/header') %>
+        <%- include('../partials/header') %> 
+
         <div class="contenedor">
             <div class="center">
-                <h1>CREAR CUENTA</h1>
+                <h1 class="form-title">CREAR CUENTA</h1>
                 <form action="/users/registro" method="POST" enctype="multipart/form-data">
-                    <div class="fields"><input type="text" name="name" placeholder="Nombre"></div>
-                    <div class="fields"><input type="text" name="lastname" placeholder="Apellido"></div>
-                    <div class="fields"><input type="email" name="email" placeholder="mail@mail.com"></div>
-                    <div class="fields"><input type="password" name="password" placeholder="Contraseña"></div>
-                    <div class="fields"><input type="password" name="user" placeholder="Vuelve a escribir tu contraseña"></div>
-                    <div class="crudImage">
-                        <input type="file" name="image" id="image" accept=".jpg,.png" required>
-                        <label class="imageButton"for="image">Seleccionar Avatar &nbsp;<i class="far fa-images"></i></label>
+
+                    <div class="fields">
+                        <input type="text" name="name" placeholder="Nombre" value="<%= locals.oldData ? oldData.name : null %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.name.msg %></p>
+                            </div>   
+                       <% } %>
                     </div>
+
+                    <div class="fields">
+                        <input type="text" name="lastname" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastname : null %>">
+                        <% if (locals.errors && errors.lastname) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.lastname.msg %></p>
+                            </div>   
+                       <% } %>
+                    </div>
+
+                    <div class="fields">
+                        <input type="text" name="email" placeholder="mail@mail.com" value="<%= locals.oldData ? oldData.email : null %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.email.msg %></p>
+                            </div>   
+                       <% } %>
+                    </div>
+
+                    <div class="fields">
+                        <input type="password" name="password" placeholder="Contraseña">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.password.msg %></p>
+                            </div>   
+                       <% } %>
+                    </div>
+
+                    <div class="crudImage">
+                        <label class="imageButton" for="image">Seleccionar Avatar &nbsp;<i class="far fa-images"></i></label>
+                        <input type="file" name="image" id="image" accept=".jpg,.png">
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="errors-conteiner">
+                                    <p><%= errors.image.msg %></p>
+                            </div>   
+                       <% } %>
+                    </div>
+
                     <div class="registrarse"><button type="submit">Registrarse</button></div>
-                    <div class="olvidastecontraseña"><p>¿Ya tienes una cuenta?<a href="#"> Iniciar sesión</a></p></div>
+                    <div class="olvidastecontraseña"><p>¿Ya tienes una cuenta?<a href="/users/login"> Iniciar sesión</a></p></div>
                 </form>
             </div>
         </div>

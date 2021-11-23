@@ -62,6 +62,7 @@
     justify-content: center;
     align-items: center;
     font-size: 13px;
+    margin-top: 10px;
 }
 
 .star {
@@ -69,7 +70,7 @@
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .star i{
@@ -96,6 +97,7 @@
 
 .product-payment-shipping a {
     margin-right: 20px;
+    font-size: .8em;
 }
 
 .product-payment-shipping i {

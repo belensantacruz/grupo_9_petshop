@@ -3,43 +3,85 @@ const fs = require('fs');
 let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), 'utf-8'); //Leer jsons y parsearlos
 let users = JSON.parse(jsonUsers); //json a array
 const bcrpyt = require('bcryptjs');
-
-//Generar nuevo id:
-const nuevoId =()=>{
-    let ultimo=0;
-    users.forEach(element =>{
-        if (element.id > ultimo){
-            ultimo=element.id;
-        }
-    })
-        return ultimo +1;
-}
+const User = require('../models/Users');
+const { validationResult } = require('express-validator')
 
 let controller ={
     login : (req, res) =>{
         res.render("users/login");
     },
-    registro : (req, res) =>{
-        let usuario={
-            ...req.body,
-        };
-        res.render("users/registro", {usuario});
+
+    processLogin: (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render ('users/login', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
+        }
+
+        let userToLogin = User.findByField('email', req.body.email);
+
+        if (userToLogin) {
+            let passwordOK = bcrpyt.compareSync(req.body.password, userToLogin.password)
+            if (passwordOK) {
+                res.send('ok puedes ingresar')
+            }
+
+            return res.render('users/login', {
+                errors: {
+                    email: {
+                        msg: 'Las credenciales son invalidas'
+                    }
+                }
+            })
+        }
+
+        return res.render('users/login', {
+            errors: {
+                email: {
+                    msg: 'Este email no se encuentra registrado'
+                }
+            }
+        })
     },
-    register: (req,res) =>{
-        let usuario = {
-            id: nuevoId(),
-            name: req.body.name,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            password: bcrpyt.hashSync(req.body.password, 10),
-            //contraseña confirmacion??
-            avatar: req.file.originalname,
-            isAdmin: req.body.email.includes('@admin.com')
-           };
-            users.push(usuario);
-        jsonUsers= JSON.stringify(users, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../data/users.json"), jsonUsers);
-        res.redirect('/');
+
+    register: (req, res) => {
+        return res.render('users/registro')
+    },
+
+    processRegister: (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render ('users/registro', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
+        }
+
+        let userInDB = User.findByField('email', req.body.email);
+
+        if (userInDB) {
+            return res.render ('users/registro', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya esta registrado'
+                    }
+                },
+                oldData: req.body,
+            });
+        }
+
+        let userToCreate = {
+            ...req.body,
+            password: bcrpyt.hashSync(req.body.password, 12),
+            avatar: req.file.filename,
+        }
+
+        let userCreated = User.create(userToCreate);
+        res.redirect('/users/login')
     }
 };
 

@@ -1,11 +1,44 @@
 @import url("https://fonts.google.com/specimen/Poppins?query=popp family = Poppins & display = swap");
 
+
+body{
+    margin-top: 170px;
+}
+
+.errors {
+    display: flex;
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: red;
+    font-weight: 600;
+    border: red solid 1px;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: rgb(255, 225, 225);
+    justify-content: center;
+}
+
+
+.errors-conteiner {
+    display: flex;
+    margin: 0 auto;
+    font-size: 11px;
+    color: red;
+    font-weight: 600;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .contenedor{
     /* position:absolute;
     top:30%;
     left:50%;
     transform: translate(-50%, -50%); */
-    margin: 150px auto 300px auto;
+    margin: 50px auto 300px auto;
     display: flex;
     justify-content: center;
 }
@@ -16,14 +49,13 @@
    background-color: white;
    border: 1px solid #D3D3D3;
    width: 350px;
-   height: 500px;
-   border-radius: 10px;
+   height: 100%;
+   border-radius: 20px;
+   padding-bottom: 20px;
 }
-.center h1{
+.center .form-title{
     text-align:center;
     font-size: 24px;
-    padding-top:15px;
-    padding-bottom: 15px;
     color:#8a2be2;
 }
 .fields input{
@@ -32,9 +64,9 @@
     padding-left: 5px;
     border: 1px solid #D3D3D3;
     border-radius:50px;  
-    margin-top:8px;
-    margin-bottom:8px;
+    margin-bottom:5px;
 }
+
 .registrarse{
     margin-top:20px;
     margin-bottom:20px;
@@ -49,6 +81,11 @@
     transition-property: background-color, color;
     transition-duration: all 1s;
 }
+
+.crudImage {
+    margin-bottom: 5px;
+}
+
 .registrarse  button:hover{
     background-color:#8a2be2;
     color:white;

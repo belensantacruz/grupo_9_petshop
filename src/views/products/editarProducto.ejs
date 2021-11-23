@@ -4,7 +4,7 @@
 <body>
     <%- include('../partials/header') %> 
     <main>
-        <div class="formContainerEdit">
+        <div class="formContainerAdd">
             <div class="crudForm">      
                 <form action="/products/editarProducto/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <%- include('../partials/crudEditarAgregarProducto') %>

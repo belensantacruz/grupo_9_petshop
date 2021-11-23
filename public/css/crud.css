@@ -9,7 +9,6 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  margin-top: 100px;
 }
 
 td, th {
@@ -23,7 +22,7 @@ th{
 }
 th a, td a {
   text-decoration: underline;
-  font-size: 14px;
+  font-size: 12px;
   color: #8a2be2;
 }
 th a:hover, td a:hover {
@@ -34,20 +33,20 @@ tr:nth-child(even) {
 }
 
 .crud-table {
-  height: 100%;
-  margin-top: -10px;
-  margin-bottom: 90px ;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 1%;
 }
 
-.crudForm{
-  margin-top:90px;
-  margin-bottom: 240px;
-}
 .formContainerAdd {
   background-color: whitesmoke;
-  width: 400px;
-  height: 400px;
-  margin: auto;
+  width: 25%;
+  margin: 0 auto;
+  border-radius: 5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .formContainerEdit {
   background-color: whitesmoke;
@@ -56,9 +55,15 @@ tr:nth-child(even) {
   margin: auto;
 }
 
+
 td {
-  font-size: 14px;
+  font-size: 12px;
 }
+
+th {
+  font-size: 12px;
+}
+
 td img {
   height: 40px;
   width: 40px;

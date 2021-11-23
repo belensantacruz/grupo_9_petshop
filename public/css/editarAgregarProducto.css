@@ -5,9 +5,9 @@
     flex-direction: column;
 }
 .crudForm input {
-    width: 200px;
+    width: 80%;
     height: 30px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 50px;
     border: 1px solid #D3D3D3;
     display: block;
@@ -60,6 +60,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5px;
 }
 .imageButton:hover {
     background-color: #ff2870;
