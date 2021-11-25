@@ -3,20 +3,22 @@ let router =express.Router();
 const path =require ("path");
 const controller =require("../controllers/usersController");
 const multer = require('multer');
-const { body } = require('express-validator')
+const { body } = require('express-validator');
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const validationsRegister = [
-    body('name').notEmpty().withMessage('Tenes que escribir un nombre'),
-    body('lastname').notEmpty().withMessage('Tenes que escribir un apellido'),
+    body('name').notEmpty().withMessage('Debe escribir un nombre'),
+    body('lastname').notEmpty().withMessage('Debe escribir un apellido'),
     body('email')
-        .notEmpty().withMessage('Tenes que escribir un email').bail()
-        .isEmail().withMessage('Tenes que escribir un email valido'),
-    body('password').notEmpty().withMessage('Tenes que escribir una contraseña'),
+        .notEmpty().withMessage('Debe escribir un email').bail()
+        .isEmail().withMessage('Debe escribir un email válido'),
+    body('password').notEmpty().withMessage('Debe escribir una contraseña'),
     body('image').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
         if (!file) {
-            throw new Error ('Tenes que subir una imagen');
+            throw new Error ('Debe subir una imagen');
         } else {
             let fileExtension = path.extname(file.originalname);
             if (!acceptedExtensions.includes(fileExtension)){
@@ -29,8 +31,8 @@ const validationsRegister = [
 
 const validationsLogin = [
     body('email')
-        .notEmpty().withMessage('Tenes que escribir un email').bail()
-        .isEmail().withMessage('Tenes que escribir un email valido')
+        .notEmpty().withMessage('Debe escribir un email').bail()
+        .isEmail().withMessage('Debe escribir un email válido')
 ]
 
 //multer:
@@ -46,8 +48,9 @@ const storage = multer.diskStorage({
 const uploadFile = multer({storage});
 
 // Login
-router.get("/login", controller.login);
+router.get("/login", guestMiddleware, controller.login);
 router.post("/login", validationsLogin, controller.processLogin);
+router.get("/profile", authMiddleware, controller.profile);
 
 //Register
 router.get("/registro", controller.register);

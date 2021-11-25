@@ -1,0 +1,19 @@
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <div class="profile">
+        <span>Hola <%= user.name  %> <%= user.lastname %>!</span>
+        <div class="profileField">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= user.email %>" readonly>
+        </div>
+        <div class="profileField">
+            <label for="avatar">Avatar</label>
+            <img src="/images/users/<%= user.avatar %>" alt="Avatar">
+        </div>
+        <a href="/">Ir al Inicio</a>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -74,3 +74,13 @@ transition-duration: all 1s;
         font-size:12px;
         padding-left: 15px;
     }
+.rememberUser {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    font-size:12px;
+    color:#ff2870;
+}
+.rememberUser input {
+    margin-right: 5px;
+}
