@@ -5,7 +5,6 @@ let users = JSON.parse(jsonUsers); //json a array
 const bcrpyt = require('bcryptjs');
 const User = require('../models/Users');
 const { validationResult } = require('express-validator');
-const { RSA_NO_PADDING } = require("constants");
 
 let controller ={
     login : (req, res) =>{
