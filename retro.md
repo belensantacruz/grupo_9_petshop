@@ -67,3 +67,21 @@ https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/8aed1e82-dd6a-4a9f
 <br>
 https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/e2f88431-943f-4018-8f68-04f632192f74
 <br>
+
+# RETRO SPRINT 5
+## FUE BIEN
+* Hubo mucha ayuda por parte del equipo :)
+* Uri y Leo nos dieron una mano con la parte de session y cookies
+* Se usó más el trello
+* División de tareas y trabajo en equipo
+* Tuvimos bastantes dailys para organizarnos y compartir el trabajo
+## A MEJORAR
+* Tenemos que estar más al día con la teoría para no atrasarnos
+* Somos pocos integrantes en el equipo y tenemos poco tiempo
+* No pudimos entregar a tiempo
+## ACCIONES
+* Nos comprometemos a ver la teoría con deadlines en el equipo para ayudarnos.
+* Seguir teniendo daylies para trackear el trabajo
+<br>
+https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/528b6c8f-e631-40d4-a24c-ca56ccaddf19
+<br>
