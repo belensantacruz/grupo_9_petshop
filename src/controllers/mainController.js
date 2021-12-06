@@ -20,6 +20,12 @@ let controller ={
         });
         
         res.render("index", {destacado, oferta});
+    },
+
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        res.redirect('/');
     }
 }
 

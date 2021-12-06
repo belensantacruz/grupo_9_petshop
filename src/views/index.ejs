@@ -5,11 +5,7 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <% if (locals.isLogged) { %>
-        <%- include('./partials/headerLogged') %> 
-    <% } else { %>
-    <%- include('./partials/header') %>
-    <% } %>
+    <%- include('./partials/header') %> 
     <%- include('./partials/main') %> 
     <%- include('./partials/footer') %> 
 </body>

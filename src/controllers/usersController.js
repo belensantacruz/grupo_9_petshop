@@ -29,10 +29,7 @@ let controller ={
                     req.session.loggedUser = userToLogin;
                     if(req.body.remember)
                     {
-                        //Tal vez logged user en cookies
-                        res.cookie('userId', req.session.userId);
-                        res.cookie('userName', req.session.userName);
-                        res.cookie('email', req.session.email);
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
                     }
                     res.redirect('/users/profile');
                 }
@@ -61,6 +58,7 @@ let controller ={
     },
 
     register: (req, res) => {
+        res.cookie()
         res.render('users/registro')
     },
 
@@ -83,7 +81,7 @@ let controller ={
                             msg: 'Este email ya esta registrado'
                         }
                     },
-                    oldData: req.body,
+                    oldData: req.body
                 });
             }
             else{
