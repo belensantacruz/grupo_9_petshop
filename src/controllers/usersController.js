@@ -1,10 +1,11 @@
 const path =require ("path");
 const fs = require('fs');
-let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), 'utf-8'); //Leer jsons y parsearlos
+let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'); //Leer jsons y parsearlos
 let users = JSON.parse(jsonUsers); //json a array
 const bcrpyt = require('bcryptjs');
-const User = require('../models/Users');
+const User = require('../database/models/User');
 const { validationResult } = require('express-validator');
+const db = require("../database/models");
 
 let controller ={
     login : (req, res) =>{
@@ -21,7 +22,11 @@ let controller ={
             });
         }
         else{
-            let userToLogin = User.findByField('email', req.body.email);
+            let userToLogin = db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            });
             if (userToLogin) {
                 let passwordOK = bcrpyt.compareSync(req.body.password, userToLogin.password);
                 if (passwordOK) {

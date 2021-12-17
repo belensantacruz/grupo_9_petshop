@@ -2,7 +2,7 @@ const fs = require('fs')
 const path =require ("path");
 
 /* Leer jsons y parsearlos */
-let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8');
+let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../database/products.json'), 'utf-8');
 let products = JSON.parse(jsonProducts); //json a array
 
 let controller ={

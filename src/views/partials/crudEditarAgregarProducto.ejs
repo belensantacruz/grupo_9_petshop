@@ -22,6 +22,10 @@
             <label class="field" for="status">Status</label>
             <input type="text" name="status" value="<%=producto.status%>" id="status" required>
         </div>
+        <div>
+            <label class="field" for="stock">Stock</label>
+            <input type="text" name="stock" value="<%=producto.stock%>" id="stock" required>
+        </div>
         <% if (producto.image == null) { %>
             <div class="crudImage">
                 <input type="file" name="image" id="image" accept=".jpg,.png" required>
