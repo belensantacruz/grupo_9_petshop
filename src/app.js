@@ -26,5 +26,3 @@ app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productRouter);
 app.listen(3000, () => console.log("Server corriendo en el puerto 3000"));
-
-

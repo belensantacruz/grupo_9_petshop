@@ -21,5 +21,16 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     });
 
+    Purchase.associate = (models) => {
+        Purchase.belongsTo(models.Order, {
+            as: "orderPurchases",
+            foreignKey: "order_id"
+        });
+        Purchase.belongsTo(models.Product, {
+            as: "productPurchases",
+            foreignKey: "product_id"
+        });
+    }
+
     return Purchase;
 }

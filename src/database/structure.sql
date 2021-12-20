@@ -6,7 +6,7 @@ CREATE TABLE users (
   name VARCHAR(45) NOT NULL,
   lastname VARCHAR(45) NOT NULL,
   email VARCHAR(45) NOT NULL,
-  password CHAR(20) NOT NULL,
+  password CHAR(60) NOT NULL,
   avatar VARCHAR(100) NOT NULL DEFAULT 'avatar1.png',
   isadmin TINYINT(4) NOT NULL,
   PRIMARY KEY (id)
