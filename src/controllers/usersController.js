@@ -28,14 +28,14 @@ let controller ={
             }).then((resultado) =>{
                 let userToLogin = resultado;
                 if (userToLogin) {
-                    let passwordOK = bcrpyt.compareSync(req.body.password, userToLogin.password);
+                    let passwordOK = bcrpyt.compareSync(req.body.password, userToLogin.dataValues.password);
                     if (passwordOK) {
-                        delete userToLogin.password;
-                        req.session.loggedUser = userToLogin;
+                        delete userToLogin.dataValues.password;
+                        req.session.loggedUser = userToLogin.dataValues;
+                        res.locals.isLogged = true;
+                        res.locals.loggedUser = req.session.loggedUser;
                         if(req.body.remember)
-                        {
                             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
-                        }
                         res.redirect('/users/profile');
                     }
                     else{
@@ -109,7 +109,7 @@ let controller ={
 
     profile: (req, res) => {
         res.render('users/profile', {
-            user: req.session.loggedUser.dataValues
+            user: req.session.loggedUser
         });
     }
 }
