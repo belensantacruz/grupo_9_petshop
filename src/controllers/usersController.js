@@ -98,10 +98,11 @@ let controller ={
                         ...req.body,
                         password: bcrpyt.hashSync(req.body.password, 12),
                         avatar: req.file.filename,
+                        isadmin: 0
                     }
         
                     let userCreated = db.User.create(userToCreate);
-                    res.redirect('users/login')
+                    res.redirect('/login')
                 }
             });
         }
