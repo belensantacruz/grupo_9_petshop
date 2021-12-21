@@ -12,11 +12,15 @@
         </div>
         <div class="crudCategory">
             <label class="field" for="category">Categoría</label>
-            <input type="text" name="category" value="<%=producto.category%>" id="category" required>
+            <input type="text" name="category" value="<%=producto.category_id%>" id="category" required>
         </div>
         <div class="crudPrice">
             <label class="field" for="price">Precio</label>
             <input type="text" name="price" value="<%=producto.price%>" id="price" required>
+        </div>
+        <div>
+            <label class="field" for="rating">Rating</label>
+            <input type="text" name="rating" value="<%=producto.rating%>" id="rating" required>
         </div>
         <div>
             <label class="field" for="status">Status</label>

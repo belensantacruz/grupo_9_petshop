@@ -5,69 +5,76 @@ let db = require('../database/models')
 let controller ={
     detalle : (req, res) =>{
         db.Product.findByPk(req.params.id)
-        .then((resultado) => {
-            res.render("products/product", { productDetail: resultado.dataValues });
-        })
+            .then((resultado) => {
+                res.render("products/product", { productDetail: resultado.dataValues });
+            });
     },
     carrito : (req, res) =>{
         res.render("products/carrito");
     },
     crud: (req, res)=>{
         db.Product.findAll()
-        .then(resultado => {
-            res.render("products/crud", {productos: resultado});
-        })
+            .then(resultado => {
+                res.render("products/crud", { productos: resultado });
+            });
     },
     agregar: (req, res) =>{
-        let producto={
+        let producto = {
             ...req.body,
         };
-        res.render("products/agregarProducto", {producto});
+        res.render("products/agregarProducto", { producto });
     },
     agregarProducto : (req, res) => {
-        let producto = {
-            id: nuevoId(),
-            name: req.body.name,
-            description: req.body.description,
-            price: parseFloat(req.body.price),
-            category: req.body.category,
-            status: req.body.status,
-            image: req.file == undefined ? producto.image : req.file.originalname
-           };
-            products.push(producto)
-        //jsonProductos= JSON.stringify(products, null, 4);
-       // fs.writeFileSync(path.resolve(__dirname, "../database/products.json"), jsonProductos);
-       // res.redirect('/products/crud');
+        db.Product.findOrCreate({
+            where: {
+                name: req.body.name,
+                description: req.body.description,
+                price: parseFloat(req.body.price),
+                category_id: req.body.category,
+                rating: req.body.rating,
+                status: req.body.status,
+                stock: req.body.stock,
+                image: req.file == undefined ? producto.image : req.file.originalname
+            }
+        })
+            .then((resultado) =>{
+                res.redirect("crud");
+            });
     },
 
     editar: (req, res)=>{
-        let producto=products.find(function (prod) {
-            return prod.id==req.params.id
-        })
-        res.render("products/editarProducto", {producto});
+        db.Product.findByPk(req.params.id)
+            .then((resultado) => {
+                res.render("products/editarProducto", { producto: resultado });
+            });
     },
+
     update: (req, res) =>{
-        products.forEach(producto => {
-            if (producto.id == req.params.id){
-                producto.name = req.body.name;
-                producto.description = req.body.description;
-                producto.price = parseFloat(req.body.price);
-                producto.image = req.file == undefined ? producto.image : req.file.originalname;
-                producto.category = req.body.category;
-                producto.status = req.body.status;
-            }    
-        });
-       // let jsonProducts = JSON.stringify(products, null, 4);
-      //  fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), jsonProducts);
-        //res.redirect('/products/crud');
+        db.Product.update({
+            name: req.body.name,
+            description: req.body.description,
+            price: parseFloat(req.body.price),
+            image: req.file == undefined ? producto.image : req.file.originalname,
+            category_id: req.body.category,
+            rating: req.body.rating,
+            status: req.body.status,
+            stock: req.body.stock
+        }, { where: { id: req.params.id } })
+            .then((resultado) => {
+                res.redirect("/products/crud");
+            });
     },
     borrar: (req, res) => {
-        let nuevaListaProductos = products.filter(item => {
-            return item.id != req.params.id;
-        });
-      //  let jsonProductos = JSON.stringify(nuevaListaProductos, null, 4);
-       // fs.writeFileSync(path.resolve(__dirname, "../database/products.json"), jsonProductos);
-        //res.redirect("/products/crud");
+        db.Product.destroy({
+            where: { id: req.params.id },
+            cascade: true
+        })
+            .then((resultado) => {
+                res.redirect("/products/crud");
+            })
+            .catch(error =>{
+                console.log(error);
+            });
     }
 }
 
