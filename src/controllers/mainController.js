@@ -1,3 +1,4 @@
+const { promiseImpl } = require('ejs');
 const fs = require('fs')
 const path =require ("path");
 let db = require('../database/models');
@@ -5,31 +6,16 @@ let db = require('../database/models');
 let controller ={
     home : (req, res) =>{
 
-        let destacado = [];
-        let oferta = []
+        let destacado = db.Product.findAll({ where: {status: 'destacado'}});
+        let oferta = db.Product.findAll({ where: {status: 'oferta'}});
 
-        // products.forEach(element => {
-        //     if(element.status == 'destacado'){
-        //         destacado.push(element);
-        //     } else{
-        //         oferta.push(element);
-        //     }
-        // });
-        
-        db.Product.findAll({ where: {status: 'destacado'}})
-        .then((resultado) => {
-            destacado = resultado;
+        Promise.all([destacado, oferta])
+        .then(resultado => {
+            let [destacado, oferta] = resultado; 
+
+            res.render("index", {destacado, oferta});
         })
-
-        db.Product.findAll({ where: {status: 'oferta'}})
-        .then((resultado) => {
-            oferta = resultado;
-        })
-
-        console.log(destacado);
-        console.log(oferta);
-
-        res.render("index", {destacado, oferta})
+    
     },
 
     logout: (req, res) => {

@@ -1,10 +1,10 @@
 const path = require ("path");
 const fs = require('fs');
-let product = require('../database/models/Product')
+let db = require('../database/models')
 
 let controller ={
     detalle : (req, res) =>{
-        product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id)
         .then((resultado) => {
             res.render("products/product", { productDetail: resultado.dataValues });
         })
@@ -13,11 +13,10 @@ let controller ={
         res.render("products/carrito");
     },
     crud: (req, res)=>{
-        let productos = [];
-        products.forEach(element => {
-            productos.push(element);
-        });
-        res.render("products/crud", {productos});
+        db.Product.findAll()
+        .then(resultado => {
+            res.render("products/crud", {productos: resultado});
+        })
     },
     agregar: (req, res) =>{
         let producto={
