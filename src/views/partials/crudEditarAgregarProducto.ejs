@@ -4,43 +4,88 @@
     <div>
         <div class="crudName">
             <label class="field" for="name">Nombre</label>
-            <input type="text" name="name" value="<%=producto.name%>" id="name" required>
+            <input type="text" name="name" value="<%=producto.name%>" id="name">
+            <% if (locals.errors && errors.name) { %>
+                <div class="errors-conteiner">
+                    <p><%= errors.name.msg %></p>
+                </div>   
+           <% } %>
         </div>
         <div class="crudDescription">
             <label class="field" for="description">Descripción</label>
-            <input type="text" name="description" value="<%=producto.description%>" id="description" required>
+            <input type="text" name="description" value="<%=producto.description%>" id="description">
+            <% if (locals.errors && errors.description) { %>
+                <div class="errors-conteiner">
+                    <p><%= errors.description.msg %></p>
+                </div>   
+           <% } %>
         </div>
         <div class="crudCategory">
             <label class="field" for="category">Categoría</label>
-            <input type="text" name="category" value="<%=producto.category_id%>" id="category" required>
+            <input type="text" name="category" value="<%=producto.category_id%>" id="category">
+            <% if (locals.errors && errors.category) { %>
+                <div class="errors-conteiner">
+                    <p><%= errors.category.msg %></p>
+                </div>   
+           <% } %>
         </div>
         <div class="crudPrice">
             <label class="field" for="price">Precio</label>
-            <input type="text" name="price" value="<%=producto.price%>" id="price" required>
+            <input type="text" name="price" value="<%=producto.price%>" id="price">
+            <% if (locals.errors && errors.price) { %>
+                <div class="errors-conteiner">
+                    <p><%= errors.price.msg %></p>
+                </div>   
+           <% } %>
         </div>
         <div>
             <label class="field" for="rating">Rating</label>
-            <input type="text" name="rating" value="<%=producto.rating%>" id="rating" required>
+            <input type="text" name="rating" value="<%=producto.rating%>" id="rating">
+            <% if (locals.errors && errors.rating) { %>
+                <div class="errors-conteiner">
+                    <p><%= errors.rating.msg %></p>
+                </div>   
+           <% } %>
         </div>
         <div>
             <label class="field" for="status">Status</label>
-            <input type="text" name="status" value="<%=producto.status%>" id="status" required>
+            <input type="text" name="status" value="<%=producto.status%>" id="status">
+            <% if (locals.errors && errors.status) { %>
+                <div class="errors-conteiner">
+                    <p><%= errors.status.msg %></p>
+                </div>   
+           <% } %>
         </div>
         <div>
             <label class="field" for="stock">Stock</label>
-            <input type="text" name="stock" value="<%=producto.stock%>" id="stock" required>
+            <input type="text" name="stock" value="<%=producto.stock%>" id="stock">
+            <% if (locals.errors && errors.stock) { %>
+                <div class="errors-conteiner">
+                    <p><%= errors.stock.msg %></p>
+                </div>   
+           <% } %>
         </div>
         <% if (producto.image == null) { %>
             <div class="crudImage">
-                <input type="file" name="image" id="image" accept=".jpg,.png" required>
+                <input type="file" name="image" id="image" accept=".jpg,.png">
                 <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
+                <% if (locals.errors && errors.image) { %>
+                    <div class="errors-conteiner">
+                        <p><%= errors.image.msg %></p>
+                    </div>   
+               <% } %>
             </div>    
         <% } else { %>   
             <div class="crudImage">
-                <input type="file" name="image" id="image" accept=".jpg,.png" required>
+                <input type="file" name="image" id="image" accept=".jpg,.png" src="/images/products/<%= producto.image %>">
                 <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
                 <img src="/images/products/<%= producto.image %>" alt="Imagen Producto <%= producto.image %>">
                 <label class="tituloImagen" name="imageLabel"><%=producto.image%></label>
+                <% if (locals.errors && errors.image) { %>
+                    <div class="errors-conteiner">
+                        <p><%= errors.image.msg %></p>
+                    </div>   
+               <% } %>
             </div>
         <% } %> 
     </div>

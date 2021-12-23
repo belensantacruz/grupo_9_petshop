@@ -5,7 +5,7 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const validateRegisterMiddleware = require("../middlewares/validateRegisterMiddleware");
 const validateLoginMiddleware = require("../middlewares/validateLoginMiddleware");
-const multerMiddleware = require("../middlewares/multerMiddleware");
+const multerMiddleware = require("../middlewares/multerUsersMiddleware");
 
 // Login
 router.get("/login", guestMiddleware, controller.login);

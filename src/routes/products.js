@@ -1,28 +1,17 @@
-let express =require("express");
-const router =express.Router();
-const controller =require("../controllers/productController");
-const path = require('path');
-const multer = require('multer');
-
-//multer:
-const storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, './public/images/products');
-    },
-    filename: function(req, file, cb){
-        cb(null, `${file.originalname}`);
-    }
-});
-const uploadFile = multer({storage});
+let express = require("express");
+const router = express.Router();
+const controller = require("../controllers/productController");
+const multerMiddleware = require("../middlewares/multerProductsMiddleware");
+const validateAddProductMiddleware = require("../middlewares/validateAddProductMiddleware");
 
 // Detalle producto
 router.get("/detalle/:id", controller.detalle);
 router.get("/carrito", controller.carrito);
 router.get("/crud", controller.crud);
 router.get("/agregarProducto", controller.agregar);
-router.post("/agregarProducto", uploadFile.single('image'), controller.agregarProducto);
+router.post("/agregarProducto", multerMiddleware.single('image'), validateAddProductMiddleware, controller.agregarProducto);
 router.get("/editarProducto/:id", controller.editar);
-router.put("/editarProducto/:id", uploadFile.single('image'), controller.update);
+router.put("/editarProducto/:id", multerMiddleware.single('image'), validateAddProductMiddleware, controller.update);
 router.delete("/editarProducto/:id", controller.borrar);
 
 module.exports=router;
