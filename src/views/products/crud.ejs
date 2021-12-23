@@ -23,7 +23,7 @@
             <td><%= item.id %></td>
             <td><%= item.name %></td>
             <td><%= item.description %></td>
-            <td><%= item.category_id %></td>
+            <td><%= categorias[item.category_id - 1].name %></td>
             <td>$<%= item.price %></td>
             <td><%= item.status %></td>
             <td><%= item.rating %> </td>

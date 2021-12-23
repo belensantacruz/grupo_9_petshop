@@ -1,6 +1,7 @@
 const path = require ("path");
 const fs = require('fs');
 let db = require('../database/models')
+const { validationResult } = require('express-validator');
 
 let controller ={
     detalle : (req, res) =>{
@@ -15,7 +16,10 @@ let controller ={
     crud: (req, res)=>{
         db.Product.findAll()
             .then(resultado => {
-                res.render("products/crud", { productos: resultado });
+                db.Category.findAll()
+                    .then(itemCategory => {
+                        res.render("products/crud", { productos: resultado, categorias: itemCategory });
+                    });
             });
     },
     agregar: (req, res) =>{
@@ -50,19 +54,22 @@ let controller ={
     },
 
     update: (req, res) =>{
-        db.Product.update({
-            name: req.body.name,
-            description: req.body.description,
-            price: parseFloat(req.body.price),
-            image: req.file == undefined ? producto.image : req.file.originalname,
-            category_id: req.body.category,
-            rating: req.body.rating,
-            status: req.body.status,
-            stock: req.body.stock
-        }, { where: { id: req.params.id } })
+        db.Product.findByPk()
             .then((resultado) => {
-                res.redirect("/products/crud");
-            });
+                db.Product.update({
+                    name: req.body.name,
+                    description: req.body.description,
+                    price: parseFloat(req.body.price),
+                    image: req.file == undefined ? resultado.image : req.file.originalname,
+                    category_id: req.body.category,
+                    rating: req.body.rating,
+                    status: req.body.status,
+                    stock: req.body.stock
+                }, { where: { id: req.params.id } })
+                    .then((resultado) => {
+                        res.redirect("/products/crud");
+                });
+        });
     },
     borrar: (req, res) => {
         db.Product.destroy({
