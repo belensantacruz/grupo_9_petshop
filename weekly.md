@@ -30,3 +30,12 @@ Vamos a trabajar en el crud para que tome los datos del home y que se puedan edi
 * DELETE: Al redireccionar no refresca la tabla
 * EDIT: Al editar el producto, no se actualiza la foto en el formulario de editar (preview).
 
+
+# SPRINT 6
+* Estuvimos haciendo dailys casi todas las semanas para poder entregar el sprint en tiempo y forma.
+
+## BELEN:
+* Estuve realizando los scripts para la creación de la base y para la data dummy, armado de sequalize con estructura y data y sus modelos. Fix de login con cookies y session. Sequalize para la tabla de productos, agregado de categorias al crud, fix de edit y add product para trabajar con sequalize.
+
+## AGUS:
+* Estuve trabajando en los diagramas de las tablas y su estructura, el modelo de controller del user, main y product.
