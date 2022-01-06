@@ -85,3 +85,17 @@ https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/e2f88431-943f-4018
 <br>
 https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/528b6c8f-e631-40d4-a24c-ca56ccaddf19
 <br>
+
+# RETRO SPRINT 6
+## FUE BIEN
+* Se terminó el Sprint a tiempoo! (Primeros :P)
+* Se usó el trello
+* Hicimos varias dailies/weeklies
+* Hicimos tareas para hacer seguimiento de la teoría (para estudiar)
+## A MEJORAR
+* Estar más al día con la teoría
+## ACCIONES
+* Seguir poniendo tareas con deadlines para estudiar teoría
+<br>
+https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/257a2b71-ddeb-49d1-8f77-6e234050ec7a
+<br>
