@@ -5,6 +5,7 @@
         <div class="crudName">
             <label class="field" for="name">Nombre</label>
             <input type="text" name="name" value="<%=producto.name%>" id="name">
+            <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.name) { %>
                 <div class="errors-conteiner">
                     <p><%= errors.name.msg %></p>
@@ -14,6 +15,7 @@
         <div class="crudDescription">
             <label class="field" for="description">Descripción</label>
             <input type="text" name="description" value="<%=producto.description%>" id="description">
+            <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.description) { %>
                 <div class="errors-conteiner">
                     <p><%= errors.description.msg %></p>
@@ -23,6 +25,7 @@
         <div class="crudCategory">
             <label class="field" for="category">Categoría</label>
             <input type="text" name="category" value="<%=producto.category_id%>" id="category">
+            <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.category) { %>
                 <div class="errors-conteiner">
                     <p><%= errors.category.msg %></p>
@@ -32,33 +35,37 @@
         <div class="crudPrice">
             <label class="field" for="price">Precio</label>
             <input type="text" name="price" value="<%=producto.price%>" id="price">
+            <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.price) { %>
                 <div class="errors-conteiner">
                     <p><%= errors.price.msg %></p>
                 </div>   
            <% } %>
         </div>
-        <div>
+        <div class="crudRating">
             <label class="field" for="rating">Rating</label>
             <input type="text" name="rating" value="<%=producto.rating%>" id="rating">
+            <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.rating) { %>
                 <div class="errors-conteiner">
                     <p><%= errors.rating.msg %></p>
                 </div>   
            <% } %>
         </div>
-        <div>
+        <div class="crudStatus">
             <label class="field" for="status">Status</label>
             <input type="text" name="status" value="<%=producto.status%>" id="status">
+            <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.status) { %>
                 <div class="errors-conteiner">
                     <p><%= errors.status.msg %></p>
                 </div>   
            <% } %>
         </div>
-        <div>
+        <div class="crudStock">
             <label class="field" for="stock">Stock</label>
             <input type="text" name="stock" value="<%=producto.stock%>" id="stock">
+            <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.stock) { %>
                 <div class="errors-conteiner">
                     <p><%= errors.stock.msg %></p>
@@ -69,6 +76,7 @@
             <div class="crudImage">
                 <input type="file" name="image" id="image" accept=".jpg,.png">
                 <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
+                <div class="frontError"><p></p></div>
                 <% if (locals.errors && errors.image) { %>
                     <div class="errors-conteiner">
                         <p><%= errors.image.msg %></p>

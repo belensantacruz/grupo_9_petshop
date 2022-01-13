@@ -77,3 +77,8 @@
     font-size: 12px;
     color:grey;
 }
+
+.frontError {
+    font-size: 12px;
+    color: red;
+}
