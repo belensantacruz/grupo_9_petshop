@@ -7,27 +7,25 @@
 <div class="contenedor">
     <div class="center">
         <h1>INICIAR SESIÓN</h1>
-        <form action="/users/login" method="POST" >
+        <form action="/users/login" method="POST" class="loginForm">
         <div class="fields">
-            <input type="email" name="email" placeholder="mail@mail.com" value="<%= locals.oldData ? oldData.email : null %>">
-            <% if (locals.errors && errors.email) { %>
-                <div class="errors-conteiner">
-                    <ul>
-                        <li><%= errors.email.msg %></li>
-                    </ul>
-                </div>   
-           <% } %>
+            <input type="email" name="email" placeholder="mail@mail.com" value="<%= locals.oldData ? oldData.email : null %>" id="email">
+            <div class="frontError"><p></p></div>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="errors-conteiner">
+                        <p><%= errors.email.msg %></p>
+                    </div>   
+               <% } %>
         </div>
 
         <div class="fields">
-            <input type="password" name="password" placeholder="Contraseña">
-            <% if (locals.errors && errors.password) { %>
-                <div class="errors-conteiner">
-                    <ul>
-                        <li><%= errors.password.msg %></li>
-                    </ul>
-                </div>   
-           <% } %>
+            <input type="password" name="password" placeholder="Contraseña" id="password">
+            <div class="frontError2"><p></p></div>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="errors-conteiner">
+                        <p><%= errors.password.msg %></p>
+                    </div>   
+               <% } %>
         </div>
         <div class="rememberUser">
             <input type="checkbox" name="remember">
@@ -46,5 +44,7 @@
 </div>
 
 <%- include('../partials/footer') %>
+
+<script src="/js/loginValidate.js" type="text/javascript"></script>
 </body>
 </html>
