@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
     let body = document.querySelector('body');
 
     let nombre = document.querySelector('#name');
-    nombre.addEventListener('change', function() {
+    function nameValidator(nombre, nameErrors) {
         if(nombre.value == "")
             nameErrors.push("Debe ingresar un nombre"); 
         else
@@ -22,15 +22,25 @@ window.addEventListener('load', function() {
         
         nombre.addEventListener('blur', function() {
             let error = document.querySelector('.crudName .frontError p');
-            if(nameErrors.length > 0)
+            if(nameErrors.length > 0){
+                nameErrors = nameErrors.filter( function( item, index, inputArray ) {
+                    return inputArray.indexOf(item) == index;
+                });
                 error.innerHTML = nameErrors;
+            }
             else
                 error.innerHTML = "";
         });
+    }
+    nombre.addEventListener('focus', function() {
+        nameValidator(nombre, nameErrors);
+    });
+    nombre.addEventListener('change', function() {
+        nameValidator(nombre, nameErrors);
     });
 
     let descripcion = document.querySelector('#description');
-    descripcion.addEventListener('change', function() {
+    function descriptionValidator(descripcion, descriptionErrors) {
         if(descripcion.value == "")
             descriptionErrors.push("Debe ingresar una descripción");
         else
@@ -38,15 +48,25 @@ window.addEventListener('load', function() {
 
         descripcion.addEventListener('blur', function() {
             let error = document.querySelector('.crudDescription .frontError p');
-            if(descriptionErrors.length > 0)
+            if(descriptionErrors.length > 0){
+                descriptionErrors = descriptionErrors.filter( function( item, index, inputArray ) {
+                    return inputArray.indexOf(item) == index;
+                });
                 error.innerHTML = descriptionErrors;
+            }                
             else
                 error.innerHTML = "";
         });
+    }
+    descripcion.addEventListener('focus', function() {
+        descriptionValidator(descripcion, descriptionErrors);
+    });
+    descripcion.addEventListener('change', function() {
+        descriptionValidator(descripcion, descriptionErrors);
     });
 
     let categoria = document.querySelector('#category');
-    categoria.addEventListener('change', function() {
+    function categoryValidator(categoria, categoryErrors) {
         categoryErrors = [];
         if(categoria.value == "")
             categoryErrors.push("Debe ingresar una categoría válida");
@@ -66,10 +86,16 @@ window.addEventListener('load', function() {
             else
                 error.innerHTML = "";
         });
+    }
+    categoria.addEventListener('focus', function() {
+        categoryValidator(categoria, categoryErrors);
+    });
+    categoria.addEventListener('change', function() {
+        categoryValidator(categoria, categoryErrors);
     });
 
     let precio = document.querySelector('#price');
-    precio.addEventListener('change', function() {
+    function priceValidator(precio, priceErrors) {
         priceErrors = [];
         if(precio.value == "")
             priceErrors.push("Debe ingresar un valor");
@@ -91,10 +117,16 @@ window.addEventListener('load', function() {
             else
                 error.innerHTML = "";
         });
+    }
+    precio.addEventListener('focus', function() {
+        priceValidator(precio, priceErrors);
+    });
+    precio.addEventListener('change', function() {
+        priceValidator(precio, priceErrors);
     });
 
     let rating = document.querySelector('#rating');
-    rating.addEventListener("change", function() {
+    function ratingValidator(rating, ratingErrors) {
         ratingErrors = [];
         if(rating.value == "")
             ratingErrors.push("Debe ingresar el rating");
@@ -114,10 +146,16 @@ window.addEventListener('load', function() {
             else
                 error.innerHTML = "";
         });
+    }
+    rating.addEventListener("focus", function() {
+        ratingValidator(rating, ratingErrors);
+    });
+    rating.addEventListener("change", function() {
+        ratingValidator(rating, ratingErrors);
     });
 
     let status = document.querySelector('#status');
-    status.addEventListener('change', function() {
+    function statusValidator(status, statusErrors) {
         statusErrors = [];
         if(status.value == "")
             statusErrors.push("Debe ingresar un status");
@@ -137,10 +175,16 @@ window.addEventListener('load', function() {
             else
                 error.innerHTML = "";
         });
+    }
+    status.addEventListener('focus', function() {
+        statusValidator(status, statusErrors);
+    });
+    status.addEventListener('change', function() {
+        statusValidator(status, statusErrors);
     });
     
     let stock = document.querySelector('#stock');
-    stock.addEventListener('change', function() {
+    function stockValidator(stock, stockErrors) {
         stockErrors = [];
         if(stock.value == "")
             stockErrors.push("Debe ingresar un número");
@@ -160,10 +204,16 @@ window.addEventListener('load', function() {
             else
                 error.innerHTML = "";
         });
+    }
+    stock.addEventListener('focus', function() {
+        stockValidator(stock, stockErrors);
     });
+    stock.addEventListener('change', function() {
+        stockValidator(stock, stockErrors);
+    });    
 
-    let imagen = document.querySelector('#image');   
-    imagen.addEventListener('change', function() {
+    let imagen = document.querySelector('#image');
+    function imageValidator(imagen, imageErrors) {
         if(imagen.value == "")
             imageErrors.push("Debe seleccionar una imagen");
         else
@@ -180,6 +230,12 @@ window.addEventListener('load', function() {
             else
                 error.innerHTML = "";
         });
+    }
+    imagen.addEventListener('focus', function() {
+        imageValidator(imagen, imageErrors);
+    });
+    imagen.addEventListener('change', function() {
+        imageValidator(imagen, imageErrors);
     });
 
     form.addEventListener('submit', function(e) {
