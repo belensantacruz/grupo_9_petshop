@@ -78,11 +78,7 @@
     color:grey;
 }
 
-.frontError,
-.frontError2,
-.frontError3,
-.frontError4,
-.frontError5 {
+.frontError {
     font-size: 12px;
     color: red;
 }

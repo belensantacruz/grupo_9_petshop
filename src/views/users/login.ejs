@@ -8,7 +8,7 @@
     <div class="center">
         <h1>INICIAR SESIÓN</h1>
         <form action="/users/login" method="POST" class="loginForm">
-        <div class="fields">
+        <div class="fields emailInput">
             <input type="email" name="email" placeholder="mail@mail.com" value="<%= locals.oldData ? oldData.email : null %>" id="email">
             <div class="frontError"><p></p></div>
                 <% if (locals.errors && errors.email) { %>
@@ -18,9 +18,9 @@
                <% } %>
         </div>
 
-        <div class="fields">
+        <div class="fields passwordInput">
             <input type="password" name="password" placeholder="Contraseña" id="password">
-            <div class="frontError2"><p></p></div>
+            <div class="frontError"><p></p></div>
                 <% if (locals.errors && errors.password) { %>
                     <div class="errors-conteiner">
                         <p><%= errors.password.msg %></p>

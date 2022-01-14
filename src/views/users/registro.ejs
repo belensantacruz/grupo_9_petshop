@@ -9,55 +9,55 @@
                 <h1 class="form-title">CREAR CUENTA</h1>
                 <form action="/users/registro" method="POST" enctype="multipart/form-data">
 
-                    <div class="fields">
+                    <div class="fields nameInput">
                         <input type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.oldData ? oldData.name : null %>">
                         <div class="frontError"><p></p></div>
-                <% if (locals.errors && errors.name) { %>
-                    <div class="errors-conteiner">
-                        <p><%= errors.name.msg %></p>
-                    </div>   
-               <% } %>
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.name.msg %></p>
+                            </div>   
+                        <% } %>
                     </div>
 
-                    <div class="fields">
+                    <div class="fields lastnameInput">
                         <input type="text" name="lastname" id="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastname : null %>">
-                        <div class="frontError2"><p></p></div>
-                <% if (locals.errors && errors.lastname) { %>
-                    <div class="errors-conteiner">
-                        <p><%= errors.lastname.msg %></p>
-                    </div>   
-               <% } %>
+                        <div class="frontError"><p></p></div>
+                        <% if (locals.errors && errors.lastname) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.lastname.msg %></p>
+                            </div>   
+                        <% } %>
                     </div>
 
-                    <div class="fields">
+                    <div class="fields emailInput">
                         <input type="text" name="email" id="email" placeholder="mail@mail.com" value="<%= locals.oldData ? oldData.email : null %>">
-                        <div class="frontError3"><p></p></div>
-                <% if (locals.errors && errors.email) { %>
-                    <div class="errors-conteiner">
-                        <p><%= errors.email.msg %></p>
-                    </div>   
-               <% } %>
+                        <div class="frontError"><p></p></div>
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.email.msg %></p>
+                            </div>   
+                        <% } %>
                     </div>
 
-                    <div class="fields">
+                    <div class="fields passwordInput">
                         <input type="password" name="password" id="password" placeholder="Contraseña">
-                        <div class="frontError4"><p></p></div>
-                <% if (locals.errors && errors.password) { %>
-                    <div class="errors-conteiner">
-                        <p><%= errors.password.msg %></p>
-                    </div>   
-               <% } %>
+                        <div class="frontError"><p></p></div>
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.password.msg %></p>
+                            </div>   
+                        <% } %>
                     </div>
 
-                    <div class="crudImage">
+                    <div class="crudImage imageInput">
                         <label class="imageButton" for="image">Seleccionar Avatar &nbsp;<i class="far fa-images"></i></label>
                         <input type="file" name="image" id="image" accept=".jpg,.png">
-                        <div class="frontError5"><p></p></div>
-                <% if (locals.errors && errors.image) { %>
-                    <div class="errors-conteiner">
-                        <p><%= errors.image.msg %></p>
-                    </div>   
-               <% } %>
+                        <div class="frontError"><p></p></div>
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="errors-conteiner">
+                                <p><%= errors.image.msg %></p>
+                            </div>   
+                        <% } %>
                     </div>
 
                     <div class="registrarse"><button type="submit">Registrarse</button></div>

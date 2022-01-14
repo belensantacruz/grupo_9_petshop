@@ -16,6 +16,7 @@ window.addEventListener("load", function(){
         let name = document.querySelector('#name');
 
         function nameValidator(name, nameErrors){
+            nameErrors = [];
             if(name.value == ''){
                 nameErrors.push('Debe ingresar un nombre');
             } else {
@@ -23,7 +24,7 @@ window.addEventListener("load", function(){
             }
 
             name.addEventListener('blur', function() {
-                let error = document.querySelector('.fields .frontError p');
+                let error = document.querySelector('.nameInput .frontError p');
                 if(nameErrors.length > 0){
                     nameErrors = nameErrors.filter( function( item, index, inputArray ) {
                         return inputArray.indexOf(item) == index;
@@ -47,6 +48,7 @@ window.addEventListener("load", function(){
         let lastName = document.querySelector('#lastName');
 
         function lastNameValidator(lastName, lastNameErrors){
+            lastNameErrors = [];
             if(lastName.value == ''){
                 lastNameErrors.push('Debe ingresar un apellido');
             } else {
@@ -54,7 +56,7 @@ window.addEventListener("load", function(){
             }
 
             lastName.addEventListener('blur', function() {
-                let error = document.querySelector('.fields .frontError2 p');
+                let error = document.querySelector('.lastnameInput .frontError p');
                 if(lastNameErrors.length > 0){
                     lastNameErrors = lastNameErrors.filter( function( item, index, inputArray ) {
                         return inputArray.indexOf(item) == index;
@@ -78,17 +80,17 @@ window.addEventListener("load", function(){
     let email = document.querySelector('#email');
 
     function emailValidator(email, emailErrors){
+        emailErrors = [];
         if(email.value == ''){
             emailErrors.push('Debe ingresar un email');
-        } else if (emailErrors.length > 0 && !regExEmail.test(email.value)){
-            emailErrors = [];
+        } else if (email.value != "" && !regExEmail.test(email.value)){
             emailErrors.push('Debe ser un email valido');
         } else {
             emailErrors = [];
         }
 
         email.addEventListener('blur', function() {
-            let error = document.querySelector('.fields .frontError3 p');
+            let error = document.querySelector('.emailInput .frontError p');
             if(emailErrors.length > 0){
                 emailErrors = emailErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
@@ -112,17 +114,17 @@ window.addEventListener("load", function(){
     let password = document.querySelector('#password');
 
     function passwordValidator(password, passwordErrors){
+        passwordErrors = [];
         if(password.value == ''){
             passwordErrors.push('Debe ingresar una contraseña');
-        } else if (passwordErrors.length > 0 && !regPassword.test(password.value)){
-            passwordErrors = [];
-            passwordErrors.push('La contraseña debe contener entre 8 y 16 caracteres, al menos un digito y al menos una mayuscula');
+        } else if (password.value != "" && !regPassword.test(password.value)){
+            passwordErrors.push('La contraseña debe contener entre 8 y 16 caracteres y al menos un número y una mayúscula');
         } else {
             passwordErrors = [];
         }
 
         password.addEventListener('blur', function() {
-            let error = document.querySelector('.fields .frontError4 p');
+            let error = document.querySelector('.passwordInput .frontError p');
             if(passwordErrors.length > 0){
                 passwordErrors = passwordErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
@@ -145,22 +147,23 @@ window.addEventListener("load", function(){
    //Image
    let imagen = document.querySelector('#image');
    function imageValidator(imagen, imageErrors) {
-       if(imagen.value == "")
+        imageErrors = [];
+        if(imagen.value == "")
            imageErrors.push("Debe seleccionar una imagen");
-       else
+        else
            imageErrors = [];
 
-       imagen.addEventListener('blur', function() {
-           let error = document.querySelector('.crudImage .frontError5 p');
-           if(imageErrors.length > 0){
-               imageErrors = imageErrors.filter( function( item, index, inputArray ) {
+        imagen.addEventListener('blur', function() {
+            let error = document.querySelector('.imageInput .frontError p');
+            if(imageErrors.length > 0){
+                imageErrors = imageErrors.filter( function( item, index, inputArray ) {
                    return inputArray.indexOf(item) == index;
-               });
-               error.innerHTML = imageErrors;
-           }
-           else
+                });
+                error.innerHTML = imageErrors;
+            }
+            else
                error.innerHTML = "";
-       });
+        });
    }
    imagen.addEventListener('focus', function() {
        imageValidator(imagen, imageErrors);
@@ -169,14 +172,18 @@ window.addEventListener("load", function(){
        imageValidator(imagen, imageErrors);
    });
 
-
     loginForm.addEventListener('submit', function(e) {
         errores = [];
-        errores.push.apply(errores, nameErrors);
-        errores.push.apply(errores, lastNameErrors);
-        errores.push.apply(errores, emailErrors);
-        errores.push.apply(errores, passwordErrors);
-        errores.push.apply(errores, imageErrors);
+        
+        let frontErrors = document.querySelectorAll('.frontError p');
+        frontErrors.forEach(function(item, index) {
+            if(frontErrors[index].innerText != "")
+                errores.push(frontErrors[index].innerText);
+        })
+
+        errores = errores.filter( function( item, index, inputArray ) {
+            return inputArray.indexOf(item) == index;
+        });
 
         if(errores.length > 0){
             e.preventDefault();

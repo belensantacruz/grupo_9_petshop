@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
     let errores = [];
-
+    let regexp = /\s/;
     let nameErrors = [];
     let descriptionErrors = [];
     let categoryErrors = [];
@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
 
     let nombre = document.querySelector('#name');
     function nameValidator(nombre, nameErrors) {
-        if(nombre.value == "")
+        if(nombre.value == "" || regexp.test(nombre.value))
             nameErrors.push("Debe ingresar un nombre"); 
         else
             nameErrors = [];
@@ -41,7 +41,7 @@ window.addEventListener('load', function() {
 
     let descripcion = document.querySelector('#description');
     function descriptionValidator(descripcion, descriptionErrors) {
-        if(descripcion.value == "")
+        if(descripcion.value == "" || regexp.test(nombre.value))
             descriptionErrors.push("Debe ingresar una descripción");
         else
             descriptionErrors = [];
@@ -68,9 +68,9 @@ window.addEventListener('load', function() {
     let categoria = document.querySelector('#category');
     function categoryValidator(categoria, categoryErrors) {
         categoryErrors = [];
-        if(categoria.value == "")
+        if(categoria.value == "" || regexp.test(nombre.value))
             categoryErrors.push("Debe ingresar una categoría válida");
-        else if(categoria.value != "" && (categoria.value <= 0 || categoria.value > 5 || isNaN(categoria.value)))
+        else if(categoria.value != "" && (categoria.value <= 0 || categoria.value > 5 || (isNaN(categoria.value) && categoria.value != "")))
             categoryErrors.push("Debe ingresar una categoría del 1 al 5"); 
         else
             categoryErrors = [];
@@ -96,8 +96,7 @@ window.addEventListener('load', function() {
 
     let precio = document.querySelector('#price');
     function priceValidator(precio, priceErrors) {
-        priceErrors = [];
-        if(precio.value == "")
+        if(precio.value == "" || regexp.test(nombre.value))
             priceErrors.push("Debe ingresar un valor");
         else if(precio.value != "" && isNaN(precio.value))
             priceErrors.push("Debe ingresar un número válido");
@@ -127,8 +126,7 @@ window.addEventListener('load', function() {
 
     let rating = document.querySelector('#rating');
     function ratingValidator(rating, ratingErrors) {
-        ratingErrors = [];
-        if(rating.value == "")
+        if(rating.value == "" || regexp.test(nombre.value))
             ratingErrors.push("Debe ingresar el rating");
         else if(rating.value != "" && (rating.value <= 0 || rating.value > 5 || isNaN(rating.value)))
             ratingErrors.push("Debe ingresar un rating del 1 al 5"); 
@@ -156,8 +154,7 @@ window.addEventListener('load', function() {
 
     let status = document.querySelector('#status');
     function statusValidator(status, statusErrors) {
-        statusErrors = [];
-        if(status.value == "")
+        if(status.value == "" || regexp.test(nombre.value))
             statusErrors.push("Debe ingresar un status");
         else if(status.value != "" && (status.value != "oferta" && status.value != "destacado"))
             statusErrors.push("Debe ingresar un status válido: oferta o destacado");
@@ -185,8 +182,7 @@ window.addEventListener('load', function() {
     
     let stock = document.querySelector('#stock');
     function stockValidator(stock, stockErrors) {
-        stockErrors = [];
-        if(stock.value == "")
+        if(stock.value == "" || regexp.test(nombre.value))
             stockErrors.push("Debe ingresar un número");
         else if(stock.value != "" && (isNaN(stock.value) || stock.value <=0))
             stockErrors.push("Debe ingresar un número mayor a 0");
@@ -207,10 +203,10 @@ window.addEventListener('load', function() {
     }
     stock.addEventListener('focus', function() {
         stockValidator(stock, stockErrors);
-    });
+    });   
     stock.addEventListener('change', function() {
         stockValidator(stock, stockErrors);
-    });    
+    });     
 
     let imagen = document.querySelector('#image');
     function imageValidator(imagen, imageErrors) {
@@ -240,14 +236,16 @@ window.addEventListener('load', function() {
 
     form.addEventListener('submit', function(e) {
         errores = [];
-        errores.push.apply(errores, nameErrors);
-        errores.push.apply(errores, descriptionErrors);
-        errores.push.apply(errores, categoryErrors);
-        errores.push.apply(errores, priceErrors);
-        errores.push.apply(errores, ratingErrors);
-        errores.push.apply(errores, statusErrors);
-        errores.push.apply(errores, stockErrors);
-        errores.push.apply(errores, imageErrors);
+        let frontErrors = document.querySelectorAll('.frontError p');
+        frontErrors.forEach(function(item, index) {
+            if(frontErrors[index].innerText != "")
+                errores.push(frontErrors[index].innerText);
+        })
+
+        errores = errores.filter( function( item, index, inputArray ) {
+            return inputArray.indexOf(item) == index;
+        });
+
         if(errores.length > 0){
             e.preventDefault();
             errores.forEach(function(item, index) {
