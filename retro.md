@@ -99,3 +99,16 @@ https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/528b6c8f-e631-40d4
 <br>
 https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/257a2b71-ddeb-49d1-8f77-6e234050ec7a
 <br>
+
+# RETRO SPRINT 7
+## FUE BIEN
+* Entregamos a tiempo :)
+* Fue un Sprint tranquilo
+* Usamos el trello
+## A MEJORAR
+* Estar al día con la teoría
+## ACCIONES
+* Seguir trackeando lo que estudiamos de teoría en el trello
+<br>
+https://easyretro.io/publicboard/fjXacC4Gi3W1FVeneTxbMkkREz72/065cbc45-268a-4929-8543-cb9f7ed95b9c
+<br>
