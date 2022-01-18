@@ -102,7 +102,7 @@ let controller ={
                     }
         
                     let userCreated = db.User.create(userToCreate);
-                    res.redirect('/login')
+                    res.redirect('/users/login')
                 }
             });
         }
