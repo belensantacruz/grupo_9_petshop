@@ -8,6 +8,7 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 // Detalle producto
 router.get("/detalle/:id", controller.detalle);
 router.get("/carrito", controller.carrito);
+router.get("/categories/:category", controller.categoria);
 router.get("/crud", adminMiddleware, controller.crud);
 router.get("/agregarProducto", adminMiddleware, controller.agregar);
 router.post("/agregarProducto", adminMiddleware, multerMiddleware.single('image'), validateAddProductMiddleware, controller.agregarProducto);

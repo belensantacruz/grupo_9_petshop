@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./../partials/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('./../partials/header') %> 
+    <section class="categories-page">
+        <div class="category-titulo">
+            <div class="titulo-articulos">
+                <h1><%= categoriaTitulo %></h1>
+                <div class="articulos-arrows">
+                    <p class="button-articulos">&lt;</p>
+                    <p class="button-articulos active">&gt;</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="articulos">
+                <% categories.forEach(element => {%>
+                <article>  
+                    <a href="/products/detalle/<%= element.id %>">
+                    <img src="/images/products/<%= element.image %>" alt="Imagen Producto 1"></a>
+                    <p class="precio"><%= element.price %></p>
+                    <div class="detalles-producto">
+                        <div class="botones-compras">
+                            <div class="botones-cantidad">
+                                <button class="minus">-</button>
+                                <input type="text" value="0" readonly="readonly">
+                                <button class="plus">+</button>
+                            </div>
+                            <a href="/products/carrito"><button class="comprar-button">Comprar</button></a>
+                        </div>
+                        <p class="descripcion-articulo"><%= element.name %></p>
+                    </div>
+                </article>  
+                <% }); %>
+        </div>
+    </section>
+    <%- include('./../partials/footer') %> 
+    <script src="/js/headerCategories.js" type="text/javascript"></script>
+</body>
+</html>

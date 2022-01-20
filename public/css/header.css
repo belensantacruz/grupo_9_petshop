@@ -120,6 +120,11 @@
     text-decoration: none;
     color: black;
 }
+.selected-category {
+    color: #8a2be2;
+    font-weight: bold;
+    border-bottom: solid 4px #8a2be2;
+}
 
 @media (max-width: 1024px) {
     .header-top .header-logo {

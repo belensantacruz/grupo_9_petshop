@@ -124,6 +124,16 @@ let controller ={
                     console.log(error);
                 });
         }
+    },
+    categoria: (req, res) => {
+        db.Category.findAll({where: {name: req.params.category}})
+            .then((categoria) => {
+                let id = categoria[0].dataValues.id;
+                db.Product.findAll({where: {category_id: id}})
+                    .then(categories => {
+                        res.render("products/categories", {categories, categoriaTitulo: categoria[0].dataValues.name})
+                    });
+            });
     }
 }
 
