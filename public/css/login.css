@@ -81,3 +81,25 @@ transition-duration: all 1s;
 .rememberUser input {
     margin-right: 5px;
 }
+
+.iniciarsesion{
+    margin-top:20px;
+    margin-bottom:20px;
+    }
+
+.recoverPassButton button{
+    width:52%;
+    height:40px;
+    background-color: white;
+    border-radius:50px;
+    border: 2px solid #8a2be2;
+    font-size:14px;
+    transition-property: background-color, color;
+    transition-duration: all 1s;
+    
+    }
+
+.recoverPassButton button:hover{
+       background-color:#8a2be2;
+        color:white;
+    }

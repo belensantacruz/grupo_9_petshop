@@ -18,4 +18,8 @@ router.get("/profile", authMiddleware, controller.profile);
 router.get("/registro", guestMiddleware, controller.register);
 router.post("/registro", multerMiddleware.single('image'), validateRegisterMiddleware, controller.processRegister);
 
+//Recover pass
+router.get("/recover", controller.recover);
+router.post("/recover", controller.recover);
+
 module.exports=router;

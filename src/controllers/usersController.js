@@ -112,6 +112,10 @@ let controller ={
         res.render('users/profile', {
             user: req.session.loggedUser
         });
+    },
+
+    recover: (req, res) => {
+        res.render('users/recover')
     }
 }
 

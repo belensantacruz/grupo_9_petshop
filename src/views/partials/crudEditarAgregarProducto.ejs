@@ -24,7 +24,14 @@
         </div>
         <div class="crudCategory">
             <label class="field" for="category">Categoría</label>
-            <input type="text" name="category" value="<%=producto.category_id%>" id="category">
+            <select type="text" name="category" value="<%=producto.category_id%>" id="category">
+                <option value="" disabled selected='true'>Seleccciona una opcion</option>
+                <option value="1">Snacks</option>
+                <option value="2">Accesorios</option>
+                <option value="3">Alimentos</option>
+                <option value="4">Juguetes</option>
+                <option value="5">Higiene</option>
+            </select>    
             <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.category) { %>
                 <div class="errors-conteiner">
@@ -54,7 +61,12 @@
         </div>
         <div class="crudStatus">
             <label class="field" for="status">Status</label>
-            <input type="text" name="status" value="<%=producto.status%>" id="status">
+            <select type="text" name="status" value="<%=producto.status%>" id="status">
+                <option value="" disabled selected='true'>Selecciona una opcion</option>
+                <option value="oferta">Oferta</option>
+                <option value="destacado">Destacado</option>
+            </select>
+
             <div class="frontError"><p></p></div>
             <% if (locals.errors && errors.status) { %>
                 <div class="errors-conteiner">
