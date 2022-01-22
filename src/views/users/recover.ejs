@@ -8,10 +8,16 @@
     <div class="center">
         <h1>RECUPERAR <br>
             CONTRASEÑA</h1>
-        <form action="/users/login/?_method='PUT" method="POST" class="loginForm">
+        <form action="/users/recover" method="POST" class="recoverForm">
 
         <div class="fields emailInput">
             <input type="email" name="email" placeholder="Ingresa tu email" value="<%= locals.oldData ? oldData.email : null %>" id="email">
+            <div class="frontError"><p></p></div>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="errors-conteiner">
+                        <p><%= errors.email.msg %></p>
+                    </div>   
+               <% } %>
         </div>
 
         <div class="fields newpassword">

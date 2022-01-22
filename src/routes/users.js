@@ -20,6 +20,6 @@ router.post("/registro", multerMiddleware.single('image'), validateRegisterMiddl
 
 //Recover pass
 router.get("/recover", controller.recover);
-router.post("/recover", controller.recover);
+router.post("/recover", controller.processRecover);
 
 module.exports=router;

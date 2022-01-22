@@ -116,6 +116,16 @@ let controller ={
 
     recover: (req, res) => {
         res.render('users/recover')
+    },
+
+    processRecover: (req, res) => {
+        db.User.update(
+            {
+                password: req.body.password
+            },
+            {
+                where: {email: req.body.email}
+            });
     }
 }
 
