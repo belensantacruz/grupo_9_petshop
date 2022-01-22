@@ -121,11 +121,14 @@ let controller ={
     processRecover: (req, res) => {
         db.User.update(
             {
-                password: req.body.password
+                password: req.body.newPassword
             },
             {
                 where: {email: req.body.email}
-            });
+            })
+        .then(result => {
+            res.redirect("/users/login");
+        });
     }
 }
 

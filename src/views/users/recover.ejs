@@ -8,7 +8,7 @@
     <div class="center">
         <h1>RECUPERAR <br>
             CONTRASEÑA</h1>
-        <form action="/users/recover" method="POST" class="recoverForm">
+        <form action="/users/recover?_method=PUT" method="POST" class="recoverForm">
 
         <div class="fields emailInput">
             <input type="email" name="email" placeholder="Ingresa tu email" value="<%= locals.oldData ? oldData.email : null %>" id="email">
@@ -41,7 +41,5 @@
 </div>
 
 <%- include('../partials/footer') %>
-
-<script src="/js/loginValidate.js" type="text/javascript"></script>
 </body>
 </html>
