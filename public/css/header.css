@@ -146,6 +146,7 @@
     z-index: 1;
     background-color: #e0e0e0;
     margin-left: 15px;
+    transition: all 1s;
 }
 
 .dropdown-content .dropdown-a {
@@ -162,6 +163,9 @@
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
+
+
+/* DROPDOWN */
 
 @media (max-width: 1024px) {
     .header-top .header-logo {

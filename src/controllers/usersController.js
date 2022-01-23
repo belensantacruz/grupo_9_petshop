@@ -114,22 +114,55 @@ let controller ={
         });
     },
 
+
     recover: (req, res) => {
         res.render('users/recover')
     },
 
     processRecover: (req, res) => {
-        db.User.update(
-            {
-                password: req.body.newPassword
-            },
-            {
-                where: {email: req.body.email}
-            })
-        .then(result => {
-            res.redirect("/users/login");
-        });
+
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            res.render ('users/recover', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
+        }
+        else{
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            }).then((resultado) => {
+                let userInDB = resultado
+                if (!userInDB) {
+                    res.render ('users/recover', {
+                        errors: {
+                            email: {
+                                msg: 'Este email no esta registrado'
+                            }
+                        },
+                        oldData: req.body
+                    });
+                }
+                else{
+                    db.User.update(
+                        {
+                            password: bcrpyt.hashSync(req.body.newPassword, 12)
+                        },
+                        {
+                            where: {email: req.body.email}
+                        })
+                    .then(result => {
+                        res.redirect("/users/login");
+                    });
+                }
+            });
+        }
     }
+
+
 }
 
 
