@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const mainRouter=require("./routes/main");
 const usersRouter = require("./routes/users");
 const productRouter= require("./routes/products");
+const apiRouter = require("./routes/api");
 const session = require('express-session');
 const loggedMiddleware = require('./middlewares/loggedMiddleware')
 const cookies = require('cookie-parser');
@@ -25,4 +26,5 @@ app.use(express.json());
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productRouter);
+app.use("/api", apiRouter);
 app.listen(3000, () => console.log("Server corriendo en el puerto 3000"));
