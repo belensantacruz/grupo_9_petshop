@@ -6,19 +6,21 @@ const e = require("express");
 
 let controller = {
     getUsers: (req, res) => {
-        let limitOffset;
-        let pagination = 10 * (req.params.page - 1);
-        if(req.params.page)
-        {
-            limitOffset = {
-                limit: 10,
-                offset: pagination
-            }
-        }
-            db.User.findAll(limitOffset)
+        if(!req.query.page)
+            req.query.page = 1;
+        let totalInDb;
+        let pagination;
+        db.User.findAll()
             .then(resultado => {
-            return res.status(200).json({
-                count: resultado.length,
+                totalInDb = resultado.length;
+            });
+        db.User.findAll({
+            limit: 10,
+            offset: 10 * (req.query.page - 1)
+        })
+            .then(resultado => {
+            let paramObj = {
+                count: totalInDb,
                 users: resultado.map(function(item) {
                     return {
                         id: item.id,
@@ -28,7 +30,17 @@ let controller = {
                     }
                 }),
                 status: 200
-            });
+            };
+            if((10 * req.query.page) < totalInDb){
+                pagination = { next: "http://localhost:8080/api/users?page=" + (Number(req.query.page) + 1) };
+                paramObj = { ...paramObj, ...pagination };
+            }
+            if(req.query.page > 1)
+            {
+                pagination = { previous: "http://localhost:8080/api/users?page=" + (Number(req.query.page) - 1) };
+                paramObj = { ...paramObj, ...pagination };
+            }
+            return res.status(200).json(paramObj);
         });
     },
 
@@ -46,81 +58,73 @@ let controller = {
     },
 
     getProducts: (req, res) => {
-
-        let att;
-        let pagination = 10 * (req.params.page - 1);
-        if(req.params.page)
-        {
-            att = {
-                limit: 10,
-                offset: pagination
-            }
-        }
-        else {
-            att = { attributes: {exclude: ['products']} }
-        }
-
-            let categories = db.Category.findAll({ attributes: {exclude: ['products']} });
-
-            let products = db.Product.findAll(att);
-
-            Promise.all([categories, products])
-
-            .then(([categories, products]) => {
-
-                                        // // Inicio logica countByCategory
-
-                                        let contadorSnacks = []
-                                        let contadorAccesorios = []     
-                                        let contadorAlimentos = []
-                                        let contadorJuguetes = []
-                                        let contadorHigiene = []
-                                    
-                                        
-                                        products.forEach(element => {
-
-                                            if(element.category_id == 1){
-                                                contadorSnacks.push(element);
-                                            } else if(element.category_id == 2){
-                                                contadorAccesorios.push(element);
-                                            } else if(element.category_id == 3){
-                                                contadorAlimentos.push(element);
-                                            } else if(element.category_id == 4){
-                                                contadorJuguetes.push(element);
-                                            } else {(element.category_id == 5)
-                                                contadorHigiene.push(element);
-                                            }
-                                        });
-
-                                        // // Fin logica countByCategory
-
-
-                listaProductos = []
-
-                products.forEach(product => {
-                    listaProductos.push({
+        if(!req.query.page)
+            req.query.page = 1;
+        let totalInDb;
+        let pagination;
+        let categories = db.Category.findAll({ attributes: {exclude: ['products']} });
+        let totalProducts = db.Product.findAll();
+        let products = db.Product.findAll({
+            limit: 10,
+            offset: 10 * (req.query.page - 1)
+        });
+        Promise.all([categories, products, totalProducts])
+        .then(([categories, products, totalProducts]) => {
+            totalInDb = totalProducts.length
+            
+            // Inicio logica countByCategory
+            let contadorSnacks = []
+            let contadorAccesorios = []     
+            let contadorAlimentos = []
+            let contadorJuguetes = []
+            let contadorHigiene = []
+            totalProducts.forEach(element => {
+                if(element.category_id == 1){
+                    contadorSnacks.push(element);
+                } else if(element.category_id == 2){
+                    contadorAccesorios.push(element);
+                } else if(element.category_id == 3){
+                    contadorAlimentos.push(element);
+                } else if(element.category_id == 4){
+                    contadorJuguetes.push(element);
+                } else {(element.category_id == 5)
+                    contadorHigiene.push(element);
+                }
+            });
+            //Fin logica countByCategory
+            
+            let paramObj = {
+                count: totalProducts.length,
+                countByCategory: {
+                    snacks: contadorSnacks.length,
+                    accesorios: contadorAccesorios.length,
+                    alimentos: contadorAlimentos.length,
+                    juguetes: contadorJuguetes.length,
+                    higiene: contadorHigiene.length
+                },
+                products: products.map(function(product) {
+                    return { 
                         id: product.id,
                         name: product.name,
                         description: product.description,
                         detail: "http://localhost:8080/products/detalle/" + product.id,
                         category: categories[product.category_id - 1]
-                    })
+                    }
                 })
+            };
+            if((10 * req.query.page) < totalInDb){
+                pagination = { next: "http://localhost:8080/api/products?page=" + (Number(req.query.page) + 1) };
+                paramObj = { ...paramObj, ...pagination };
+            }
+            if(req.query.page > 1)
+            {
+                pagination = { previous: "http://localhost:8080/api/products?page=" + (Number(req.query.page) - 1) };
+                paramObj = { ...paramObj, ...pagination };
+            }
+            return res.json(paramObj);
+        })
 
-                return res.json({
-                    count: products.length,
-                    countByCategory: {
-                        snacks: contadorSnacks.length,
-                        accesorios: contadorAccesorios.length,
-                        alimentos: contadorAlimentos.length,
-                        juguetes: contadorJuguetes.length,
-                        higiene: contadorHigiene.length
-                    },
-                    products: listaProductos
-                })
-            })
-
-        },
+    },
 
     getOneProduct: (req, res) => {
 
