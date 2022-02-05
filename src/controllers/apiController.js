@@ -7,8 +7,17 @@ const res = require("express/lib/response");
 
 let controller = {
     getUsers: (req, res) => {
-        db.User.findAll()
-        .then(resultado => {
+        let limitOffset;
+        let pagination = 10 * (req.params.page - 1);
+        if(req.params.page)
+        {
+            limitOffset = {
+                limit: 10,
+                offset: pagination
+            }
+        }
+            db.User.findAll(limitOffset)
+            .then(resultado => {
             return res.status(200).json({
                 count: resultado.length,
                 users: resultado.map(function(item) {
@@ -16,7 +25,7 @@ let controller = {
                         id: item.id,
                         name: item.name,
                         email: item.email,
-                        detail: "http://localhost:3000/users/profile"
+                        detail: "http://localhost:8080/users/profile"
                     }
                 }),
                 status: 200
@@ -32,20 +41,29 @@ let controller = {
                 name: resultado.name,
                 lastname: resultado.lastname,
                 email: resultado.email,
-                avatar: "http://localhost:3000/images/users/" + resultado.avatar
+                avatar: "http://localhost:8080/images/users/" + resultado.avatar
             })
         });
     },
 
     getProducts: (req, res) => {
 
-            let categories = db.Category.findAll({
-                attributes: {exclude: ['products']}
-            });
+        let att;
+        let pagination = 10 * (req.params.page - 1);
+        if(req.params.page)
+        {
+            att = {
+                limit: 10,
+                offset: pagination
+            }
+        }
+        else {
+            att = { attributes: {exclude: ['products']} }
+        }
 
-            let products = db.Product.findAll({
-                include: {all: true}
-            });
+            let categories = db.Category.findAll({ attributes: {exclude: ['products']} });
+
+            let products = db.Product.findAll(att);
 
             Promise.all([categories, products])
 
@@ -85,7 +103,7 @@ let controller = {
                         id: product.id,
                         name: product.name,
                         description: product.description,
-                        detail: "http://localhost:3000/products/detalle/" + product.id,
+                        detail: "http://localhost:8080/products/detalle/" + product.id,
                         category: categories[product.category_id - 1]
                     })
                 })
@@ -124,7 +142,7 @@ let controller = {
                 name: product.name,
                 descripcion: product.description,
                 price: product.price,
-                image: "http://localhost:3000/images/products/" + product.image,
+                image: "http://localhost:8080/images/products/" + product.image,
                 rating: product.rating,
                 status: product.status,
                 stock: product.stock,
