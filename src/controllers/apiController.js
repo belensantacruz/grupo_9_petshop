@@ -3,6 +3,7 @@ const fs = require('fs');
 const db = require("../database/models");
 const { parse } = require("path");
 const e = require("express");
+const res = require("express/lib/response");
 
 let controller = {
     getUsers: (req, res) => {
@@ -129,6 +130,56 @@ let controller = {
                 stock: product.stock,
                 category: categories[product.category_id - 1]
             })
+        })
+    },
+
+    metrics: (req, res) => {
+        let categories = db.Category.findAll()
+
+        let products = db.Product.findAll()
+
+        let users = db.User.findAll()
+
+        Promise.all([categories, products, users])
+
+        .then(([categories, products, users]) => {
+            return res.json({
+                results: [
+                {
+                    name: 'Usuarios en la DB',
+                    cantidad: users.length,
+                    color: 'warning'
+                },
+                {
+                    name: 'Productos en la DB',
+                    cantidad: products.length,
+                    color: 'primary'
+                },
+                {
+                    name: 'Categorias en la DB',
+                    cantidad: categories.length,
+                    color: 'success'
+                }
+                ]   
+            })
+        })
+    },
+
+    category: (req, res) => {
+        db.Category.findAll({
+            include: {all: true}
+        })
+        .then(resultado => {
+            res.json(resultado);
+        })
+    },
+
+    allProducts: (req, res) => {
+        db.Product.findAll({
+            include: {all: true}
+        })
+        .then(resultado => {
+            res.json(resultado);
         })
     }
 
