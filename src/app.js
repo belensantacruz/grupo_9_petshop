@@ -9,7 +9,9 @@ const apiRouter = require("./routes/api");
 const session = require('express-session');
 const loggedMiddleware = require('./middlewares/loggedMiddleware')
 const cookies = require('cookie-parser');
+const cors = require('cors')
 
+app.use(cors());
 app.use(session( {
     secret: "guaridaSecret",
     resave: false,
