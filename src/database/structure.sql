@@ -22,7 +22,7 @@ CREATE TABLE products (
   id INT(11) NOT NULL AUTO_INCREMENT,
   category_id INT(11) NOT NULL,
   name VARCHAR(45) NOT NULL,
-  description VARCHAR(100) NOT NULL,
+  description VARCHAR(500) NOT NULL,
   price DECIMAL(10,2) NOT NULL,
   image VARCHAR(100) NOT NULL,
   rating INT(11) NOT NULL,

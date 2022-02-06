@@ -35,6 +35,7 @@ section {
 img.activeSlide {
   opacity: 1;
   transition: 300ms opacity ease-in-out;
+  transition-delay: 200ms;
 }
 .imagenes-carrusel img {
   display: block;

@@ -53,7 +53,7 @@ insert into categories (id, name) values (5, 'Higiene');
 
 /*Products*/
 
-insert into products (id, category_id, name, description, price, image, rating, status, stock) values (1, 5, 'Nomad Foods Limited', 'lectus aliquam sit amet diam in magna bibendum', 1524.72, 'producto1.png', 4, 'destacado', 7);
+insert into products (id, category_id, name, description, price, image, rating, status, stock) values (1, 2, 'Cucha pequeña plástico', 'Diseñada con el tamaño ideal para razas pequeñas para mantener seco al perro. Material resistente a la humedad, fácil de limpiar. Para uso en interiores y exteriores, con protección UV. El diseño del techo evita que la lluvia moje el interior.', 6999.99, 'producto1.png', 4, 'destacado', 7);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (2, 3, 'Cato Corporation (The)', 'rutrum nulla nunc purus phasellus in felis donec semper sapien a libero', 1837.76, 'producto2.png', 5, 'oferta', 7);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (3, 3, 'Dreyfus High Yield Strategies Fund', 'proin interdum mauris non ligula pellentesque ultrices', 202.34, 'producto4.png', 3, 'oferta', 7);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (4, 4, 'Bank of South Carolina Corp.', 'mauris eget massa tempor convallis nulla neque libero', 508.49, 'producto2.png', 5, 'oferta', 4);

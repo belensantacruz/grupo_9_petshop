@@ -5,9 +5,14 @@ const { validationResult } = require('express-validator');
 
 let controller ={
     detalle : (req, res) =>{
+        let categoryName;
         db.Product.findByPk(req.params.id)
             .then((resultado) => {
-                res.render("products/product", { productDetail: resultado.dataValues });
+                db.Category.findByPk(resultado.dataValues.category_id)
+                .then(categoria => {
+                    categoryName = categoria.name;
+                    res.render("products/product", { productDetail: resultado.dataValues, categoryName });
+                });
             });
     },
     carrito : (req, res) =>{
