@@ -21,26 +21,37 @@ section {
 }
 
 /* Carrusel */
-.banner-inactivo {
-  display: none;
-}
-.imagenes-carrusel img{
+.carrusel {
+  position: relative;
   width: 100%;
-  height: 20vh;
+  height: 350px;
 }
-.arrows {
-  color: white;
-  cursor: pointer;
-  display: none;
-}
-.arrows p:hover{
-  background-color: #ff2870;
-}
-.arrows p {
-  background-color: #8a2be2;
-  border-radius: 2px;
+.imagenes-carrusel img {
   position: absolute;
-  top: 50%;
+  width: 100%;
+  height: 40vh;
+  opacity: 0;
+}
+img.activeSlide {
+  opacity: 1;
+  transition: 300ms opacity ease-in-out;
+}
+.imagenes-carrusel img {
+  display: block;
+}
+.arrows button:hover{
+  background-color: #8a2be2;
+  color: white;
+  border: solid 2px none;
+}
+.arrows button {
+  background-color: transparent;
+  border: solid 2px transparent;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  position: absolute;
+  top: 30%;
   transition: background-color 0.6s ease;
 }
 .next {
@@ -48,7 +59,6 @@ section {
   right: 0px;
 }
 .dots {
-  display: none;
   position: absolute; 
 }
 .dot {
@@ -98,6 +108,12 @@ section {
   border: solid 2px grey;
   border-radius: 50%;
 }
+.articulos-destacados {
+  position: relative;
+}
+.articulos-ofertas {
+  position: relative;
+}
 .articulos {
   display: flex;
   justify-content: flex-start;
@@ -124,7 +140,7 @@ section {
 }
 .articulos article:hover {
   box-shadow: 0px 0px 5px #8a2be2;
-  margin: 15px;
+  margin: 5px;
   height: 300px;
   min-height: 300px;
   width: 220px;
@@ -223,7 +239,7 @@ article:hover .detalles-producto {
     font-size: 40px;
     display: contents;
   }
-  .arrows p {
+  .arrows button {
     padding: 10px 10px;
     font-size: 30px;
   }
@@ -245,6 +261,9 @@ article:hover .detalles-producto {
 
 /* Desktop */
 @media (min-width: 769px) {
+  .carrusel {
+    height: 400px;
+  }
   .imagenes-carrusel img{
     height: 60vh;
   }
@@ -252,13 +271,13 @@ article:hover .detalles-producto {
     display: contents;
     font-size: 60px;
   }
-  .arrows p {
+  .arrows button {
     padding: 20px 20px;
     font-size: 40px;
   }
   .dots{
     display: flex;
-    top: 74%;
+    top: 78%;
     left: 46%;
   }
   .articulos-arrows {
