@@ -16,8 +16,8 @@ let controller = {
                 totalInDb = resultado.length;
             });
         db.User.findAll({
-            limit: 10,
-            offset: 10 * (req.query.page - 1)
+            limit: 5,
+            offset: 5 * (req.query.page - 1)
         })
             .then(resultado => {
             let paramObj = {
@@ -32,7 +32,7 @@ let controller = {
                 }),
                 status: 200
             };
-            if((10 * req.query.page) < totalInDb){
+            if((5 * req.query.page) < totalInDb){
                 pagination = { next: "http://localhost:8080/api/users?page=" + (Number(req.query.page) + 1) };
                 paramObj = { ...paramObj, ...pagination };
             }
@@ -66,8 +66,8 @@ let controller = {
         let categories = db.Category.findAll({ attributes: {exclude: ['products']} });
         let totalProducts = db.Product.findAll();
         let products = db.Product.findAll({
-            limit: 10,
-            offset: 10 * (req.query.page - 1)
+            limit: 5,
+            offset: 5 * (req.query.page - 1)
         });
         Promise.all([categories, products, totalProducts])
         .then(([categories, products, totalProducts]) => {
@@ -108,12 +108,13 @@ let controller = {
                         id: product.id,
                         name: product.name,
                         description: product.description,
+                        price: product.price,
                         detail: "http://localhost:8080/products/detalle/" + product.id,
                         category: categories[product.category_id - 1]
                     }
                 })
             };
-            if((10 * req.query.page) < totalInDb){
+            if((5 * req.query.page) < totalInDb){
                 pagination = { next: "http://localhost:8080/api/products?page=" + (Number(req.query.page) + 1) };
                 paramObj = { ...paramObj, ...pagination };
             }
