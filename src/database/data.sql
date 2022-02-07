@@ -58,7 +58,7 @@ insert into products (id, category_id, name, description, price, image, rating, 
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (3, 2, 'Rascador con pelota', 'Rascador de 35x35x45 con superficie forrada en felpa y poste de sisal .Rampa con superficie de sisal y pelota de juguete con cuerda', 6896.34, 'producto3.png', 2, 'oferta', 2);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (4, 3, 'Alimento Pedigree Cachorro 21k', 'La selección de un alimento adecuado para tu mascota es muy importante para garantizar su crecimiento, desarrollo y salud. Con esta opción de Pedigree podrás cubrir las necesidades nutricionales y energéticas de tu perro.Tu mascota siempre saludable. Brindale a tu perro los nutrientes que necesita para que pueda correr, saltar y jugar todo el día.', 508.49, 'producto4.png', 3, 'oferta', 4);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (5, 3, 'Alimento Gato Maine Coon 7.5k', 'Alimento especialmente formulado para gatos adultos de raza Maine Coon - A partir de los 12 meses de edad.', 8900.00, 'producto5.png', 5, 'oferta', 1);
-insert into products (id, category_id, name, description, price, image, rating, status, stock) values (6, 4, 'Pack comedero + bebedero + juguetes', 'Es un práctico distribuidor para agua y croquetas. Esta fabricado en plástico con borde de goma anti deslizante, tiene dos orificios de salida diferentes en el tanque, permitiendo el uso dual. El tanque transparente tiene un indicador de capacidad útil que mantiene en control el nivel de alimentos o agua dentro. Incluye 1 juguete y cortauñas.', 4000.50, 'producto6.jpg', 5, 'destacado', 12);
+insert into products (id, category_id, name, description, price, image, rating, status, stock) values (6, 2, 'Pack comedero + bebedero + juguetes', 'Es un práctico distribuidor para agua y croquetas. Esta fabricado en plástico con borde de goma anti deslizante, tiene dos orificios de salida diferentes en el tanque, permitiendo el uso dual. El tanque transparente tiene un indicador de capacidad útil que mantiene en control el nivel de alimentos o agua dentro. Incluye 1 juguete y cortauñas.', 4000.50, 'producto6.jpg', 5, 'destacado', 12);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (7, 3, 'Sobres comida húmeda kitten', 'Este alimento húmedo es esencial para una mayor vitalidad y un crecimiento sano y fuerte en gatitos cachorros desde sus primeros meses de vida. Ayuda a apoyar las necesidades de las defensas naturales a través de un balance de nutrientes. Es fácil de masticar ya que son pequeños trozos en salsa.', 24.79, 'producto7.jpg', 3, 'oferta', 69);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (8, 3, 'Sobres comida húmeda perro adulto', 'Sobrecito Adulto con ingredientes naturales es alimento húmedo 100% completo y balanceado cocido al vapor, que contiene suaves trocitos en salsa y ha sido formulado para perros adultos, aportando vitalidad y energía en cada porción.', 26.54, 'producto8.jpg', 3, 'oferta', 75);
 insert into products (id, category_id, name, description, price, image, rating, status, stock) values (9, 4, 'Soga perro mediana', 'Soga con nudos, puro algodón, muy resistente y no daña a su perro. Favorece la limpieza e higiene de la dentadura de su mascota.', 613.4, 'producto9.jpg', 5, 'destacado', 45);
@@ -80,37 +80,37 @@ insert into products (id, category_id, name, description, price, image, rating, 
 
 /*Orders*/
 
-insert into orders (id, user_id, total) values (1, 13, 19548.6);
-insert into orders (id, user_id, total) values (2, 31, 49603.3);
-insert into orders (id, user_id, total) values (3, 4, 72.23);
-insert into orders (id, user_id, total) values (4, 19, 149681.31);
-insert into orders (id, user_id, total) values (5, 21, 6098.88);
-insert into orders (id, user_id, total) values (6, 36, 22053.12);
-insert into orders (id, user_id, total) values (7, 9, 72235.16);
-insert into orders (id, user_id, total) values (8, 11, 32633.75);
-insert into orders (id, user_id, total) values (9, 11, 5728.74);
-insert into orders (id, user_id, total) values (10, 28, 81743.57);
+-- insert into orders (id, user_id, total) values (1, 13, 19548.6);
+-- insert into orders (id, user_id, total) values (2, 31, 49603.3);
+-- insert into orders (id, user_id, total) values (3, 4, 72.23);
+-- insert into orders (id, user_id, total) values (4, 19, 149681.31);
+-- insert into orders (id, user_id, total) values (5, 21, 6098.88);
+-- insert into orders (id, user_id, total) values (6, 36, 22053.12);
+-- insert into orders (id, user_id, total) values (7, 9, 72235.16);
+-- insert into orders (id, user_id, total) values (8, 11, 32633.75);
+-- insert into orders (id, user_id, total) values (9, 11, 5728.74);
+-- insert into orders (id, user_id, total) values (10, 28, 81743.57);
 
 
 /*Purchases*/
 
-insert into purchases (id, order_id, product_id, quantity) values (1, 1, 6, 6);
-insert into purchases (id, order_id, product_id, quantity) values (2, 1, 13, 18);
-insert into purchases (id, order_id, product_id, quantity) values (3, 2, 10, 17);
-insert into purchases (id, order_id, product_id, quantity) values (4, 2, 10, 21);
-insert into purchases (id, order_id, product_id, quantity) values (5, 3, 14, 1);
-insert into purchases (id, order_id, product_id, quantity) values (6, 4, 11, 26);
-insert into purchases (id, order_id, product_id, quantity) values (7, 4, 16, 5);
-insert into purchases (id, order_id, product_id, quantity) values (8, 4, 5, 23);
-insert into purchases (id, order_id, product_id, quantity) values (9, 5, 1, 4);
-insert into purchases (id, order_id, product_id, quantity) values (10, 6, 2, 12);
-insert into purchases (id, order_id, product_id, quantity) values (11, 7, 14, 3);
-insert into purchases (id, order_id, product_id, quantity) values (12, 7, 7, 30);
-insert into purchases (id, order_id, product_id, quantity) values (13, 7, 4, 5);
-insert into purchases (id, order_id, product_id, quantity) values (14, 7, 20, 12);
-insert into purchases (id, order_id, product_id, quantity) values (15, 7, 17, 16);
-insert into purchases (id, order_id, product_id, quantity) values (16, 8, 10, 25);
-insert into purchases (id, order_id, product_id, quantity) values (17, 9, 7, 6);
-insert into purchases (id, order_id, product_id, quantity) values (18, 10, 2, 25);
-insert into purchases (id, order_id, product_id, quantity) values (19, 10, 19, 25);
-insert into purchases (id, order_id, product_id, quantity) values (20, 10, 6, 26);
+-- insert into purchases (id, order_id, product_id, quantity) values (1, 1, 6, 6);
+-- insert into purchases (id, order_id, product_id, quantity) values (2, 1, 13, 18);
+-- insert into purchases (id, order_id, product_id, quantity) values (3, 2, 10, 17);
+-- insert into purchases (id, order_id, product_id, quantity) values (4, 2, 10, 21);
+-- insert into purchases (id, order_id, product_id, quantity) values (5, 3, 14, 1);
+-- insert into purchases (id, order_id, product_id, quantity) values (6, 4, 11, 26);
+-- insert into purchases (id, order_id, product_id, quantity) values (7, 4, 16, 5);
+-- insert into purchases (id, order_id, product_id, quantity) values (8, 4, 5, 23);
+-- insert into purchases (id, order_id, product_id, quantity) values (9, 5, 1, 4);
+-- insert into purchases (id, order_id, product_id, quantity) values (10, 6, 2, 12);
+-- insert into purchases (id, order_id, product_id, quantity) values (11, 7, 14, 3);
+-- insert into purchases (id, order_id, product_id, quantity) values (12, 7, 7, 30);
+-- insert into purchases (id, order_id, product_id, quantity) values (13, 7, 4, 5);
+-- insert into purchases (id, order_id, product_id, quantity) values (14, 7, 20, 12);
+-- insert into purchases (id, order_id, product_id, quantity) values (15, 7, 17, 16);
+-- insert into purchases (id, order_id, product_id, quantity) values (16, 8, 10, 25);
+-- insert into purchases (id, order_id, product_id, quantity) values (17, 9, 7, 6);
+-- insert into purchases (id, order_id, product_id, quantity) values (18, 10, 2, 25);
+-- insert into purchases (id, order_id, product_id, quantity) values (19, 10, 19, 25);
+-- insert into purchases (id, order_id, product_id, quantity) values (20, 10, 6, 26);
