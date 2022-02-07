@@ -24,12 +24,12 @@ section {
 .carrusel {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 150px;
 }
 .imagenes-carrusel img {
   position: absolute;
+  height: 60%;
   width: 100%;
-  height: 40vh;
   opacity: 0;
 }
 img.activeSlide {
@@ -52,7 +52,7 @@ img.activeSlide {
   font-weight: 500;
   border-radius: 10px;
   position: absolute;
-  top: 30%;
+  top: 25%;
   transition: background-color 0.6s ease;
 }
 .next {
@@ -60,7 +60,7 @@ img.activeSlide {
   right: 0px;
 }
 .dots {
-  position: absolute; 
+  position: absolute;
 }
 .dot {
     cursor: pointer;
@@ -232,7 +232,11 @@ article:hover .detalles-producto {
 /* Tablets */
 @media (min-width: 361px) {
   .imagenes-carrusel img{
-    height: 350px;
+    height: 75%;
+    width: 100%;
+  }
+  .carrusel {
+    height: 200px;
   }
   .arrows {
     font-size: 40px;
@@ -241,10 +245,11 @@ article:hover .detalles-producto {
   .arrows button {
     padding: 10px 10px;
     font-size: 30px;
+    top: 30%;
   }
   .dots{
     display: flex;
-    top: 55%;
+    top: 75%;
     left: 42%;
   }
   .minus, .plus {
@@ -265,7 +270,8 @@ article:hover .detalles-producto {
     height: 400px;
   }
   .imagenes-carrusel img{
-    height: 350px;
+    height: 80%;
+    width: 100%;
   }
   .arrows {
     display: contents;
@@ -274,10 +280,11 @@ article:hover .detalles-producto {
   .arrows button {
     padding: 20px 20px;
     font-size: 40px;
+    top: 30%;
   }
   .dots{
     display: flex;
-    top: 78%;
+    top: 70%;
     left: 46%;
   }
   .articulos-arrows {
