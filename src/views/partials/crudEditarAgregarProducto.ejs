@@ -86,8 +86,10 @@
         </div>
         <% if (producto.image == null) { %>
             <div class="crudImage">
-                <input type="file" name="image" id="image" accept=".jpg,.png">
+                <input type="file" name="image" id="image" accept=".jpg,.png" onchange="onFileSelected(event)">
                 <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
+                <img id="selectedImage" hidden>
+                <label class="tituloImagen" name="imageLabel" hidden><%=producto.image%></label>
                 <div class="frontError"><p></p></div>
                 <% if (locals.errors && errors.image) { %>
                     <div class="errors-conteiner">
@@ -97,9 +99,9 @@
             </div>    
         <% } else { %>   
             <div class="crudImage">
-                <input type="file" name="image" id="image" accept=".jpg,.png" src="/images/products/<%= producto.image %>">
+                <input type="file" name="image" id="image" accept=".jpg,.png" src="/images/products/<%= producto.image %>" onchange="onFileSelected(event)">
                 <label class="imageButton"for="image">Seleccionar Imagen &nbsp;<i class="far fa-images"></i></label>
-                <img src="/images/products/<%= producto.image %>" alt="Imagen Producto <%= producto.image %>">
+                <img id="selectedImage" src="/images/products/<%= producto.image %>" alt="Imagen Producto">
                 <label class="tituloImagen" name="imageLabel"><%=producto.image%></label>
                 <% if (locals.errors && errors.image) { %>
                     <div class="errors-conteiner">
@@ -109,5 +111,7 @@
             </div>
         <% } %> 
     </div>
+    <script src="/js/changeImageSelected.js" type="text/javascript"></script>
+    <script src="/js/dropdownSelectedValue.js" type="text/javascript"></script>
 </body>
 </html>
