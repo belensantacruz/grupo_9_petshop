@@ -100,9 +100,7 @@
     justify-content: space-between;
     margin-left: 50px;
     margin-right: 50px;
-    padding-left: 70px;
-    padding-right: 70px;
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     margin-top: 10px;
     font-size: 14px;
@@ -132,7 +130,6 @@
 
 .dropbtn{
     border: none;
-    margin-left: 20px;
     background-color: transparent;
 }
 

@@ -33,7 +33,7 @@ body{
     top:30%;
     left:50%;
     transform: translate(-50%, -50%); */
-    margin: 50px auto 300px auto;
+    margin: 50px auto 250px auto;
     display: flex;
     justify-content: center;
 }

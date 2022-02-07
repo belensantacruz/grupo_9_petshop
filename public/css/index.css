@@ -20,6 +20,10 @@ section {
   margin: 0px 25px;
 }
 
+.categories-page{
+  margin-bottom: 200px;
+}
+
 /* Carrusel */
 .carrusel {
   position: relative;
@@ -307,3 +311,4 @@ article:hover .detalles-producto {
     overflow-x: scroll;
   }
 }
+
