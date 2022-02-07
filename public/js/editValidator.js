@@ -1,6 +1,5 @@
 window.addEventListener('load', function() {
     let errores = [];
-    let regexp = /\s/; 
     let nameErrors = [];
     let descriptionErrors = [];
     let categoryErrors = [];
@@ -16,21 +15,25 @@ window.addEventListener('load', function() {
     let nombre = document.querySelector('#name');
     function nameValidator(nombre, nameErrors) {
         nameErrors = [];
-        if(nombre.value == "" || regexp.test(nombre.value))
+        if (nombre.value == "" || nombre.value == " ")
             nameErrors.push("Debe ingresar un nombre"); 
         else
             nameErrors = [];
         
         nombre.addEventListener('blur', function() {
             let error = document.querySelector('.crudName .frontError p');
+            let backEndError = document.querySelector('.crudName .errors-conteiner p');
             if(nameErrors.length > 0){
                 nameErrors = nameErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = nameErrors;
             }
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     nombre.addEventListener('change', function() {
@@ -43,21 +46,25 @@ window.addEventListener('load', function() {
     let descripcion = document.querySelector('#description');
     function descriptionValidator(descripcion, descriptionErrors) {
         descriptionErrors = [];
-        if(descripcion.value == "" || regexp.test(nombre.value))
+        if(descripcion.value == "" || descripcion.value == " ")
             descriptionErrors.push("Debe ingresar una descripción");
         else
             descriptionErrors = [];
 
         descripcion.addEventListener('blur', function() {
             let error = document.querySelector('.crudDescription .frontError p');
+            let backEndError = document.querySelector('.crudDescription .errors-conteiner p');
             if(descriptionErrors.length > 0){
                 descriptionErrors = descriptionErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = descriptionErrors;
             }                
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     descripcion.addEventListener('change', function() {
@@ -70,7 +77,7 @@ window.addEventListener('load', function() {
     let categoria = document.querySelector('#category');
     function categoryValidator(categoria, categoryErrors) {
         categoryErrors = [];
-        if(categoria.value == "" || regexp.test(nombre.value))
+        if(categoria.value == "" || categoria.value == " ")
             categoryErrors.push("Debe ingresar una categoría válida");
         else if(categoria.value != "" && (categoria.value <= 0 || categoria.value > 5 || isNaN(categoria.value)))
             categoryErrors.push("Debe ingresar una categoría del 1 al 5"); 
@@ -79,14 +86,18 @@ window.addEventListener('load', function() {
 
         categoria.addEventListener('blur', function() {
             let error = document.querySelector('.crudCategory .frontError p');
+            let backEndError = document.querySelector('.crudCategory .errors-conteiner p');
             if(categoryErrors.length > 0){
                 categoryErrors = categoryErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = categoryErrors;
             }
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     categoria.addEventListener('change', function() {
@@ -99,7 +110,7 @@ window.addEventListener('load', function() {
     let precio = document.querySelector('#price');
     function priceValidator(precio, priceErrors) {
         priceErrors = [];
-        if(precio.value == "" || regexp.test(nombre.value))
+        if(precio.value == "" || precio.value == " ")
             priceErrors.push("Debe ingresar un valor");
         else if(precio.value != "" && isNaN(precio.value))
             priceErrors.push("Debe ingresar un número válido");
@@ -110,14 +121,18 @@ window.addEventListener('load', function() {
 
         precio.addEventListener('blur', function() {
             let error = document.querySelector('.crudPrice .frontError p');
+            let backEndError = document.querySelector('.crudPrice .errors-conteiner p');
             if(priceErrors.length > 0){
                 priceErrors = priceErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = priceErrors;
             }
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     precio.addEventListener('change', function() {
@@ -130,7 +145,7 @@ window.addEventListener('load', function() {
     let rating = document.querySelector('#rating');
     function ratingValidator(rating, ratingErrors) {
         ratingErrors = [];
-        if(rating.value == "" || regexp.test(nombre.value))
+        if(rating.value == "" || rating.value == " ")
             ratingErrors.push("Debe ingresar el rating");
         else if(rating.value != "" && (rating.value <= 0 || rating.value > 5 || isNaN(rating.value)))
             ratingErrors.push("Debe ingresar un rating del 1 al 5"); 
@@ -139,14 +154,18 @@ window.addEventListener('load', function() {
 
         rating.addEventListener('blur', function() {
             let error = document.querySelector('.crudRating .frontError p');
+            let backEndError = document.querySelector('.crudRating .errors-conteiner p');
             if(ratingErrors.length > 0){
                 ratingErrors = ratingErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = ratingErrors;
             }
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     rating.addEventListener("change", function() {
@@ -159,7 +178,7 @@ window.addEventListener('load', function() {
     let status = document.querySelector('#status');
     function statusValidator(status, statusErrors) {
         statusErrors = [];
-        if(status.value == "" || regexp.test(nombre.value))
+        if(status.value == "" || status.value == " ")
             statusErrors.push("Debe ingresar un status");
         else if(status.value != "" && (status.value != "oferta" && status.value != "destacado"))
             statusErrors.push("Debe ingresar un status válido: oferta o destacado");
@@ -168,14 +187,18 @@ window.addEventListener('load', function() {
 
         status.addEventListener('blur', function() {
             let error = document.querySelector('.crudStatus .frontError p');
+            let backEndError = document.querySelector('.crudStatus .errors-conteiner p');
             if(statusErrors.length > 0){
                 statusErrors = statusErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = statusErrors;
             }
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     status.addEventListener('change', function() {
@@ -188,7 +211,7 @@ window.addEventListener('load', function() {
     let stock = document.querySelector('#stock');
     function stockValidator(stock, stockErrors) {
         stockErrors = [];
-        if(stock.value == "" || regexp.test(nombre.value))
+        if(stock.value == "" || stock.value == " ")
             stockErrors.push("Debe ingresar un número");
         else if(stock.value != "" && (isNaN(stock.value) || stock.value <=0))
             stockErrors.push("Debe ingresar un número mayor a 0");
@@ -197,14 +220,18 @@ window.addEventListener('load', function() {
 
         stock.addEventListener('blur', function() {
             let error = document.querySelector('.crudStock .frontError p');
+            let backEndError = document.querySelector('.crudStock .errors-conteiner p');
             if(stockErrors.length > 0){
                 stockErrors = stockErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = stockErrors;
             }
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     stock.addEventListener('change', function() {
@@ -217,21 +244,25 @@ window.addEventListener('load', function() {
     let imagen = document.querySelector('#image');
     function imageValidator(imagen, imageErrors) {
         imageErrors = [];
-        if(imagen.value == "" || regexp.test(nombre.value))
+        if(imagen.value == "" || imagen.value == " ")
             imageErrors.push("Debe seleccionar una imagen");
         else
             imageErrors = [];
 
         image.addEventListener('blur', function() {
             let error = document.querySelector('.crudImage .frontError p');
+            let backEndError = document.querySelector('.crudImage .errors-conteiner p');
             if(imageErrors.length > 0){
                 image = imageErrors.filter( function( item, index, inputArray ) {
                     return inputArray.indexOf(item) == index;
                 });
                 error.innerHTML = imageErrors;
             }
-            else
+            else{
                 error.innerHTML = "";
+                if(backEndError)
+                    backEndError.innerHTML = "";
+            }
         });
     }
     imagen.addEventListener('change', function() {
