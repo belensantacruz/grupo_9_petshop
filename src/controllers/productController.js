@@ -60,7 +60,7 @@ let controller ={
                         rating: req.body.rating,
                         status: req.body.status,
                         stock: req.body.stock,
-                        image: req.file == undefined ? producto.image : req.file.originalname
+                        image: req.file == undefined ? producto.dataValues.image : req.file.filename
                     }
                 })
                     .then((resultado) =>{
