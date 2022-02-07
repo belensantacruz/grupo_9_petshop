@@ -22,10 +22,6 @@ let controller ={
         res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
-    },
-
-    nosotros: (req, res) => {
-        res.render("nosotros");
     }
 }
 

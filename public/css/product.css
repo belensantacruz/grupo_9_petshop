@@ -187,11 +187,15 @@
 
 .snippetCategory {
     cursor: pointer;
-    border: solid 2px #ead4ff;
     background-color: #ead4ff;
     border-radius: 20px;
     padding: 5px;    
     font-size: 10px;
+}
+.snippetCategory:hover {
+    background-color: #ff2870;
+    color: white;
+    transition: 300ms;
 }
 
 .nombreProducto {

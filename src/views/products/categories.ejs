@@ -10,10 +10,6 @@
         <div class="category-titulo">
             <div class="titulo-articulos">
                 <h1><%= categoriaTitulo %></h1>
-                <div class="articulos-arrows">
-                    <p class="button-articulos">&lt;</p>
-                    <p class="button-articulos active">&gt;</p>
-                </div>
             </div>
         </div>
         
@@ -22,7 +18,7 @@
                 <article>  
                     <a href="/products/detalle/<%= element.id %>">
                     <img src="/images/products/<%= element.image %>" alt="Imagen Producto 1"></a>
-                    <p class="precio"><%= element.price %></p>
+                    <p class="precio">$<%= element.price %></p>
                     <div class="detalles-producto">
                         <div class="botones-compras">
                             <div class="botones-cantidad">
@@ -40,5 +36,6 @@
     </section>
     <%- include('./../partials/footer') %> 
     <script src="/js/headerCategories.js" type="text/javascript"></script>
+    <script src="/js/contadorProductos.js" type="text/javascript"></script>
 </body>
 </html>

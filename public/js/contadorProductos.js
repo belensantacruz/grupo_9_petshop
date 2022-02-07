@@ -1,14 +1,16 @@
 window.addEventListener('load', function() {
-    let botonMas = document.querySelector(".botones-cantidad.active .plus");
-    let botonMenos = document.querySelector(".botones-cantidad.active .minus");
-    let cantidad = document.querySelector(".botones-cantidad.active input");
-
-    botonMas.addEventListener('click', function() {
-        if(cantidad.value >= 0)
-            cantidad.value = Number(cantidad.value) + 1;
-    });
-    botonMenos.addEventListener('click', function() {
-        if(cantidad.value > 0)
-            cantidad.value = Number(cantidad.value) - 1;
-    });
+    let botonMas = document.querySelectorAll(".botones-cantidad .plus");
+    let botonMenos = document.querySelectorAll(".botones-cantidad .minus");
+    let cantidad = document.querySelectorAll(".botones-cantidad input");
+    for(let i = 0; i < cantidad.length; i++){
+        botonMas[i].addEventListener('click', function() {
+            if(cantidad[i].value >= 0 && cantidad[i].value < 99){
+                cantidad[i].value = Number(cantidad[i].value) + 1;
+            }
+        });
+        botonMenos[i].addEventListener('click', function() {
+            if(cantidad[i].value > 0)
+                cantidad[i].value = Number(cantidad[i].value) - 1;
+        });
+    };
 });

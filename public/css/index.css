@@ -84,30 +84,7 @@ img.activeSlide {
   width: 60%;
   color: #8a2be2;
   font-size: 24px;
-}
-.articulos-arrows {
-  display: none;
-  justify-content: flex-end;
-  width: 40%;
-}
-.articulos-arrows .active:hover {
-  background-color: #8a2be2;
-  cursor: pointer;
-  color: white;
-}
-.articulos-arrows p:hover{
-  background-color: transparent;
-  cursor: default;
-  color: grey;
-}
-.articulos-arrows .active {
-  color: #8a2be2;
-  border: solid 2px #8a2be2;
-}
-.articulos-arrows p {
-  color: grey;
-  border: solid 2px grey;
-  border-radius: 50%;
+  font-weight: 400;
 }
 .articulos-destacados {
   position: relative;
@@ -130,7 +107,7 @@ img.activeSlide {
   min-width: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 10px;
   text-align: center;
   align-items: center;
@@ -148,28 +125,30 @@ img.activeSlide {
   min-width: 220px;
 }
 .articulos article:hover img, .articulos article:focus img {
-  width: 190px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .articulos article img {
   border-bottom: solid 1px #8a2be2;
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   align-self: center;
   background-color: white;
   border-radius: 10px 10px 0px 0px;
 }
 .precio {
+  position: relative;
   color: #8a2be2;
   font-weight: 500;
-  margin: 10px;
   max-width: 100%;
 }
 .botones-compras {
   display: none;
   display: flex;
+  margin-bottom: 5px;
+  margin-top: 0px;
   justify-content: space-around;
 }
 .botones-cantidad {
@@ -215,6 +194,7 @@ img.activeSlide {
   background-color: #8a2be2; 
   color: white;
   pointer-events:visible;
+  transition: 300ms;
 }
 .descripcion-articulo {
   display: none;
@@ -229,12 +209,26 @@ article:hover .detalles-producto {
   display: revert;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  height: 4px;
+  margin-bottom: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.envios {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 /* Media Queries */
 
 /* Tablets */
 @media (min-width: 361px) {
   .imagenes-carrusel img{
-    height: 40vh;
+    height: 350px;
   }
   .arrows {
     font-size: 40px;
@@ -257,6 +251,7 @@ article:hover .detalles-producto {
   }
   .articulos {
     overflow-x: scroll;
+    overflow-y: hidden;
   }
 }
 
@@ -266,7 +261,7 @@ article:hover .detalles-producto {
     height: 400px;
   }
   .imagenes-carrusel img{
-    height: 60vh;
+    height: 350px;
   }
   .arrows {
     display: contents;
@@ -297,6 +292,7 @@ article:hover .detalles-producto {
     display: revert;
   }
   .articulos{
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
 }
